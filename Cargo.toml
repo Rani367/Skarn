@@ -1,0 +1,13 @@
+# Skarn — Cargo workspace
+#
+# A cross-platform, single-binary Rust Model Context Protocol (MCP) gateway with
+# OS-native sandboxing, an embedded Code Mode engine, and shell-output token
+# compression. See README.md for the full picture.
+
+[workspace]
+resolver = "3"
+members = [
+    "crates/skarn-common",
+    "crates/skarn-sandbox",
+    "crates/skarn-compress",
+    "crates/skarn-codemode",
