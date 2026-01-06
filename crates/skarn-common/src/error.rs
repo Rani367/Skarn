@@ -11,3 +11,6 @@ pub type Result<T> = std::result::Result<T, Error>;
 /// [`Error::CodeMode`], etc., keeping a single error surface for the CLI while
 /// still allowing each subsystem to be consumed independently.
 #[derive(Debug, thiserror::Error)]
+#[non_exhaustive]
+pub enum Error {
+    /// A filesystem or process I/O error.

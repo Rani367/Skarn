@@ -28,3 +28,10 @@ impl CommandSpec {
         P: Into<String>,
         A: IntoIterator<Item = S>,
         S: Into<String>,
+    {
+        Self {
+            program: program.into(),
+            args: args.into_iter().map(Into::into).collect(),
+            cwd: None,
+            env: Vec::new(),
+        }

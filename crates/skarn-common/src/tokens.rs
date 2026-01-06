@@ -20,3 +20,11 @@ pub fn estimate_tokens(text: &str) -> usize {
     {
         heuristic_tokens(text)
     }
+}
+
+/// The byte-based heuristic, always available (also used as the unit-tested
+/// reference implementation).
+pub fn heuristic_tokens(text: &str) -> usize {
+    if text.is_empty() {
+        return 0;
+    }

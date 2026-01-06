@@ -4,3 +4,4 @@ description = "Shared primitives for the Skarn workspace: command specs, token e
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+license.workspace = true
