@@ -24,3 +24,6 @@ pub enum Error {
     /// Invalid or unsupported configuration.
     #[error("configuration error: {0}")]
     Config(String),
+
+    /// The OS-native sandbox layer rejected or could not apply a policy.
+    #[error("sandbox error: {0}")]

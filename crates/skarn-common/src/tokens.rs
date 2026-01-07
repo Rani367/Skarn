@@ -45,3 +45,6 @@ fn token_count_tiktoken(text: &str) -> usize {
     bpe.encode_ordinary(text).len()
 }
 
+/// A before/after token comparison produced by the compression layer.
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Savings {
