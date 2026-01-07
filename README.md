@@ -10,3 +10,4 @@
 ![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)
 
 *Cut your agent's API bill while physically stopping it from wiping your disk or exfiltrating your secrets.*
+

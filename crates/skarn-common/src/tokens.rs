@@ -37,3 +37,11 @@ pub fn heuristic_tokens(text: &str) -> usize {
 }
 
 #[cfg(feature = "tiktoken")]
+fn token_count_tiktoken(text: &str) -> usize {
+    use std::sync::OnceLock;
+    use tiktoken_rs::{CoreBPE, o200k_base};
+    static BPE: OnceLock<CoreBPE> = OnceLock::new();
+    let bpe = BPE.get_or_init(|| o200k_base().expect("o200k_base tokenizer loads"));
+    bpe.encode_ordinary(text).len()
+}
+

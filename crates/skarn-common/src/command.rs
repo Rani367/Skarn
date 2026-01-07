@@ -49,3 +49,7 @@ impl CommandSpec {
             env: Vec::new(),
         })
     }
+
+    /// Set the working directory.
+    pub fn with_cwd(mut self, cwd: impl Into<PathBuf>) -> Self {
+        self.cwd = Some(cwd.into());
