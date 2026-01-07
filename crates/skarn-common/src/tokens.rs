@@ -58,3 +58,10 @@ impl Savings {
     /// Construct savings by estimating tokens for both strings.
     pub fn measure(before: &str, after: &str) -> Self {
         Self {
+            before: estimate_tokens(before),
+            after: estimate_tokens(after),
+        }
+    }
+
+    /// Tokens saved (`before - after`, clamped at zero).
+    pub fn saved(&self) -> usize {

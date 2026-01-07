@@ -75,3 +75,9 @@ impl CommandSpec {
                 out.push_str(a);
             }
         }
+        out
+    }
+
+    /// The base name of [`Self::program`], lowercased, with any path and a
+    /// trailing `.exe` removed. Used to pick a compression profile.
+    pub fn tool_name(&self) -> String {

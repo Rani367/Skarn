@@ -33,3 +33,8 @@ pub enum Error {
     /// `fail_closed` was set, so execution was refused.
     #[error("sandbox unsupported on this platform: {0}")]
     SandboxUnsupported(String),
+
+    /// A Code Mode script was rejected by static validation.
+    #[error("code-mode validation rejected script: {0}")]
+    CodeModeRejected(String),
+

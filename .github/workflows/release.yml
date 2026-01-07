@@ -7,3 +7,5 @@ on:
 
 permissions:
   contents: write
+
+jobs:
