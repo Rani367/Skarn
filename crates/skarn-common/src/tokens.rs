@@ -65,3 +65,9 @@ impl Savings {
 
     /// Tokens saved (`before - after`, clamped at zero).
     pub fn saved(&self) -> usize {
+        self.before.saturating_sub(self.after)
+    }
+
+    /// The reduction as a fraction in `0.0..=1.0`. Returns `0.0` if `before` is
+    /// zero or if compression somehow grew the output.
+    pub fn ratio(&self) -> f64 {

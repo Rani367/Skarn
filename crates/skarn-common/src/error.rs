@@ -38,3 +38,7 @@ pub enum Error {
     #[error("code-mode validation rejected script: {0}")]
     CodeModeRejected(String),
 
+    /// A Code Mode script failed at runtime (threw, timed out, or hit a limit).
+    #[error("code-mode runtime error: {0}")]
+    CodeMode(String),
+

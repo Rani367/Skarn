@@ -5,3 +5,4 @@
 //! and CLI crates so they do not have to depend on one another for trivial
 //! data structures.
 
+mod command;

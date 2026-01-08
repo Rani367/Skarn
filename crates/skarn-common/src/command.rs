@@ -81,3 +81,11 @@ impl CommandSpec {
     /// The base name of [`Self::program`], lowercased, with any path and a
     /// trailing `.exe` removed. Used to pick a compression profile.
     pub fn tool_name(&self) -> String {
+        let base = self
+            .program
+            .rsplit(['/', '\\'])
+            .next()
+            .unwrap_or(&self.program);
+        base.trim_end_matches(".exe").to_ascii_lowercase()
+    }
+}
