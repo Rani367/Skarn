@@ -6,3 +6,4 @@
 //! data structures.
 
 mod command;
+mod error;

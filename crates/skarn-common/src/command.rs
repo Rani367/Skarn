@@ -89,3 +89,9 @@ impl CommandSpec {
         base.trim_end_matches(".exe").to_ascii_lowercase()
     }
 }
+
+/// A coarse classification of a program, used to select compression heuristics
+/// and default sandbox hints. This is best-effort and purely advisory.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum ProgramClass {

@@ -71,3 +71,4 @@ impl Savings {
     /// The reduction as a fraction in `0.0..=1.0`. Returns `0.0` if `before` is
     /// zero or if compression somehow grew the output.
     pub fn ratio(&self) -> f64 {
+        if self.before == 0 || self.after >= self.before {

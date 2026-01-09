@@ -42,3 +42,5 @@ pub enum Error {
     #[error("code-mode runtime error: {0}")]
     CodeMode(String),
 
+    /// A downstream MCP server or transport error.
+    #[error("mcp error: {0}")]
