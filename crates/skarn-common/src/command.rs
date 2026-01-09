@@ -97,3 +97,8 @@ impl CommandSpec {
 pub enum ProgramClass {
     /// Rust build / test tooling (`cargo`, `rustc`).
     Rust,
+    /// Python build / test tooling (`python`, `pytest`, `pip`, `uv`).
+    Python,
+    /// JavaScript / Node tooling (`npm`, `pnpm`, `yarn`, `node`, `bun`).
+    Node,
+    /// Version control (`git`, `jj`).

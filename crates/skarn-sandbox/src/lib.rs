@@ -5,3 +5,5 @@
 //!
 //! | Platform | Mechanism | Backend |
 //! |----------|-----------|---------|
+//! | macOS    | Seatbelt (`sandbox_init`) | [`Backend::Seatbelt`] |
+//! | Linux    | Landlock LSM + seccomp-bpf | [`Backend::Landlock`] |

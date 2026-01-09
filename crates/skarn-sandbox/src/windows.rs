@@ -7,3 +7,7 @@
 //! 1. Create (or reuse) an AppContainer profile and derive its SID.
 //! 2. Grant that SID read/execute on the program and read/write on the
 //!    workspace via ACLs (AppContainer processes are denied by default).
+//! 3. Attach `SECURITY_CAPABILITIES` to a `STARTUPINFOEXW` attribute list.
+//! 4. `CreateProcessW` with `EXTENDED_STARTUPINFO_PRESENT`.
+//! 5. Assign the child to a Job Object with kill-on-close so the whole tree
+//!    dies with the parent.

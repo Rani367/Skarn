@@ -77,3 +77,7 @@ impl Savings {
         self.saved() as f64 / self.before as f64
     }
 
+    /// The reduction as a rounded percentage (e.g. `90`).
+    pub fn percent(&self) -> u8 {
+        (self.ratio() * 100.0).round() as u8
+    }
