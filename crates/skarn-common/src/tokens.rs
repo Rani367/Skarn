@@ -81,3 +81,6 @@ impl Savings {
     pub fn percent(&self) -> u8 {
         (self.ratio() * 100.0).round() as u8
     }
+}
+
+#[cfg(test)]

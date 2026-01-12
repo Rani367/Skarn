@@ -11,3 +11,7 @@
 //! 4. `CreateProcessW` with `EXTENDED_STARTUPINFO_PRESENT`.
 //! 5. Assign the child to a Job Object with kill-on-close so the whole tree
 //!    dies with the parent.
+//!
+//! This file is compiled and tested in CI on Windows runners.
+
+#![cfg(windows)]

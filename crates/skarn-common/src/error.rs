@@ -49,3 +49,4 @@ pub enum Error {
     /// A tool was requested that the gateway does not know about.
     #[error("unknown tool: {0}")]
     UnknownTool(String),
+

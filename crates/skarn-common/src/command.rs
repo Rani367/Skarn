@@ -102,3 +102,8 @@ pub enum ProgramClass {
     /// JavaScript / Node tooling (`npm`, `pnpm`, `yarn`, `node`, `bun`).
     Node,
     /// Version control (`git`, `jj`).
+    Vcs,
+    /// Filesystem listing (`ls`, `tree`, `find`).
+    Listing,
+    /// Search (`grep`, `rg`, `ag`).
+    Search,

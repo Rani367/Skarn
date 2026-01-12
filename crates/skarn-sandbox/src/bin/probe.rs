@@ -1,1 +1,2 @@
 //! Sandbox self-test probe.
+//!

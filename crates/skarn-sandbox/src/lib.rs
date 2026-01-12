@@ -7,3 +7,7 @@
 //! |----------|-----------|---------|
 //! | macOS    | Seatbelt (`sandbox_init`) | [`Backend::Seatbelt`] |
 //! | Linux    | Landlock LSM + seccomp-bpf | [`Backend::Landlock`] |
+//! | Windows  | AppContainer + Job Object  | [`Backend::AppContainer`] |
+//!
+//! # Execution model
+//!
