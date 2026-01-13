@@ -5,3 +5,6 @@
 //! the OpenAI Codex CLI, and Claude Code. We bind it directly through libSystem
 //! (no `#[link]` needed) and feed it a generated SBPL (Sandbox Profile
 //! Language) policy string.
+
+use std::ffi::{CStr, CString, c_char};
+

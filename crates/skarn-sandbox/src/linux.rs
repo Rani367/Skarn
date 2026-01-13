@@ -7,3 +7,4 @@
 //! caller refuses to run). seccomp adds defense-in-depth by killing syscalls
 //! Landlock cannot reason about (`ptrace`, `mount`, `bpf`, module loading, …).
 //!
+//! Note: Landlock network filtering is *port*-based — it cannot distinguish

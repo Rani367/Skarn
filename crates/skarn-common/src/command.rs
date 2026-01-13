@@ -111,3 +111,7 @@ pub enum ProgramClass {
     Other,
 }
 
+/// Classify a program by its (base) name.
+pub fn classify_program(tool_name: &str) -> ProgramClass {
+    match tool_name {
+        "cargo" | "rustc" | "rustup" | "clippy-driver" => ProgramClass::Rust,

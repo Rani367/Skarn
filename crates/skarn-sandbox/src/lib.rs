@@ -16,3 +16,6 @@
 //! sandboxed**. On Unix the worker calls [`apply_to_current_process`] as its
 //! very first action — while it is still single-threaded, which avoids the
 //! classic "fork in a multi-threaded process then call a non-async-signal-safe
+//! function" deadlock — and then `exec`s the target. Landlock domains, seccomp
+//! filters, and the Seatbelt profile all persist across `execve`, so the target
+//! inherits the confinement. On Windows a process cannot move *itself* into an

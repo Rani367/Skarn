@@ -23,3 +23,5 @@ use skarn_common::{CommandSpec, Error, Result};
 use windows::Win32::Foundation::{
     CloseHandle, ERROR_BROKEN_PIPE, HANDLE, HANDLE_FLAG_INHERIT, HANDLE_FLAGS, HLOCAL, LocalFree,
     SetHandleInformation,
+};
+use windows::Win32::Security::Authorization::{
