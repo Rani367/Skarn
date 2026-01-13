@@ -14,3 +14,5 @@
 use landlock::{
     ABI, Access, AccessFs, AccessNet, BitFlags, CompatLevel, Compatible, PathBeneath, PathFd,
     Ruleset, RulesetAttr, RulesetCreatedAttr, RulesetStatus,
+};
+use skarn_common::{Error, Result};

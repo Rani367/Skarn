@@ -22,3 +22,5 @@
 //! AppContainer, so the parent launches the worker into one with
 //! [`spawn_appcontainer`].
 //!
+//! The [`skarn`] CLI wires this together; this crate only provides the
+//! primitives and the [`Policy`] type.

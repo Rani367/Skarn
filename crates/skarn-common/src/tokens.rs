@@ -95,3 +95,4 @@ mod tests {
     #[test]
     fn non_empty_is_at_least_one() {
         assert_eq!(heuristic_tokens("a"), 1);
+    }

@@ -16,3 +16,6 @@ use crate::{Backend, NetPolicy, Policy, RestrictionReport, RestrictionStatus};
 unsafe extern "C" {
     fn sandbox_init(profile: *const c_char, flags: u64, errorbuf: *mut *mut c_char) -> i32;
     fn sandbox_free_error(errorbuf: *mut c_char);
+}
+
+/// System directories programs are executed from.
