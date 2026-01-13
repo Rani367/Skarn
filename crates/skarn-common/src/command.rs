@@ -119,3 +119,8 @@ pub fn classify_program(tool_name: &str) -> ProgramClass {
             ProgramClass::Python
         }
         "npm" | "pnpm" | "yarn" | "node" | "bun" | "npx" | "tsc" | "vite" | "webpack" => {
+            ProgramClass::Node
+        }
+        "git" | "jj" | "hg" => ProgramClass::Vcs,
+        "ls" | "tree" | "find" | "fd" | "exa" | "eza" => ProgramClass::Listing,
+        "grep" | "rg" | "ag" | "ack" => ProgramClass::Search,

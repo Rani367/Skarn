@@ -12,3 +12,5 @@
 //! "allow outbound" here and a note is attached to the report.
 
 use landlock::{
+    ABI, Access, AccessFs, AccessNet, BitFlags, CompatLevel, Compatible, PathBeneath, PathFd,
+    Ruleset, RulesetAttr, RulesetCreatedAttr, RulesetStatus,

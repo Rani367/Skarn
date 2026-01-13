@@ -19,3 +19,6 @@
 //! function" deadlock — and then `exec`s the target. Landlock domains, seccomp
 //! filters, and the Seatbelt profile all persist across `execve`, so the target
 //! inherits the confinement. On Windows a process cannot move *itself* into an
+//! AppContainer, so the parent launches the worker into one with
+//! [`spawn_appcontainer`].
+//!

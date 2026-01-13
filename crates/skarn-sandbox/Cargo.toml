@@ -1,2 +1,3 @@
 [package]
 name = "skarn-sandbox"
+description = "OS-native process sandboxing (Seatbelt / Landlock+seccomp / AppContainer) with a unified API."

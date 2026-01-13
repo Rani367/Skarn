@@ -30,3 +30,9 @@ use windows::Win32::Security::Authorization::{
 };
 use windows::Win32::Security::Isolation::{
     CreateAppContainerProfile, DeriveAppContainerSidFromAppContainerName,
+};
+use windows::Win32::Security::{
+    ACL, CopySid, DACL_SECURITY_INFORMATION, DeriveCapabilitySidsFromName, GetLengthSid, PSID,
+    SECURITY_ATTRIBUTES, SECURITY_CAPABILITIES, SID_AND_ATTRIBUTES,
+    SUB_CONTAINERS_AND_OBJECTS_INHERIT,
+};
