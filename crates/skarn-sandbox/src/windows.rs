@@ -25,3 +25,8 @@ use windows::Win32::Foundation::{
     SetHandleInformation,
 };
 use windows::Win32::Security::Authorization::{
+    EXPLICIT_ACCESS_W, GRANT_ACCESS, GetNamedSecurityInfoW, NO_MULTIPLE_TRUSTEE, SE_FILE_OBJECT,
+    SetEntriesInAclW, SetNamedSecurityInfoW, TRUSTEE_IS_SID, TRUSTEE_IS_UNKNOWN, TRUSTEE_W,
+};
+use windows::Win32::Security::Isolation::{
+    CreateAppContainerProfile, DeriveAppContainerSidFromAppContainerName,

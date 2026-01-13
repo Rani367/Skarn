@@ -91,3 +91,5 @@ mod tests {
     fn empty_is_zero() {
         assert_eq!(heuristic_tokens(""), 0);
     }
+
+    #[test]

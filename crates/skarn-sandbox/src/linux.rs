@@ -8,3 +8,7 @@
 //! Landlock cannot reason about (`ptrace`, `mount`, `bpf`, module loading, …).
 //!
 //! Note: Landlock network filtering is *port*-based — it cannot distinguish
+//! loopback from the internet — so [`NetPolicy::AllowLoopback`] degrades to
+//! "allow outbound" here and a note is attached to the report.
+
+use landlock::{

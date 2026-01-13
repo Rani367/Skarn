@@ -115,3 +115,7 @@ pub enum ProgramClass {
 pub fn classify_program(tool_name: &str) -> ProgramClass {
     match tool_name {
         "cargo" | "rustc" | "rustup" | "clippy-driver" => ProgramClass::Rust,
+        "python" | "python3" | "pytest" | "pip" | "pip3" | "uv" | "poetry" | "ruff" => {
+            ProgramClass::Python
+        }
+        "npm" | "pnpm" | "yarn" | "node" | "bun" | "npx" | "tsc" | "vite" | "webpack" => {

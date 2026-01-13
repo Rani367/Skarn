@@ -8,3 +8,8 @@
 
 use std::ffi::{CStr, CString, c_char};
 
+use skarn_common::{Error, Result};
+
+use crate::{Backend, NetPolicy, Policy, RestrictionReport, RestrictionStatus};
+
+// SAFETY: these symbols are provided by libSystem and resolve at link time.
