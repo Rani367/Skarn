@@ -17,3 +17,6 @@ use skarn_sandbox::{NetPolicy, Policy, RestrictionStatus, backend_report};
 const PROBE: &str = env!("CARGO_BIN_EXE_skarn-sandbox-probe");
 
 const EXIT_OK: i32 = 0;
+const EXIT_DENIED: i32 = 10;
+
+fn unique_root() -> PathBuf {

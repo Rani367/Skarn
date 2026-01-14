@@ -7,3 +7,5 @@
 //! Operations:
 //!   write   <path>        try to create+write a file at <path>
 //!   read    <path>        try to read a file at <path>
+//!   connect <host:port>   try to open a TCP connection
+//!

@@ -22,3 +22,5 @@ unsafe extern "C" {
 const SYSTEM_EXEC_SUBPATHS: &[&str] = &["/usr/bin", "/bin", "/usr/sbin", "/sbin", "/usr/local/bin"];
 
 /// Generate the SBPL profile string for a policy.
+///
+/// This is a pure function so it can be unit-tested directly without touching

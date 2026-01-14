@@ -55,3 +55,7 @@ use windows::Win32::System::Threading::{
 use windows::core::{BOOL, PCWSTR, PWSTR};
 
 use crate::{Backend, NetPolicy, Policy, RestrictionReport, RestrictionStatus};
+
+/// `SE_GROUP_ENABLED` — the capability SID is active in the token.
+const SE_GROUP_ENABLED: u32 = 0x0000_0004;
+

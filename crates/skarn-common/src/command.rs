@@ -131,3 +131,5 @@ pub fn classify_program(tool_name: &str) -> ProgramClass {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
