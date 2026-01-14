@@ -49,3 +49,9 @@ use windows::Win32::System::Threading::{
     CreateProcessW, DeleteProcThreadAttributeList, EXTENDED_STARTUPINFO_PRESENT,
     GetExitCodeProcess, InitializeProcThreadAttributeList, LPPROC_THREAD_ATTRIBUTE_LIST,
     PROC_THREAD_ATTRIBUTE_SECURITY_CAPABILITIES, PROCESS_CREATION_FLAGS, PROCESS_INFORMATION,
+    STARTF_USESTDHANDLES, STARTUPINFOEXW, STARTUPINFOW, UpdateProcThreadAttribute,
+    WaitForSingleObject,
+};
+use windows::core::{BOOL, PCWSTR, PWSTR};
+
+use crate::{Backend, NetPolicy, Policy, RestrictionReport, RestrictionStatus};

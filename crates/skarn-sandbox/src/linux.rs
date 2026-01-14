@@ -18,3 +18,6 @@ use landlock::{
 use skarn_common::{Error, Result};
 
 use crate::{Backend, NetPolicy, Policy, RestrictionReport, RestrictionStatus};
+
+/// System directories programs need to read/execute to start.
+const SYSTEM_READ: &[&str] = &["/usr", "/lib", "/lib64", "/bin", "/sbin", "/etc"];

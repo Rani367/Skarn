@@ -97,3 +97,4 @@ mod tests {
         assert_eq!(heuristic_tokens("a"), 1);
     }
 
+    #[test]
