@@ -25,3 +25,6 @@ const SYSTEM_EXEC_SUBPATHS: &[&str] = &["/usr/bin", "/bin", "/usr/sbin", "/sbin"
 ///
 /// This is a pure function so it can be unit-tested directly without touching
 /// the kernel.
+pub fn profile_sbpl(policy: &Policy) -> String {
+    let policy = policy.canonicalized();
+    let mut p = String::with_capacity(1024);

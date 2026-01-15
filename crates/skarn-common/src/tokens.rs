@@ -101,3 +101,5 @@ mod tests {
     fn savings_ratio_and_percent() {
         let s = Savings {
             before: 1000,
+            after: 100,
+        };

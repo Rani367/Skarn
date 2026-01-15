@@ -60,3 +60,7 @@ impl Error {
     pub fn other(msg: impl fmt::Display) -> Self {
         Error::Other(msg.to_string())
     }
+
+    /// Construct a [`Error::Config`] from anything string-like.
+    pub fn config(msg: impl fmt::Display) -> Self {
+        Error::Config(msg.to_string())

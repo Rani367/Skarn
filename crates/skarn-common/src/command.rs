@@ -136,3 +136,5 @@ mod tests {
     fn argv_round_trip() {
         let spec = CommandSpec::from_argv(&["cargo", "test", "--quiet"]).unwrap();
         assert_eq!(spec.program, "cargo");
+        assert_eq!(spec.args, vec!["test", "--quiet"]);
+        assert_eq!(spec.display(), "cargo test --quiet");

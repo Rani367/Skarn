@@ -25,3 +25,4 @@ const SYSTEM_DEV_READ: &[&str] = &["/dev/null", "/dev/zero", "/dev/random", "/de
 const PROC_SELF: &str = "/proc/self";
 
 /// Syscalls we deny outright via seccomp regardless of Landlock support.
+/// These are operations a sandboxed code/command runner never legitimately
