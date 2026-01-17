@@ -4,3 +4,4 @@ description = "OS-native process sandboxing (Seatbelt / Landlock+seccomp / AppCo
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+license.workspace = true

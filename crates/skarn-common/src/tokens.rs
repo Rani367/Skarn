@@ -110,3 +110,4 @@ mod tests {
 
     #[test]
     fn savings_never_negative() {
+        let s = Savings {

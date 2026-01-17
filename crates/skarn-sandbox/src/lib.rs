@@ -50,3 +50,10 @@ pub use windows::{Captured, SandboxChild, spawn_appcontainer};
 
 #[cfg(not(any(target_os = "macos", target_os = "linux", windows)))]
 mod unsupported;
+#[cfg(not(any(target_os = "macos", target_os = "linux", windows)))]
+use unsupported as imp;
+
+pub use skarn_common::{Error, Result};
+
+/// A network access policy.
+///

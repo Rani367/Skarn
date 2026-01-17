@@ -33,3 +33,4 @@ pub fn profile_sbpl(policy: &Policy) -> String {
 
     // Baseline capabilities a normal process needs just to run.
     p.push_str("(allow process-fork)\n");
+    p.push_str("(allow signal (target self))\n");

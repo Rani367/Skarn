@@ -74,3 +74,7 @@ pub struct SandboxChild {
 /// Captured output of a sandboxed child.
 pub struct Captured {
     pub stdout: Vec<u8>,
+    pub stderr: Vec<u8>,
+    pub code: i32,
+}
+

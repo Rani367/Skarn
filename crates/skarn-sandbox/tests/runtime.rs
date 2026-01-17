@@ -23,3 +23,5 @@ fn unique_root() -> PathBuf {
     let home = std::env::var("HOME").expect("HOME set");
     let nanos = SystemTime::now()
         .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_nanos();
