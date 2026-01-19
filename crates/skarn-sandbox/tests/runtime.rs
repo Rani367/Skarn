@@ -25,3 +25,4 @@ fn unique_root() -> PathBuf {
         .duration_since(UNIX_EPOCH)
         .unwrap()
         .as_nanos();
+    let pid = std::process::id();

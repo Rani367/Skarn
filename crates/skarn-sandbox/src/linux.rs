@@ -34,3 +34,4 @@ fn dangerous_syscalls() -> &'static [libc::c_long] {
         libc::SYS_umount2,
         libc::SYS_init_module,
         libc::SYS_finit_module,
+        libc::SYS_delete_module,

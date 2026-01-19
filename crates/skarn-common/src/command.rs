@@ -145,3 +145,4 @@ mod tests {
         let spec = CommandSpec::new("/usr/bin/Cargo.exe", ["x"]);
         assert_eq!(spec.tool_name(), "cargo");
         assert_eq!(classify_program(&spec.tool_name()), ProgramClass::Rust);
+    }

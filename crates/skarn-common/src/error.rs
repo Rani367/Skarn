@@ -65,3 +65,6 @@ impl Error {
     pub fn config(msg: impl fmt::Display) -> Self {
         Error::Config(msg.to_string())
     }
+
+    /// Construct a [`Error::Sandbox`] from anything string-like.
+    pub fn sandbox(msg: impl fmt::Display) -> Self {

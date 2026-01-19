@@ -111,3 +111,7 @@ mod tests {
     #[test]
     fn savings_never_negative() {
         let s = Savings {
+            before: 100,
+            after: 250,
+        };
+        assert_eq!(s.saved(), 0);

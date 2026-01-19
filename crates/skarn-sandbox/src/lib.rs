@@ -57,3 +57,8 @@ pub use skarn_common::{Error, Result};
 
 /// A network access policy.
 ///
+/// Note the platform caveats: macOS Seatbelt can express all four variants;
+/// Linux Landlock is *port*-based, so [`NetPolicy::AllowLoopback`] cannot be
+/// expressed precisely and is treated as "allow outbound" there (documented in
+/// the per-rule notes of the returned [`RestrictionReport`]).
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]

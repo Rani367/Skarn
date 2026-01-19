@@ -78,3 +78,8 @@ pub struct Captured {
     pub code: i32,
 }
 
+impl SandboxChild {
+    /// Wait for the child to exit and return its exit code (output discarded).
+    pub fn wait(&self) -> Result<i32> {
+        // SAFETY: `process` is a valid handle until `Drop`.
+        unsafe {
