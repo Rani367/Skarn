@@ -101,3 +101,17 @@ mod tests {
     fn savings_ratio_and_percent() {
         let s = Savings {
             before: 1000,
+            after: 100,
+        };
+        assert_eq!(s.saved(), 900);
+        assert!((s.ratio() - 0.9).abs() < 1e-9);
+        assert_eq!(s.percent(), 90);
+    }
+
+    #[test]
+    fn savings_never_negative() {
+        let s = Savings {
+            before: 100,
+            after: 250,
+        };
+        assert_eq!(s.saved(), 0);

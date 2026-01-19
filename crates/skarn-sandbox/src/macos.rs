@@ -25,3 +25,19 @@ const SYSTEM_EXEC_SUBPATHS: &[&str] = &["/usr/bin", "/bin", "/usr/sbin", "/sbin"
 ///
 /// This is a pure function so it can be unit-tested directly without touching
 /// the kernel.
+pub fn profile_sbpl(policy: &Policy) -> String {
+    let policy = policy.canonicalized();
+    let mut p = String::with_capacity(1024);
+    p.push_str("(version 1)\n");
+    p.push_str("(deny default)\n");
+
+    // Baseline capabilities a normal process needs just to run.
+    p.push_str("(allow process-fork)\n");
+    p.push_str("(allow signal (target self))\n");
+    p.push_str("(allow sysctl-read)\n");
+    p.push_str("(allow mach-lookup)\n");
+    p.push_str("(allow file-read-metadata)\n");
+
+    // Filesystem reads.
+    //
+    // On modern macOS the dynamic loader pulls libraries from the dyld shared

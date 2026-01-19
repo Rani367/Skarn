@@ -40,3 +40,29 @@ use macos as imp;
 mod linux;
 #[cfg(target_os = "linux")]
 use linux as imp;
+
+#[cfg(windows)]
+mod windows;
+#[cfg(windows)]
+use windows as imp;
+#[cfg(windows)]
+pub use windows::{Captured, SandboxChild, spawn_appcontainer};
+
+#[cfg(not(any(target_os = "macos", target_os = "linux", windows)))]
+mod unsupported;
+#[cfg(not(any(target_os = "macos", target_os = "linux", windows)))]
+use unsupported as imp;
+
+pub use skarn_common::{Error, Result};
+
+/// A network access policy.
+///
+/// Note the platform caveats: macOS Seatbelt can express all four variants;
+/// Linux Landlock is *port*-based, so [`NetPolicy::AllowLoopback`] cannot be
+/// expressed precisely and is treated as "allow outbound" there (documented in
+/// the per-rule notes of the returned [`RestrictionReport`]).
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum NetPolicy {
+    /// Deny all network access (the secure default).
+    #[default]

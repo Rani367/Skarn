@@ -20,3 +20,6 @@ thiserror = { workspace = true }
 default = []
 # Use the real tiktoken tokenizer for token estimation instead of the byte heuristic.
 tiktoken = ["dep:tiktoken-rs"]
+
+[dependencies.tiktoken-rs]
+version = "0.6"

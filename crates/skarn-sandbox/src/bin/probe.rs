@@ -10,3 +10,6 @@
 //!   connect <host:port>   try to open a TCP connection
 //!
 //! Exit codes:
+//!   0   operation succeeded
+//!   10  operation was denied (permission denied / connection refused-by-sandbox)
+//!   11  operation failed for another reason

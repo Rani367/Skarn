@@ -20,3 +20,11 @@ const EXIT_OK: i32 = 0;
 const EXIT_DENIED: i32 = 10;
 
 fn unique_root() -> PathBuf {
+    let home = std::env::var("HOME").expect("HOME set");
+    let nanos = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_nanos();
+    let pid = std::process::id();
+    let root = PathBuf::from(home).join(format!(".skarn-sbx-test-{pid}-{nanos}"));
+    std::fs::create_dir_all(&root).unwrap();

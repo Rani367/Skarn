@@ -62,3 +62,28 @@ const SE_GROUP_ENABLED: u32 = 0x0000_0004;
 const APPCONTAINER_NAME: &str = "Skarn.Sandbox";
 
 /// A handle to a process running inside an AppContainer + Job Object, with the
+/// parent's read ends of the child's stdout/stderr pipes.
+pub struct SandboxChild {
+    process: HANDLE,
+    thread: HANDLE,
+    job: HANDLE,
+    stdout_read: HANDLE,
+    stderr_read: HANDLE,
+}
+
+/// Captured output of a sandboxed child.
+pub struct Captured {
+    pub stdout: Vec<u8>,
+    pub stderr: Vec<u8>,
+    pub code: i32,
+}
+
+impl SandboxChild {
+    /// Wait for the child to exit and return its exit code (output discarded).
+    pub fn wait(&self) -> Result<i32> {
+        // SAFETY: `process` is a valid handle until `Drop`.
+        unsafe {
+            WaitForSingleObject(self.process, u32::MAX);
+            let mut code = 0u32;
+            GetExitCodeProcess(self.process, &mut code)
+                .map_err(|e| Error::sandbox(format!("GetExitCodeProcess: {e}")))?;

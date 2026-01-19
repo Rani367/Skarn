@@ -136,3 +136,16 @@ mod tests {
     fn argv_round_trip() {
         let spec = CommandSpec::from_argv(&["cargo", "test", "--quiet"]).unwrap();
         assert_eq!(spec.program, "cargo");
+        assert_eq!(spec.args, vec!["test", "--quiet"]);
+        assert_eq!(spec.display(), "cargo test --quiet");
+    }
+
+    #[test]
+    fn tool_name_strips_path_and_exe() {
+        let spec = CommandSpec::new("/usr/bin/Cargo.exe", ["x"]);
+        assert_eq!(spec.tool_name(), "cargo");
+        assert_eq!(classify_program(&spec.tool_name()), ProgramClass::Rust);
+    }
+
+    #[test]
+    fn empty_argv_is_none() {
