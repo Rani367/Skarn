@@ -47,3 +47,4 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     // system reads are permitted we allow reading the whole filesystem but then
     // explicitly **deny the user's home directory** (where SSH keys, cloud
     // credentials, and dotfiles live) and re-allow only the workspace below.
+    //

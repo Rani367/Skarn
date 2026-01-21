@@ -111,3 +111,10 @@ impl SandboxChild {
         let mut code = 0u32;
         // SAFETY: `process` is a valid handle.
         unsafe {
+            GetExitCodeProcess(self.process, &mut code)
+                .map_err(|e| Error::sandbox(format!("GetExitCodeProcess: {e}")))?;
+        }
+        Ok(Captured {
+            stdout,
+            stderr,
+            code: code as i32,

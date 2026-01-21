@@ -38,3 +38,6 @@ fn dangerous_syscalls() -> &'static [libc::c_long] {
         libc::SYS_kexec_load,
         libc::SYS_bpf,
         libc::SYS_keyctl,
+        libc::SYS_add_key,
+        libc::SYS_request_key,
+        libc::SYS_reboot,

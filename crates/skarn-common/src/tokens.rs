@@ -118,3 +118,4 @@ mod tests {
         assert_eq!(s.ratio(), 0.0);
         assert_eq!(s.percent(), 0);
     }
+}

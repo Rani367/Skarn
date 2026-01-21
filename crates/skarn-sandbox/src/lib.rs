@@ -76,3 +76,10 @@ pub enum NetPolicy {
 }
 
 /// A declarative description of what a sandboxed process may do.
+///
+/// Build one with [`Policy::builder`]. The common case — confine a process to a
+/// project directory with no network — is [`PolicyBuilder::workspace`].
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct Policy {
+    /// Subtrees the process may read.
+    pub fs_read: Vec<PathBuf>,
