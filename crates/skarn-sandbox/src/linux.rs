@@ -37,3 +37,4 @@ fn dangerous_syscalls() -> &'static [libc::c_long] {
         libc::SYS_delete_module,
         libc::SYS_kexec_load,
         libc::SYS_bpf,
+        libc::SYS_keyctl,

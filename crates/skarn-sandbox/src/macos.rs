@@ -44,3 +44,6 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     // cache via paths that move between OS releases (Cryptexes, firmlinks, …),
     // so an allow-list of system subpaths reliably breaks `execve` ("works on
     // my macOS version" is not good enough for a security tool). Instead, when
+    // system reads are permitted we allow reading the whole filesystem but then
+    // explicitly **deny the user's home directory** (where SSH keys, cloud
+    // credentials, and dotfiles live) and re-allow only the workspace below.

@@ -75,3 +75,4 @@ pub enum NetPolicy {
     AllowAll,
 }
 
+/// A declarative description of what a sandboxed process may do.

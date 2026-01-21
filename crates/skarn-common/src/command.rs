@@ -152,3 +152,4 @@ mod tests {
         let empty: &[&str] = &[];
         assert!(CommandSpec::from_argv(empty).is_none());
     }
+}

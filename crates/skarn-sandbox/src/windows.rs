@@ -103,3 +103,11 @@ impl SandboxChild {
 
         // SAFETY: `process` is valid until `self` (and thus `Drop`) ends, which
         // is after the joins below.
+        unsafe { WaitForSingleObject(self.process, u32::MAX) };
+
+        let stdout = out_thread.join().unwrap_or_default();
+        let stderr = err_thread.join().unwrap_or_default();
+
+        let mut code = 0u32;
+        // SAFETY: `process` is a valid handle.
+        unsafe {

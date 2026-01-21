@@ -32,3 +32,7 @@ fn unique_root() -> PathBuf {
 }
 
 fn run_probe(policy: &Policy, op: &str, arg: &str) -> i32 {
+    let json = serde_json::to_string(policy).unwrap();
+    let status = Command::new(PROBE)
+        .args([op, arg])
+        .env("SKARN_PROBE_SELFAPPLY", "1")
