@@ -41,3 +41,5 @@ fn dangerous_syscalls() -> &'static [libc::c_long] {
         libc::SYS_add_key,
         libc::SYS_request_key,
         libc::SYS_reboot,
+        libc::SYS_swapon,
+        libc::SYS_swapoff,

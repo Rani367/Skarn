@@ -48,3 +48,5 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     // explicitly **deny the user's home directory** (where SSH keys, cloud
     // credentials, and dotfiles live) and re-allow only the workspace below.
     //
+    // The confidentiality story holds because the real anti-exfiltration
+    // control is the network policy (denied by default): even a read of a

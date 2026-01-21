@@ -83,3 +83,7 @@ pub enum NetPolicy {
 pub struct Policy {
     /// Subtrees the process may read.
     pub fs_read: Vec<PathBuf>,
+    /// Subtrees the process may read and write.
+    pub fs_read_write: Vec<PathBuf>,
+    /// Subtrees the process may execute binaries from. Empty means "no extra
+    /// exec restriction beyond the system defaults" (see `allow_read_system`).

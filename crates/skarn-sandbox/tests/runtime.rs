@@ -37,3 +37,5 @@ fn run_probe(policy: &Policy, op: &str, arg: &str) -> i32 {
         .args([op, arg])
         .env("SKARN_PROBE_SELFAPPLY", "1")
         .env("SKARN_PROBE_POLICY", json)
+        .status()
+        .expect("spawn probe");

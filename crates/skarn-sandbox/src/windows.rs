@@ -118,3 +118,11 @@ impl SandboxChild {
             stdout,
             stderr,
             code: code as i32,
+        })
+    }
+}
+
+impl Drop for SandboxChild {
+    fn drop(&mut self) {
+        // SAFETY: closing valid handles; ignore errors during teardown.
+        unsafe {
