@@ -24,3 +24,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
 3. **Remote code execution by design** — letting an agent run shell commands or LLM-generated code *is* RCE on your machine.
 
 **Skarn** is one binary that fixes all three:
+

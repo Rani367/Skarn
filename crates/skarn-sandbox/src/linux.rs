@@ -43,3 +43,6 @@ fn dangerous_syscalls() -> &'static [libc::c_long] {
         libc::SYS_reboot,
         libc::SYS_swapon,
         libc::SYS_swapoff,
+        libc::SYS_process_vm_readv,
+        libc::SYS_process_vm_writev,
+        libc::SYS_pivot_root,

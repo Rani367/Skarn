@@ -39,3 +39,5 @@ fn run_probe(policy: &Policy, op: &str, arg: &str) -> i32 {
         .env("SKARN_PROBE_POLICY", json)
         .status()
         .expect("spawn probe");
+    status.code().expect("probe exited with a code")
+}

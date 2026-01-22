@@ -50,3 +50,5 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     //
     // The confidentiality story holds because the real anti-exfiltration
     // control is the network policy (denied by default): even a read of a
+    // secret cannot leave the box. Writes remain confined to the workspace.
+    if policy.allow_read_system {

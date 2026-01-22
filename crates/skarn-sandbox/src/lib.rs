@@ -87,3 +87,6 @@ pub struct Policy {
     pub fs_read_write: Vec<PathBuf>,
     /// Subtrees the process may execute binaries from. Empty means "no extra
     /// exec restriction beyond the system defaults" (see `allow_read_system`).
+    pub fs_exec: Vec<PathBuf>,
+    /// Secret subtrees that must NOT be readable (SSH keys, cloud credentials).
+    /// Honored by backends that allow broad reads (macOS); on the allow-list

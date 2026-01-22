@@ -126,3 +126,11 @@ impl Drop for SandboxChild {
     fn drop(&mut self) {
         // SAFETY: closing valid handles; ignore errors during teardown.
         unsafe {
+            let _ = CloseHandle(self.stdout_read);
+            let _ = CloseHandle(self.stderr_read);
+            let _ = CloseHandle(self.thread);
+            let _ = CloseHandle(self.process);
+            // Closing the job kills the tree (KILL_ON_JOB_CLOSE).
+            let _ = CloseHandle(self.job);
+        }
+    }
