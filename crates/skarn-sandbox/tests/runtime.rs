@@ -41,3 +41,4 @@ fn run_probe(policy: &Policy, op: &str, arg: &str) -> i32 {
         .expect("spawn probe");
     status.code().expect("probe exited with a code")
 }
+

@@ -90,3 +90,5 @@ pub struct Policy {
     pub fs_exec: Vec<PathBuf>,
     /// Secret subtrees that must NOT be readable (SSH keys, cloud credentials).
     /// Honored by backends that allow broad reads (macOS); on the allow-list
+    /// backends (Linux) these are simply never granted in the first place.
+    pub fs_deny_read: Vec<PathBuf>,

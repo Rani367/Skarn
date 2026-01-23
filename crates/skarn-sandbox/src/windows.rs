@@ -134,3 +134,11 @@ impl Drop for SandboxChild {
             let _ = CloseHandle(self.job);
         }
     }
+}
+
+/// Read a pipe handle to EOF. Any read error (notably `ERROR_BROKEN_PIPE` once
+/// every write end is closed) ends the drain.
+fn drain_pipe(handle_val: isize) -> Vec<u8> {
+    let handle = HANDLE(handle_val as *mut c_void);
+    let mut out = Vec::new();
+    let mut buf = [0u8; 8192];

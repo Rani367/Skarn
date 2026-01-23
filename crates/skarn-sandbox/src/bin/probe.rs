@@ -21,3 +21,5 @@ use std::net::TcpStream;
 use std::time::Duration;
 
 use skarn_sandbox::Policy;
+
+fn main() {

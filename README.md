@@ -25,3 +25,5 @@ Autonomous AI coding agents have three expensive, dangerous habits:
 
 **Skarn** is one binary that fixes all three:
 
+- **Aggregates** your downstream MCP servers behind a tiny, constant tool surface (`search` / `read_tool_docs` / `execute`) using **Code Mode** — the model writes a short script that orchestrates tools in a sandbox, so megabyte intermediate payloads never reach the context window.
+- **Compresses** shell output with declarative, per-tool filters — typically **70–90% fewer tokens**, while *guaranteeing* errors and warnings survive.

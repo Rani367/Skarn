@@ -52,3 +52,8 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     // control is the network policy (denied by default): even a read of a
     // secret cannot leave the box. Writes remain confined to the workspace.
     if policy.allow_read_system {
+        p.push_str("(allow file-read* (subpath \"/\"))\n");
+        // Carve out the user's secret stores (and any caller-specified secrets).
+        // Workspace paths are re-allowed afterwards, so a project inside a denied
+        // tree still works.
+        for path in &policy.fs_deny_read {
