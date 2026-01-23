@@ -98,3 +98,8 @@ pub struct Policy {
     /// linked programs can actually start. Almost always `true`.
     pub allow_read_system: bool,
     /// If the active backend cannot enforce this policy, refuse to run rather
+    /// than running unconfined. Defaults to `true` (fail closed).
+    pub fail_closed: bool,
+}
+
+impl Default for Policy {

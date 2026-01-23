@@ -147,3 +147,6 @@ fn drain_pipe(handle_val: isize) -> Vec<u8> {
         // SAFETY: `handle` is a valid pipe read end owned by the caller for the
         // duration of this drain.
         match unsafe { ReadFile(handle, Some(&mut buf), Some(&mut read), None) } {
+            Ok(()) => {
+                if read == 0 {
+                    break; // EOF

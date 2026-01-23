@@ -44,3 +44,7 @@ fn run_probe(policy: &Policy, op: &str, arg: &str) -> i32 {
 
 fn skip_if_unenforced() -> bool {
     if backend_report().status == RestrictionStatus::NotEnforced {
+        eprintln!("sandbox backend not enforced on this host; skipping runtime test");
+        return true;
+    }
+    false
