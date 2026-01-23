@@ -57,3 +57,6 @@ pub fn profile_sbpl(policy: &Policy) -> String {
         // Workspace paths are re-allowed afterwards, so a project inside a denied
         // tree still works.
         for path in &policy.fs_deny_read {
+            p.push_str(&format!(
+                "(deny file-read* (subpath {}))\n",
+                sbpl_quote(&path.to_string_lossy())

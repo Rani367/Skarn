@@ -46,3 +46,7 @@ fn dangerous_syscalls() -> &'static [libc::c_long] {
         libc::SYS_process_vm_readv,
         libc::SYS_process_vm_writev,
         libc::SYS_pivot_root,
+        libc::SYS_setns,
+        libc::SYS_unshare,
+    ]
+}

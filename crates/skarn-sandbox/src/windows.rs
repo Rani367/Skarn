@@ -142,3 +142,8 @@ fn drain_pipe(handle_val: isize) -> Vec<u8> {
     let handle = HANDLE(handle_val as *mut c_void);
     let mut out = Vec::new();
     let mut buf = [0u8; 8192];
+    loop {
+        let mut read = 0u32;
+        // SAFETY: `handle` is a valid pipe read end owned by the caller for the
+        // duration of this drain.
+        match unsafe { ReadFile(handle, Some(&mut buf), Some(&mut read), None) } {

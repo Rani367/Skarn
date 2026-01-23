@@ -42,3 +42,5 @@ fn run_probe(policy: &Policy, op: &str, arg: &str) -> i32 {
     status.code().expect("probe exited with a code")
 }
 
+fn skip_if_unenforced() -> bool {
+    if backend_report().status == RestrictionStatus::NotEnforced {

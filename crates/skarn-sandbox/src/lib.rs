@@ -92,3 +92,9 @@ pub struct Policy {
     /// Honored by backends that allow broad reads (macOS); on the allow-list
     /// backends (Linux) these are simply never granted in the first place.
     pub fs_deny_read: Vec<PathBuf>,
+    /// Network policy.
+    pub net: NetPolicy,
+    /// Allow read (and exec) of the standard system directories so dynamically
+    /// linked programs can actually start. Almost always `true`.
+    pub allow_read_system: bool,
+    /// If the active backend cannot enforce this policy, refuse to run rather
