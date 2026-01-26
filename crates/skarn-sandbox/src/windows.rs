@@ -185,3 +185,10 @@ pub fn probe() -> RestrictionReport {
     RestrictionReport::new(Backend::AppContainer, RestrictionStatus::FullyEnforced)
         .note("Windows AppContainer available")
 }
+
+/// Launch `spec` inside an AppContainer governed by `policy`, capturing its
+/// stdout and stderr through pipes (stdin is closed → the child sees EOF).
+pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<SandboxChild> {
+    let policy = policy.canonicalized();
+    // SAFETY: a long unsafe block of Win32 calls; each is documented inline.
+    unsafe {

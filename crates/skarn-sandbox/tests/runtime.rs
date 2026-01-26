@@ -59,3 +59,6 @@ fn writes_inside_workspace_are_allowed() {
     let workspace = root.join("workspace");
     std::fs::create_dir_all(&workspace).unwrap();
 
+    let policy = Policy::builder().workspace(&workspace).build();
+    let target = workspace.join("out.txt");
+    let code = run_probe(&policy, "write", target.to_str().unwrap());

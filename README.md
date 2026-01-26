@@ -31,3 +31,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
 
 ```
             ┌──────────────────────────── Skarn (one binary) ────────────────────────────┐
+            │                                                                                │

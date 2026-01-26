@@ -69,3 +69,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
             .handle_access(AccessNet::from_all(abi))
             .map_err(|e| Error::sandbox(format!("landlock handle net: {e}")))?;
     }
+
+    let mut created = ruleset

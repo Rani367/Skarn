@@ -127,3 +127,6 @@ pub fn default_secret_paths() -> Vec<PathBuf> {
         ".aws",
         ".gnupg",
         ".kube",
+        ".docker",
+        ".netrc",
+        ".npmrc",

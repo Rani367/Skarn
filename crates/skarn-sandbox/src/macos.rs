@@ -73,3 +73,7 @@ pub fn profile_sbpl(policy: &Policy) -> String {
         p.push_str("(allow process-exec*\n");
         for sub in SYSTEM_EXEC_SUBPATHS {
             p.push_str(&format!("  (subpath {})\n", sbpl_quote(sub)));
+        }
+        for path in &policy.fs_exec {
+            p.push_str(&format!(
+                "  (subpath {})\n",
