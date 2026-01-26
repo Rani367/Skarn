@@ -37,3 +37,4 @@ fn main() {
             Ok(p) => p,
             Err(e) => {
                 eprintln!("bad policy json: {e}");
+                std::process::exit(20);

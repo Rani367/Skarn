@@ -151,3 +151,8 @@ impl Policy {
 
     /// Apply this policy to the **current process**, irreversibly.
     ///
+    /// On Unix this calls the kernel sandbox primitive directly (Seatbelt on
+    /// macOS, Landlock + seccomp on Linux). On Windows this is not possible — a
+    /// process cannot move itself into an AppContainer — so it returns
+    /// [`Error::SandboxUnsupported`]; use [`spawn_appcontainer`] instead.
+    ///

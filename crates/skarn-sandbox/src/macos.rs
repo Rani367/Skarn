@@ -90,3 +90,4 @@ pub fn profile_sbpl(policy: &Policy) -> String {
             p.push_str(&format!(
                 "  (subpath {})\n",
                 sbpl_quote(&path.to_string_lossy())
+            ));

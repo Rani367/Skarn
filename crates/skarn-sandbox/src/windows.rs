@@ -219,3 +219,12 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         let security_caps = SECURITY_CAPABILITIES {
             AppContainerSid: sid,
             Capabilities: if cap_attrs.is_empty() {
+                std::ptr::null_mut()
+            } else {
+                cap_attrs.as_mut_ptr()
+            },
+            CapabilityCount: cap_attrs.len() as u32,
+            ..Default::default()
+        };
+
+        // Build the proc-thread attribute list carrying the capabilities.

@@ -70,3 +70,5 @@ fn writes_inside_workspace_are_allowed() {
 #[test]
 fn writes_outside_workspace_are_denied() {
     if skip_if_unenforced() {
+        return;
+    }
