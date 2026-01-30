@@ -243,3 +243,11 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
             None,
             None,
         )
+        .map_err(|e| Error::sandbox(format!("UpdateProcThreadAttribute: {e}")))?;
+
+        // Inheritable pipes for the child's stdio. The parent's read ends (and
+        // the stdin write end) are marked non-inheritable so the child does not
+        // hold a copy that would prevent EOF.
+        let sa = SECURITY_ATTRIBUTES {
+            nLength: std::mem::size_of::<SECURITY_ATTRIBUTES>() as u32,
+            lpSecurityDescriptor: std::ptr::null_mut(),

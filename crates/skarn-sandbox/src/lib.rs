@@ -164,3 +164,11 @@ impl Policy {
             Ok(r) => {
                 if r.status == RestrictionStatus::NotEnforced && self.fail_closed {
                     return Err(Error::SandboxUnsupported(format!(
+                        "{} backend could not enforce the policy and fail_closed is set",
+                        r.backend
+                    )));
+                }
+                Ok(r)
+            }
+            Err(e) => Err(e),
+        }

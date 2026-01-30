@@ -98,3 +98,4 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     // Writable subtrees (also implies create/unlink within them).
     if !policy.fs_read_write.is_empty() {
         p.push_str("(allow file-write*\n");
+        for path in &policy.fs_read_write {

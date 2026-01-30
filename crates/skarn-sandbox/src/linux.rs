@@ -84,3 +84,7 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
 
     // System read + exec.
     if policy.allow_read_system {
+        for path in SYSTEM_READ {
+            created = add_path_rule(created, path, read, &mut sys_skipped)?;
+        }
+        for path in SYSTEM_DEV_READ {

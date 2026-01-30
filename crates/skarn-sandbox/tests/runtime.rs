@@ -76,3 +76,6 @@ fn writes_outside_workspace_are_denied() {
     let workspace = root.join("workspace");
     std::fs::create_dir_all(&workspace).unwrap();
 
+    let policy = Policy::builder().workspace(&workspace).build();
+    // `root` (under $HOME) is outside the workspace and outside the system tree.
+    let target = root.join("escape.txt");
