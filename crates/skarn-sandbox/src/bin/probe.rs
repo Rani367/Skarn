@@ -41,3 +41,7 @@ fn main() {
             }
         };
         if let Err(e) = policy.apply_to_current_process() {
+            eprintln!("apply failed: {e}");
+            std::process::exit(12);
+        }
+    }

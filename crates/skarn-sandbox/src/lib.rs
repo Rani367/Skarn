@@ -172,3 +172,19 @@ impl Policy {
             }
             Err(e) => Err(e),
         }
+    }
+
+    /// Canonicalize all paths in the policy, dropping any that do not exist.
+    ///
+    /// Kernel sandboxes generally require real, absolute paths. This is applied
+    /// automatically by the backends, but is exposed for inspection/tests.
+    pub fn canonicalized(&self) -> Policy {
+        fn canon(paths: &[PathBuf]) -> Vec<PathBuf> {
+            paths
+                .iter()
+                .filter_map(|p| std::fs::canonicalize(p).ok().or_else(|| Some(p.clone())))
+                .collect()
+        }
+        Policy {
+            fs_read: canon(&self.fs_read),
+            fs_read_write: canon(&self.fs_read_write),

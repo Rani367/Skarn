@@ -88,3 +88,11 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
             created = add_path_rule(created, path, read, &mut sys_skipped)?;
         }
         for path in SYSTEM_DEV_READ {
+            created = add_path_rule(created, path, read | AccessFs::WriteFile, &mut sys_skipped)?;
+        }
+        created = add_path_rule(created, PROC_SELF, read, &mut sys_skipped)?;
+    }
+
+    for path in &policy.fs_read {
+        created = add_path_rule(created, &path.to_string_lossy(), read, &mut skipped)?;
+    }
