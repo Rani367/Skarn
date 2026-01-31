@@ -101,3 +101,6 @@ pub fn profile_sbpl(policy: &Policy) -> String {
         for path in &policy.fs_read_write {
             p.push_str(&format!(
                 "  (subpath {})\n",
+                sbpl_quote(&path.to_string_lossy())
+            ));
+        }

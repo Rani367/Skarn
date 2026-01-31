@@ -258,3 +258,11 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         let (in_read, in_write) = make_pipe(&sa, PipeEnd::Write)?;
 
         let si = STARTUPINFOEXW {
+            StartupInfo: STARTUPINFOW {
+                cb: std::mem::size_of::<STARTUPINFOEXW>() as u32,
+                dwFlags: STARTF_USESTDHANDLES,
+                hStdInput: in_read,
+                hStdOutput: out_write,
+                hStdError: err_write,
+                ..Default::default()
+            },

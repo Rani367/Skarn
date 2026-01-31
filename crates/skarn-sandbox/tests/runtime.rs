@@ -79,3 +79,5 @@ fn writes_outside_workspace_are_denied() {
     let policy = Policy::builder().workspace(&workspace).build();
     // `root` (under $HOME) is outside the workspace and outside the system tree.
     let target = root.join("escape.txt");
+    let code = run_probe(&policy, "write", target.to_str().unwrap());
+
