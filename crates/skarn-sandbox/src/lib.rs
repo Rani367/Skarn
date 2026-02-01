@@ -188,3 +188,6 @@ impl Policy {
         Policy {
             fs_read: canon(&self.fs_read),
             fs_read_write: canon(&self.fs_read_write),
+            fs_exec: canon(&self.fs_exec),
+            fs_deny_read: canon(&self.fs_deny_read),
+            net: self.net,

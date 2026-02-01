@@ -268,3 +268,6 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
             },
             lpAttributeList: attr_list,
         };
+        let mut pi = PROCESS_INFORMATION::default();
+
+        let mut cmdline = build_command_line(spec);

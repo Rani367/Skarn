@@ -106,3 +106,8 @@ pub fn profile_sbpl(policy: &Policy) -> String {
         }
         p.push_str(")\n");
     }
+
+    // /dev/null & friends are needed for almost everything; allow read+write.
+    p.push_str(
+        "(allow file-write-data file-read-data\n  (literal \"/dev/null\")\n  (literal \"/dev/zero\")\n  (literal \"/dev/random\")\n  (literal \"/dev/urandom\"))\n",
+    );

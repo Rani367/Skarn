@@ -37,3 +37,5 @@ Autonomous AI coding agents have three expensive, dangerous habits:
   Code,     │       not 30k)               OS-sandboxed)          ▼                 │         │
   Cursor…)  │                                              ┌────────────┐   ┌────────────┐   │
             │   compressed 15-token  ◀──  return summary ──┤ MCP client │…  │ MCP client │   │
+            │   result, not a 15k      (big data stays     └─────┬──────┘   └─────┬──────┘   │
+            │   log dump                inside the box)          ▼                ▼          │

@@ -21,3 +21,4 @@ path = "src/bin/probe.rs"
 [dependencies]
 skarn-common = { workspace = true }
 serde = { workspace = true }
+serde_json = { workspace = true }
