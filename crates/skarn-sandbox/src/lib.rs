@@ -193,3 +193,9 @@ impl Policy {
             net: self.net,
             allow_read_system: self.allow_read_system,
             fail_closed: self.fail_closed,
+        }
+    }
+}
+
+/// Builder for [`Policy`].
+#[derive(Clone, Debug)]

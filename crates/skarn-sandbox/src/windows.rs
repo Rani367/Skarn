@@ -281,3 +281,12 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
             Some(PWSTR(cmdline.as_mut_ptr())),
             None,
             None,
+            true, // inherit the stdio pipe handles
+            PROCESS_CREATION_FLAGS(EXTENDED_STARTUPINFO_PRESENT.0),
+            None,
+            cwd.as_ref()
+                .map(|c| PCWSTR(c.as_ptr()))
+                .unwrap_or(PCWSTR::null()),
+            &si.StartupInfo,
+            &mut pi,
+        )

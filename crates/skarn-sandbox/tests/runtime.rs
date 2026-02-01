@@ -87,3 +87,6 @@ fn writes_outside_workspace_are_denied() {
         "writing outside the workspace must be denied"
     );
 }
+
+#[test]
+fn reading_a_designated_secret_is_denied() {

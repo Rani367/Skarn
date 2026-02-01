@@ -103,3 +103,6 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
         created = add_path_rule(
             created,
             &path.to_string_lossy(),
+            read | AccessFs::Execute,
+            &mut skipped,
+        )?;

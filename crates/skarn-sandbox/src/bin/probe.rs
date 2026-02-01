@@ -47,3 +47,4 @@ fn main() {
     }
 
     let code = match op.as_str() {
+        "write" => match try_write(arg) {
