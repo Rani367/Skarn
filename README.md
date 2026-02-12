@@ -41,3 +41,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
             │   log dump                inside the box)          ▼                ▼          │
             └────────────────────────────────────────────── Postgres MCP    GitHub MCP ──────┘
 ```
+

@@ -220,3 +220,7 @@ impl PolicyBuilder {
         self.policy.fs_deny_read.push(dir.as_ref().to_path_buf());
         self
     }
+
+    /// Allow reading a subtree.
+    pub fn read(mut self, dir: impl AsRef<Path>) -> Self {
+        self.policy.fs_read.push(dir.as_ref().to_path_buf());

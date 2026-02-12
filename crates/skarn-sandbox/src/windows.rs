@@ -315,3 +315,8 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
             job,
             JobObjectExtendedLimitInformation,
             &info as *const _ as *const _,
+            std::mem::size_of::<JOBOBJECT_EXTENDED_LIMIT_INFORMATION>() as u32,
+        )
+        .map_err(|e| Error::sandbox(format!("SetInformationJobObject: {e}")))?;
+        AssignProcessToJobObject(job, pi.hProcess)
+            .map_err(|e| Error::sandbox(format!("AssignProcessToJobObject: {e}")))?;

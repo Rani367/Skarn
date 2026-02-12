@@ -123,3 +123,7 @@ pub fn profile_sbpl(policy: &Policy) -> String {
             p.push_str("(allow network-outbound)\n");
             p.push_str("(allow network-inbound (local ip \"localhost:*\"))\n");
         }
+        NetPolicy::AllowAll => {
+            p.push_str("(allow network*)\n");
+        }
+    }

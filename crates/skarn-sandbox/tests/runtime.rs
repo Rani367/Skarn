@@ -101,3 +101,6 @@ fn reading_a_designated_secret_is_denied() {
     let secret = secret_dir.join("id_rsa");
     std::fs::write(&secret, b"ssh-private-key").unwrap();
 
+    // Broad reads are allowed, but a designated secret subtree is carved out.
+    let policy = Policy::builder()
+        .workspace(&workspace)
