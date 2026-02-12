@@ -320,3 +320,13 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         .map_err(|e| Error::sandbox(format!("SetInformationJobObject: {e}")))?;
         AssignProcessToJobObject(job, pi.hProcess)
             .map_err(|e| Error::sandbox(format!("AssignProcessToJobObject: {e}")))?;
+
+        Ok(SandboxChild {
+            process: pi.hProcess,
+            thread: pi.hThread,
+            job,
+            stdout_read: out_read,
+            stderr_read: err_read,
+        })
+    }
+}

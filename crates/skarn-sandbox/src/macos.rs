@@ -127,3 +127,5 @@ pub fn profile_sbpl(policy: &Policy) -> String {
             p.push_str("(allow network*)\n");
         }
     }
+
+    p

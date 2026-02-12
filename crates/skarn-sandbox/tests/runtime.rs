@@ -104,3 +104,6 @@ fn reading_a_designated_secret_is_denied() {
     // Broad reads are allowed, but a designated secret subtree is carved out.
     let policy = Policy::builder()
         .workspace(&workspace)
+        .deny_read(&secret_dir)
+        .build();
+    let code = run_probe(&policy, "read", secret.to_str().unwrap());
