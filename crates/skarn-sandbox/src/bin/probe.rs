@@ -58,3 +58,4 @@ fn main() {
             Err(_) => 11,
         },
         "connect" => match try_connect(arg) {
+            Ok(()) => 0,

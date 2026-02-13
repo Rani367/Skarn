@@ -129,3 +129,6 @@ pub fn profile_sbpl(policy: &Policy) -> String {
     }
 
     p
+}
+
+/// Quote a string for SBPL (double-quoted, backslash-escaped).

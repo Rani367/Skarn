@@ -119,3 +119,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     if matches!(policy.net, NetPolicy::AllowLoopback) {
         notes.push(
             "Landlock cannot restrict network to loopback; network left unrestricted".to_string(),
+        );

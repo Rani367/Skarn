@@ -330,3 +330,10 @@ pub fn spawn_appcontainer(policy: &Policy, spec: &CommandSpec) -> Result<Sandbox
         })
     }
 }
+
+/// Which end of a freshly-created pipe the parent keeps (and must therefore make
+/// non-inheritable so the child cannot hold a copy).
+enum PipeEnd {
+    Read,
+    Write,
+}
