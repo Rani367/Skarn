@@ -135,3 +135,5 @@ pub fn profile_sbpl(policy: &Policy) -> String {
 fn sbpl_quote(s: &str) -> String {
     let mut out = String::with_capacity(s.len() + 2);
     out.push('"');
+    for c in s.chars() {
+        if c == '"' || c == '\\' {

@@ -341,3 +341,6 @@ enum PipeEnd {
 /// Create a pipe and return `(read_end, write_end)`, clearing the inherit flag on
 /// the end the parent keeps.
 ///
+/// # Safety
+/// `sa` must be a valid `SECURITY_ATTRIBUTES`.
+unsafe fn make_pipe(sa: &SECURITY_ATTRIBUTES, parent: PipeEnd) -> Result<(HANDLE, HANDLE)> {

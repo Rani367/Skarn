@@ -11,3 +11,4 @@ env:
 
 jobs:
   test:
+    name: test (${{ matrix.os }})

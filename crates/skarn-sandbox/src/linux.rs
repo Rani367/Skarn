@@ -123,3 +123,7 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     }
     // For DenyAll we governed AccessNet but added zero NetPort rules, so every
     // bind/connect is denied.
+
+    let status = created
+        .restrict_self()
+        .map_err(|e| Error::sandbox(format!("landlock restrict_self: {e}")))?;

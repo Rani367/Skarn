@@ -9,3 +9,5 @@ pub struct CompiledProfile {
     strip_ansi: bool,
     collapse_carriage_returns: bool,
     collapse_blank_lines: bool,
+    dedupe_consecutive: bool,
+    max_lines: usize,

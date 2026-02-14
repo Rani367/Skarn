@@ -231,3 +231,5 @@ impl PolicyBuilder {
     pub fn read_write(mut self, dir: impl AsRef<Path>) -> Self {
         self.policy.fs_read_write.push(dir.as_ref().to_path_buf());
         self
+    }
+
