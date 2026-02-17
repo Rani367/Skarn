@@ -19,3 +19,8 @@ pub struct CompiledProfile {
 }
 
 /// What a single stream's compression produced.
+pub struct StreamResult {
+    pub text: String,
+    pub original_lines: usize,
+    pub kept_lines: usize,
+}

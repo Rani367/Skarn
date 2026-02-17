@@ -356,3 +356,6 @@ unsafe fn make_pipe(sa: &SECURITY_ATTRIBUTES, parent: PipeEnd) -> Result<(HANDLE
         SetHandleInformation(parent_handle, HANDLE_FLAG_INHERIT.0, HANDLE_FLAGS(0))
             .map_err(|e| Error::sandbox(format!("SetHandleInformation: {e}")))?;
     }
+    Ok((read, write))
+}
+

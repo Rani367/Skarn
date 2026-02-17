@@ -130,3 +130,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
 
     let restriction_status = match status.ruleset {
         RulesetStatus::FullyEnforced => RestrictionStatus::FullyEnforced,
+        RulesetStatus::PartiallyEnforced => RestrictionStatus::PartiallyEnforced,

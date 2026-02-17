@@ -11,3 +11,5 @@ pub struct RuleSet {
     /// Applied to every command unless a more specific profile matches.
     #[serde(default)]
     pub default: Rules,
+    /// Keyed by tool name (see [`skarn_common::CommandSpec::tool_name`]).
+    #[serde(default)]
