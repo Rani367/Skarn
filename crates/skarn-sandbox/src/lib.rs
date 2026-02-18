@@ -245,3 +245,10 @@ impl PolicyBuilder {
         self
     }
 
+    /// Allow (or forbid) reading the standard system directories.
+    pub fn allow_read_system(mut self, yes: bool) -> Self {
+        self.policy.allow_read_system = yes;
+        self
+    }
+
+    /// Whether to fail closed when the backend cannot enforce the policy.

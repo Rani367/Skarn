@@ -16,3 +16,4 @@ pub struct RuleSet {
     pub profiles: BTreeMap<String, ProfilePatch>,
 }
 
+/// A complete set of compression knobs.

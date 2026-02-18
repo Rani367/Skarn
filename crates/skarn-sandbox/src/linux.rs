@@ -133,3 +133,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
         RulesetStatus::PartiallyEnforced => RestrictionStatus::PartiallyEnforced,
         RulesetStatus::NotEnforced => RestrictionStatus::NotEnforced,
     };
+

@@ -114,3 +114,5 @@ fn reading_a_designated_secret_is_denied() {
         "reading a designated secret must be denied"
     );
 }
+
+#[test]

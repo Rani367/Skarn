@@ -28,3 +28,5 @@ pub struct StreamResult {
 impl CompiledProfile {
     /// Compile rules. Invalid regexes are skipped (with the offending pattern
     /// reported in `errors`) rather than failing the whole compressor.
+    pub fn compile(rules: &Rules) -> (CompiledProfile, Vec<String>) {
+        let (drop, mut errors) = compile_set(&rules.drop);

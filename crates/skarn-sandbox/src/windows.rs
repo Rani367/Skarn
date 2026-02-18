@@ -364,3 +364,6 @@ unsafe fn make_pipe(sa: &SECURITY_ATTRIBUTES, parent: PipeEnd) -> Result<(HANDLE
 /// borrows them, so the caller must keep both alive together).
 fn capability_sids(net: NetPolicy) -> Result<(Vec<SID_AND_ATTRIBUTES>, Vec<Vec<u8>>)> {
     let names: &[&str] = match net {
+        NetPolicy::DenyAll => &[],
+        NetPolicy::AllowLoopback => {
+            tracing::warn!(
