@@ -254,3 +254,8 @@ impl PolicyBuilder {
     /// Whether to fail closed when the backend cannot enforce the policy.
     pub fn fail_closed(mut self, yes: bool) -> Self {
         self.policy.fail_closed = yes;
+        self
+    }
+
+    /// Finish building.
+    pub fn build(self) -> Policy {

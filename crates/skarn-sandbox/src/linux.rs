@@ -138,3 +138,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     match install_seccomp() {
         Ok(()) => notes.push("seccomp-bpf denylist applied".to_string()),
         Err(e) => notes.push(format!("seccomp-bpf not applied: {e}")),
+    }

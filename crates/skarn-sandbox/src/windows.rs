@@ -372,3 +372,5 @@ fn capability_sids(net: NetPolicy) -> Result<(Vec<SID_AND_ATTRIBUTES>, Vec<Vec<u
             &[]
         }
         NetPolicy::AllowOutbound => &["internetClient"],
+        NetPolicy::AllowAll => &[
+            "internetClient",

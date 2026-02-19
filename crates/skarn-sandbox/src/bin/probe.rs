@@ -62,3 +62,4 @@ fn main() {
             Err(_) => 10,
         },
         other => {
+            eprintln!("unknown op: {other}");

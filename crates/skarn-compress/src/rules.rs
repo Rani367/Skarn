@@ -17,3 +17,6 @@ pub struct RuleSet {
 }
 
 /// A complete set of compression knobs.
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct Rules {
+    /// Remove ANSI escape sequences (colors, cursor moves).

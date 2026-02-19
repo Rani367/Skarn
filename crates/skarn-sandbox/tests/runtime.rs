@@ -119,3 +119,5 @@ fn reading_a_designated_secret_is_denied() {
 fn reading_system_files_is_allowed() {
     if skip_if_unenforced() {
         return;
+    }
+    // Broad system reads must work — this is what lets dynamically linked

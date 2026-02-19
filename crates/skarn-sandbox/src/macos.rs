@@ -144,3 +144,6 @@ fn sbpl_quote(s: &str) -> String {
     out.push('"');
     out
 }
+
+/// Apply the policy to the current process via `sandbox_init`.
+pub fn apply(policy: &Policy) -> Result<RestrictionReport> {

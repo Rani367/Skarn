@@ -30,3 +30,4 @@ impl CompiledProfile {
     /// reported in `errors`) rather than failing the whole compressor.
     pub fn compile(rules: &Rules) -> (CompiledProfile, Vec<String>) {
         let (drop, mut errors) = compile_set(&rules.drop);
+        let (keep, more) = compile_set(&rules.keep);
