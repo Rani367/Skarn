@@ -116,3 +116,6 @@ fn reading_a_designated_secret_is_denied() {
 }
 
 #[test]
+fn reading_system_files_is_allowed() {
+    if skip_if_unenforced() {
+        return;

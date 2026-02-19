@@ -367,3 +367,8 @@ fn capability_sids(net: NetPolicy) -> Result<(Vec<SID_AND_ATTRIBUTES>, Vec<Vec<u
         NetPolicy::DenyAll => &[],
         NetPolicy::AllowLoopback => {
             tracing::warn!(
+                "AppContainer cannot express loopback-only networking; treating as deny-all"
+            );
+            &[]
+        }
+        NetPolicy::AllowOutbound => &["internetClient"],

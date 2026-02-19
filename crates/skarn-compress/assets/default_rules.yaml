@@ -14,3 +14,4 @@ default:
   dedupe_consecutive: true
   max_lines: 200
   head_lines: 60
+  tail_lines: 40

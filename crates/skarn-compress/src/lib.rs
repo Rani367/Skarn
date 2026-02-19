@@ -15,3 +15,7 @@
 //! let out = c.compress(&spec, b"   Compiling foo v0.1.0\nerror[E0001]: boom\n", b"");
 //! assert!(out.text.contains("error[E0001]"));
 //! assert!(!out.text.contains("Compiling"));
+//! ```
+
+mod engine;
+mod rules;

@@ -134,3 +134,7 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
         RulesetStatus::NotEnforced => RestrictionStatus::NotEnforced,
     };
 
+    // Apply seccomp on top (best-effort: if it fails we still have Landlock).
+    match install_seccomp() {
+        Ok(()) => notes.push("seccomp-bpf denylist applied".to_string()),
+        Err(e) => notes.push(format!("seccomp-bpf not applied: {e}")),
