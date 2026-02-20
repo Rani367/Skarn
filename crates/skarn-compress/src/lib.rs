@@ -21,3 +21,7 @@ mod engine;
 mod rules;
 
 use std::collections::BTreeMap;
+
+use skarn_common::{CommandSpec, Savings, estimate_tokens};
+
+pub use engine::CompiledProfile;

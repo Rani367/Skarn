@@ -42,3 +42,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
             └────────────────────────────────────────────── Postgres MCP    GitHub MCP ──────┘
 ```
 
+## Install

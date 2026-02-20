@@ -31,3 +31,8 @@ impl CompiledProfile {
     pub fn compile(rules: &Rules) -> (CompiledProfile, Vec<String>) {
         let (drop, mut errors) = compile_set(&rules.drop);
         let (keep, more) = compile_set(&rules.keep);
+        errors.extend(more);
+        (
+            CompiledProfile {
+                strip_ansi: rules.strip_ansi,
+                collapse_carriage_returns: rules.collapse_carriage_returns,

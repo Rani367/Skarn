@@ -259,3 +259,7 @@ impl PolicyBuilder {
 
     /// Finish building.
     pub fn build(self) -> Policy {
+        self.policy
+    }
+}
+

@@ -121,3 +121,5 @@ fn reading_system_files_is_allowed() {
         return;
     }
     // Broad system reads must work — this is what lets dynamically linked
+    // binaries start under the sandbox.
+    let root = unique_root();

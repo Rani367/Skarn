@@ -16,3 +16,4 @@ default:
   head_lines: 60
   tail_lines: 40
   max_rescued_lines: 40
+  drop: []

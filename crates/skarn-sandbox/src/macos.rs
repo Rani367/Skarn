@@ -147,3 +147,4 @@ fn sbpl_quote(s: &str) -> String {
 
 /// Apply the policy to the current process via `sandbox_init`.
 pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
+    let profile = profile_sbpl(policy);
