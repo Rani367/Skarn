@@ -9,3 +9,4 @@ pub fn apply(_policy: &Policy) -> Result<RestrictionReport> {
         RestrictionReport::new(Backend::None, RestrictionStatus::NotEnforced)
             .note("no OS-native sandbox backend on this platform"),
     )
+}

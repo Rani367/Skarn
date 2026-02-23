@@ -20,3 +20,6 @@ pub struct RuleSet {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Rules {
     /// Remove ANSI escape sequences (colors, cursor moves).
+    #[serde(default = "yes")]
+    pub strip_ansi: bool,
+    /// Collapse carriage-return "progress bar" redraws to their final frame.

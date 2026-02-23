@@ -36,3 +36,8 @@ impl CompiledProfile {
             CompiledProfile {
                 strip_ansi: rules.strip_ansi,
                 collapse_carriage_returns: rules.collapse_carriage_returns,
+                collapse_blank_lines: rules.collapse_blank_lines,
+                dedupe_consecutive: rules.dedupe_consecutive,
+                max_lines: rules.max_lines,
+                head_lines: rules.head_lines,
+                tail_lines: rules.tail_lines,

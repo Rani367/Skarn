@@ -139,3 +139,6 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
         Ok(()) => notes.push("seccomp-bpf denylist applied".to_string()),
         Err(e) => notes.push(format!("seccomp-bpf not applied: {e}")),
     }
+
+    let mut report = RestrictionReport::new(Backend::Landlock, restriction_status);
+    report.notes = notes;

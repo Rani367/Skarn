@@ -377,3 +377,8 @@ fn capability_sids(net: NetPolicy) -> Result<(Vec<SID_AND_ATTRIBUTES>, Vec<Vec<u
             "internetClientServer",
             "privateNetworkClientServer",
         ],
+    };
+
+    let mut attrs = Vec::with_capacity(names.len());
+    let mut bufs = Vec::with_capacity(names.len());
+    for name in names {
