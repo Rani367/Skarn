@@ -149,3 +149,9 @@ fn sbpl_quote(s: &str) -> String {
 pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     let profile = profile_sbpl(policy);
     let c_profile = CString::new(profile.clone())
+        .map_err(|_| Error::sandbox("SBPL profile contained an interior NUL byte"))?;
+
+    let mut errbuf: *mut c_char = std::ptr::null_mut();
+    // SAFETY: `c_profile` is a valid NUL-terminated C string; `errbuf` is a
+    // valid out-pointer. `sandbox_init` either returns 0 (success, *errbuf left
+    // NULL) or non-zero and allocates an error string we must free.

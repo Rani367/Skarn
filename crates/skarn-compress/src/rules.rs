@@ -23,3 +23,7 @@ pub struct Rules {
     #[serde(default = "yes")]
     pub strip_ansi: bool,
     /// Collapse carriage-return "progress bar" redraws to their final frame.
+    #[serde(default = "yes")]
+    pub collapse_carriage_returns: bool,
+    /// Collapse runs of blank lines to a single blank line.
+    #[serde(default = "yes")]

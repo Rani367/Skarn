@@ -17,3 +17,5 @@ default:
   tail_lines: 40
   max_rescued_lines: 40
   drop: []
+  keep:
+    - '(?i)\berror\b'

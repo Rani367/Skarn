@@ -382,3 +382,6 @@ fn capability_sids(net: NetPolicy) -> Result<(Vec<SID_AND_ATTRIBUTES>, Vec<Vec<u
     let mut attrs = Vec::with_capacity(names.len());
     let mut bufs = Vec::with_capacity(names.len());
     for name in names {
+        let buf = derive_capability_sid(name)?;
+        // The `Vec<u8>` heap allocation is stable when moved into `bufs`.
+        attrs.push(SID_AND_ATTRIBUTES {

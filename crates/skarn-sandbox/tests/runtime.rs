@@ -124,3 +124,4 @@ fn reading_system_files_is_allowed() {
     // binaries start under the sandbox.
     let root = unique_root();
     let workspace = root.join("workspace");
+    std::fs::create_dir_all(&workspace).unwrap();

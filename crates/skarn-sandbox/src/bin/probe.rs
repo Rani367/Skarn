@@ -64,3 +64,5 @@ fn main() {
         other => {
             eprintln!("unknown op: {other}");
             20
+        }
+    };

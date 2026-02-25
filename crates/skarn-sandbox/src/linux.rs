@@ -142,3 +142,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
 
     let mut report = RestrictionReport::new(Backend::Landlock, restriction_status);
     report.notes = notes;
+    Ok(report)
+}
