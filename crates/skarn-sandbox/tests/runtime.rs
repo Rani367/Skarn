@@ -131,3 +131,5 @@ fn reading_system_files_is_allowed() {
         "/usr/share/zoneinfo/UTC"
     } else {
         "/etc/hostname"
+    };
+    let code = run_probe(&policy, "read", probe_target);

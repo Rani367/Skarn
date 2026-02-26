@@ -399,3 +399,8 @@ fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
     let wname = wide(name);
     let mut group_sids: *mut PSID = std::ptr::null_mut();
     let mut group_count = 0u32;
+    let mut cap_sids: *mut PSID = std::ptr::null_mut();
+    let mut cap_count = 0u32;
+
+    // SAFETY: out-params are valid; `wname` is a NUL-terminated wide string.
+    unsafe {

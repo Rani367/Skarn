@@ -47,3 +47,8 @@ impl CompiledProfile {
             },
             errors,
         )
+    }
+
+    /// Run the pipeline over one stream (stdout or stderr).
+    pub fn run(&self, raw: &[u8]) -> StreamResult {
+        // 1. Bytes -> text. We do NOT strip ANSI yet: the ANSI stripper also

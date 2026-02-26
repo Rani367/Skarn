@@ -27,3 +27,5 @@ use skarn_common::{CommandSpec, Savings, estimate_tokens};
 pub use engine::CompiledProfile;
 pub use rules::{ProfilePatch, RuleSet, Rules};
 
+/// The result of compressing a command's output.
+#[derive(Clone, Debug)]

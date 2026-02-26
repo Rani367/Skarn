@@ -45,3 +45,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
 ## Install
 
 ```bash
+# One line (macOS / Linux):

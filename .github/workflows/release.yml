@@ -26,3 +26,4 @@ jobs:
       - uses: dtolnay/rust-toolchain@1.95
         with:
           targets: ${{ matrix.target }}
+      # Belt-and-suspenders: the repo's rust-toolchain.toml can shadow the action's

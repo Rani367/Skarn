@@ -24,3 +24,5 @@ default:
     - '(?i)\bpanic'
     - '(?i)\btraceback'
 
+profiles:
+  cargo:
