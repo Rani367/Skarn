@@ -127,3 +127,5 @@ fn reading_system_files_is_allowed() {
     std::fs::create_dir_all(&workspace).unwrap();
     let policy = Policy::builder().workspace(&workspace).build();
 
+    let probe_target = if cfg!(target_os = "macos") {
+        "/usr/share/zoneinfo/UTC"

@@ -66,3 +66,4 @@ fn main() {
             20
         }
     };
+    std::process::exit(code);

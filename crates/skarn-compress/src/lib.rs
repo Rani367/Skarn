@@ -25,3 +25,4 @@ use std::collections::BTreeMap;
 use skarn_common::{CommandSpec, Savings, estimate_tokens};
 
 pub use engine::CompiledProfile;
+pub use rules::{ProfilePatch, RuleSet, Rules};

@@ -272,3 +272,4 @@ pub enum Backend {
     Landlock,
     /// Windows AppContainer.
     AppContainer,
+    /// No sandbox available on this platform.

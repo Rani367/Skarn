@@ -43,3 +43,5 @@ impl CompiledProfile {
                 tail_lines: rules.tail_lines,
                 max_rescued_lines: rules.max_rescued_lines,
                 drop,
+                keep,
+            },

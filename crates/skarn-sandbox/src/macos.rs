@@ -157,3 +157,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     // NULL) or non-zero and allocates an error string we must free.
     let rc = unsafe { sandbox_init(c_profile.as_ptr(), 0, &mut errbuf) };
     if rc != 0 {
+        let msg = if errbuf.is_null() {

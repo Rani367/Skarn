@@ -20,3 +20,5 @@ default:
   keep:
     - '(?i)\berror\b'
     - '(?i)\bwarning\b'
+    - '(?i)\bfailed\b'
+    - '(?i)\bpanic'

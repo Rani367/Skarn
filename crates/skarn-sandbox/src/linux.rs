@@ -145,3 +145,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     Ok(report)
 }
 
+fn add_path_rule(
+    created: landlock::RulesetCreated,

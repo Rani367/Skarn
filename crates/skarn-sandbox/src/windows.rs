@@ -392,3 +392,6 @@ fn capability_sids(net: NetPolicy) -> Result<(Vec<SID_AND_ATTRIBUTES>, Vec<Vec<u
     }
     Ok((attrs, bufs))
 }
+
+/// Derive the well-known capability SID for `name` and copy it into an owned
+/// buffer (freeing the OS-allocated arrays).

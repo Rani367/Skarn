@@ -1,3 +1,4 @@
 [package]
 name = "skarn-compress"
 description = "Declarative, YAML-driven token compression for noisy shell-command output."
+version.workspace = true

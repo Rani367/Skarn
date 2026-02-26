@@ -29,3 +29,6 @@ pub struct Rules {
     #[serde(default = "yes")]
     pub collapse_blank_lines: bool,
     /// Collapse runs of identical adjacent lines to `line  (×N)`.
+    #[serde(default = "yes")]
+    pub dedupe_consecutive: bool,
+    /// If the stream exceeds this many lines, truncate it (keeping head, tail,
