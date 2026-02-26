@@ -44,3 +44,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
 
 ## Install
 
+```bash

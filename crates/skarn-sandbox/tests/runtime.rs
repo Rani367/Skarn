@@ -129,3 +129,5 @@ fn reading_system_files_is_allowed() {
 
     let probe_target = if cfg!(target_os = "macos") {
         "/usr/share/zoneinfo/UTC"
+    } else {
+        "/etc/hostname"

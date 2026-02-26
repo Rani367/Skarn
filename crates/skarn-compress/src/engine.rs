@@ -45,3 +45,5 @@ impl CompiledProfile {
                 drop,
                 keep,
             },
+            errors,
+        )

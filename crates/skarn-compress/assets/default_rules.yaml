@@ -22,3 +22,5 @@ default:
     - '(?i)\bwarning\b'
     - '(?i)\bfailed\b'
     - '(?i)\bpanic'
+    - '(?i)\btraceback'
+

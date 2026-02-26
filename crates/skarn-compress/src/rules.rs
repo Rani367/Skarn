@@ -32,3 +32,7 @@ pub struct Rules {
     #[serde(default = "yes")]
     pub dedupe_consecutive: bool,
     /// If the stream exceeds this many lines, truncate it (keeping head, tail,
+    /// and any lines matching `keep`).
+    #[serde(default = "default_max_lines")]
+    pub max_lines: usize,
+    /// Lines to keep from the start when truncating.

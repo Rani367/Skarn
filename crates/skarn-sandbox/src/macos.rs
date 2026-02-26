@@ -158,3 +158,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     let rc = unsafe { sandbox_init(c_profile.as_ptr(), 0, &mut errbuf) };
     if rc != 0 {
         let msg = if errbuf.is_null() {
+            format!("sandbox_init failed (rc={rc})")

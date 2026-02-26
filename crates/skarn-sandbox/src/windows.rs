@@ -395,3 +395,7 @@ fn capability_sids(net: NetPolicy) -> Result<(Vec<SID_AND_ATTRIBUTES>, Vec<Vec<u
 
 /// Derive the well-known capability SID for `name` and copy it into an owned
 /// buffer (freeing the OS-allocated arrays).
+fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
+    let wname = wide(name);
+    let mut group_sids: *mut PSID = std::ptr::null_mut();
+    let mut group_count = 0u32;

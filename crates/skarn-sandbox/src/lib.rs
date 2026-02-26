@@ -273,3 +273,6 @@ pub enum Backend {
     /// Windows AppContainer.
     AppContainer,
     /// No sandbox available on this platform.
+    None,
+}
+
