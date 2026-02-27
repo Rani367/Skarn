@@ -408,3 +408,12 @@ fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
             PCWSTR(wname.as_ptr()),
             &mut group_sids,
             &mut group_count,
+            &mut cap_sids,
+            &mut cap_count,
+        )
+        .map_err(|e| Error::sandbox(format!("DeriveCapabilitySidsFromName({name}): {e}")))?;
+
+        let copied = if cap_sids.is_null() || cap_count == 0 {
+            Err(Error::sandbox(format!(
+                "no capability SID derived for {name}"
+            )))

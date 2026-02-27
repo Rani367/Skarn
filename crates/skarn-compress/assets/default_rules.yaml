@@ -26,3 +26,4 @@ default:
 
 profiles:
   cargo:
+    max_lines: 160

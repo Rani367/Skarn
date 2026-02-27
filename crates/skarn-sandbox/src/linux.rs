@@ -150,3 +150,4 @@ fn add_path_rule(
     path: &str,
     access: BitFlags<AccessFs>,
     skipped: &mut Vec<String>,
+) -> Result<landlock::RulesetCreated> {

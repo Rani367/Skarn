@@ -161,3 +161,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
             format!("sandbox_init failed (rc={rc})")
         } else {
             // SAFETY: non-null errbuf points to a NUL-terminated string owned by
+            // the sandbox library; we copy it then free it.
+            let m = unsafe { CStr::from_ptr(errbuf) }

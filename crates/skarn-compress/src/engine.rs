@@ -55,3 +55,4 @@ impl CompiledProfile {
         //    consumes carriage returns, which would defeat the progress-bar
         //    collapse below. CR handling first, ANSI strip per line after.
         let text = String::from_utf8_lossy(raw).into_owned();
+        let original_lines = text.lines().count();

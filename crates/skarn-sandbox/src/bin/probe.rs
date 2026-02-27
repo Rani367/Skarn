@@ -72,3 +72,5 @@ fn main() {
 fn is_denied(e: &std::io::Error) -> bool {
     // EPERM (1) and EACCES (13) both indicate the kernel sandbox refused us.
     e.kind() == std::io::ErrorKind::PermissionDenied
+        || matches!(e.raw_os_error(), Some(1) | Some(13))
+}

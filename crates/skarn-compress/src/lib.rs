@@ -29,3 +29,5 @@ pub use rules::{ProfilePatch, RuleSet, Rules};
 
 /// The result of compressing a command's output.
 #[derive(Clone, Debug)]
+pub struct Compressed {
+    /// The compressed, agent-ready text (stdout, then stderr if non-empty).
