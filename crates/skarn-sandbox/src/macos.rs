@@ -167,3 +167,4 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
                 .into_owned();
             unsafe { sandbox_free_error(errbuf) };
             m
+        };

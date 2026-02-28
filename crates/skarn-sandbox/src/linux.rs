@@ -153,3 +153,5 @@ fn add_path_rule(
 ) -> Result<landlock::RulesetCreated> {
     // Skip paths that do not exist — PathFd::new would fail and abort the whole
     // ruleset otherwise. Record the skip so the caller can surface it.
+    let fd = match PathFd::new(path) {
+        Ok(fd) => fd,

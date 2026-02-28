@@ -136,3 +136,4 @@ fn reading_system_files_is_allowed() {
 
     cleanup(&root);
     // On Linux this exercises the allow-list (/etc is granted); on macOS the
+    // broad-read path. Either way a public system file should be readable.

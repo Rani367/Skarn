@@ -41,3 +41,5 @@ pub struct Rules {
     /// Lines to keep from the end when truncating.
     #[serde(default = "default_tail")]
     pub tail_lines: usize,
+    /// At most this many "important" (keep-matching) lines are rescued from the
+    /// elided middle when truncating.

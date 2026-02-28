@@ -59,3 +59,6 @@ impl CompiledProfile {
 
         // 2. Per-line normalization + drop/keep filtering.
         let mut lines: Vec<String> = Vec::with_capacity(original_lines);
+        for raw_line in text.split('\n') {
+            // A progress bar redraws with \r; keep only the final frame.
+            let line = if self.collapse_carriage_returns {

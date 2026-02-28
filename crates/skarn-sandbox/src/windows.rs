@@ -423,3 +423,9 @@ fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
             if len == 0 {
                 Err(Error::sandbox(format!(
                     "zero-length capability SID for {name}"
+                )))
+            } else {
+                let mut buf = vec![0u8; len as usize];
+                CopySid(len, PSID(buf.as_mut_ptr() as *mut c_void), src)
+                    .map(|()| buf)
+                    .map_err(|e| Error::sandbox(format!("CopySid({name}): {e}")))
