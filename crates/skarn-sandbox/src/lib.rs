@@ -287,3 +287,8 @@ impl std::fmt::Display for Backend {
         f.write_str(s)
     }
 }
+
+/// How completely a policy was (or would be) enforced.
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
+pub enum RestrictionStatus {
+    /// The full policy is enforced.

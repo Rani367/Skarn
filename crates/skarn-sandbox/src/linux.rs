@@ -155,3 +155,6 @@ fn add_path_rule(
     // ruleset otherwise. Record the skip so the caller can surface it.
     let fd = match PathFd::new(path) {
         Ok(fd) => fd,
+        Err(_) => {
+            skipped.push(path.to_string());
+            return Ok(created);

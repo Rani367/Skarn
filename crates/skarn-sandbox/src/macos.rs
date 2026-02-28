@@ -168,3 +168,7 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
             unsafe { sandbox_free_error(errbuf) };
             m
         };
+        return Err(Error::Sandbox(format!("sandbox_init: {msg}")));
+    }
+
+    Ok(

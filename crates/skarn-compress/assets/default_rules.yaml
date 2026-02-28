@@ -28,3 +28,6 @@ profiles:
   cargo:
     max_lines: 160
     drop:
+      - '^\s*Compiling '
+      - '^\s*Downloading '
+      - '^\s*Downloaded '

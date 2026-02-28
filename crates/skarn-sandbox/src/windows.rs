@@ -429,3 +429,7 @@ fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
                 CopySid(len, PSID(buf.as_mut_ptr() as *mut c_void), src)
                     .map(|()| buf)
                     .map_err(|e| Error::sandbox(format!("CopySid({name}): {e}")))
+            }
+        };
+
+        // Free the OS-allocated SID arrays regardless of outcome.

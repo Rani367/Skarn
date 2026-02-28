@@ -43,3 +43,4 @@ pub struct Rules {
     pub tail_lines: usize,
     /// At most this many "important" (keep-matching) lines are rescued from the
     /// elided middle when truncating.
+    #[serde(default = "default_max_rescued")]
