@@ -174,3 +174,5 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     Ok(
         RestrictionReport::new(Backend::Seatbelt, RestrictionStatus::FullyEnforced)
             .note("Seatbelt profile applied to current process via sandbox_init"),
+    )
+}

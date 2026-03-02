@@ -72,3 +72,6 @@ impl CompiledProfile {
             } else {
                 line.to_string()
             };
+            if self.should_keep(&line) {
+                lines.push(line);
+            }

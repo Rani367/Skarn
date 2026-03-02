@@ -440,3 +440,8 @@ fn derive_capability_sid(name: &str) -> Result<Vec<u8>> {
             LocalFree(Some(HLOCAL(cap_sids as *mut c_void)));
         }
         copied
+    }
+}
+
+fn create_or_derive_sid() -> Result<PSID> {
+    let name = wide(APPCONTAINER_NAME);

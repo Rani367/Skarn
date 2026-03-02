@@ -38,3 +38,4 @@ pub struct Compressed {
     pub original_lines: usize,
     /// Lines retained after filtering (before truncation markers).
     pub kept_lines: usize,
+    /// The profile (tool name) that was applied, or `"default"`.

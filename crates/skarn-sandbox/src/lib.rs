@@ -302,3 +302,10 @@ pub enum RestrictionStatus {
 /// The result of applying (or probing) a sandbox.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct RestrictionReport {
+    /// The backend that handled (or would handle) the policy.
+    pub backend: Backend,
+    /// Enforcement completeness.
+    pub status: RestrictionStatus,
+    /// Human-readable notes (e.g. degraded ABI levels, network caveats).
+    pub notes: Vec<String>,
+}

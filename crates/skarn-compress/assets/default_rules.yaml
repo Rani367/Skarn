@@ -33,3 +33,4 @@ profiles:
       - '^\s*Downloaded '
       - '^\s*Updating '
       - '^\s*Fresh '
+      - '^\s*Finished '

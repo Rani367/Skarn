@@ -161,3 +161,7 @@ fn add_path_rule(
         }
     };
     created
+        .add_rule(PathBeneath::new(fd, access))
+        .map_err(|e| Error::sandbox(format!("landlock add_rule {path}: {e}")))
+}
+
