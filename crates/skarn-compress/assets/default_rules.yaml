@@ -39,3 +39,4 @@ profiles:
       - '^\s*Installing '
       - '^\s*Adding '
       - '^\s*Locking '
+      - '^\s*running \d+ tests?$'

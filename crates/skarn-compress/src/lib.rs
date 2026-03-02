@@ -44,3 +44,5 @@ pub struct Compressed {
 
 /// A reusable compressor with all profiles pre-compiled.
 pub struct Compressor {
+    ruleset: RuleSet,
+    compiled: BTreeMap<String, CompiledProfile>,

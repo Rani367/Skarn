@@ -81,3 +81,4 @@ impl CompiledProfile {
             lines.pop();
         }
 
+        // 3. Collapse blank runs.

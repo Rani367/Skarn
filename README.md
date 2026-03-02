@@ -48,3 +48,4 @@ Autonomous AI coding agents have three expensive, dangerous habits:
 # One line (macOS / Linux):
 curl -fsSL https://raw.githubusercontent.com/Rani367/Skarn/main/install.sh | sh
 
+# Or with Cargo:

@@ -317,3 +317,7 @@ impl RestrictionReport {
             status,
             notes: Vec::new(),
         }
+    }
+
+    pub(crate) fn note(mut self, note: impl Into<String>) -> Self {
+        self.notes.push(note.into());

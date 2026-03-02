@@ -456,3 +456,8 @@ fn create_or_derive_sid() -> Result<PSID> {
             None,
         ) {
             Ok(sid) => Ok(sid),
+            Err(_) => {
+                // Already exists — derive the SID from the name.
+                DeriveAppContainerSidFromAppContainerName(PCWSTR(name.as_ptr()))
+                    .map_err(|e| Error::sandbox(format!("DeriveAppContainerSid: {e}")))
+            }

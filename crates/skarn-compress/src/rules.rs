@@ -50,3 +50,5 @@ pub struct Rules {
     pub drop: Vec<String>,
     /// Regexes for lines to always keep (errors, failures). `keep` beats `drop`.
     #[serde(default)]
+    pub keep: Vec<String>,
+}

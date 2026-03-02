@@ -144,3 +144,6 @@ fn reading_system_files_is_allowed() {
 fn network_is_denied_by_default_and_allowed_for_loopback() {
     if skip_if_unenforced() {
         return;
+    }
+    let root = unique_root();
+    let workspace = root.join("workspace");
