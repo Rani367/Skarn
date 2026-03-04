@@ -95,3 +95,7 @@ impl CompiledProfile {
         let kept_lines = lines.len();
         let lines = self.truncate(lines);
 
+        StreamResult {
+            text: lines.join("\n"),
+            original_lines,
+            kept_lines,

@@ -194,3 +194,9 @@ mod tests {
         let sbpl = profile_sbpl(&p);
         assert!(sbpl.starts_with("(version 1)\n(deny default)"));
     }
+
+    #[test]
+    fn workspace_is_writable() {
+        // /tmp exists, so canonicalization keeps it.
+        let p = Policy::builder().workspace("/tmp").build();
+        let sbpl = profile_sbpl(&p);

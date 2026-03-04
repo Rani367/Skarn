@@ -52,3 +52,4 @@ curl -fsSL https://raw.githubusercontent.com/Rani367/Skarn/main/install.sh | sh
 cargo install skarn
 ```
 
+This installs the `skarn` binary.

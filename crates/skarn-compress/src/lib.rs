@@ -54,3 +54,6 @@ pub struct Compressor {
 impl Compressor {
     /// Build a compressor from the built-in rules.
     pub fn builtin() -> Compressor {
+        Compressor::new(RuleSet::builtin())
+    }
+

@@ -491,3 +491,4 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
         }
 
         let trustee = TRUSTEE_W {
+            pMultipleTrustee: std::ptr::null_mut(),

@@ -338,3 +338,6 @@ pub fn backend_report() -> RestrictionReport {
 pub const fn backend() -> Backend {
     #[cfg(target_os = "macos")]
     {
+        Backend::Seatbelt
+    }
+    #[cfg(target_os = "linux")]

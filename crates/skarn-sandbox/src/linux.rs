@@ -181,3 +181,4 @@ fn install_seccomp() -> std::result::Result<(), String> {
     let filter = SeccompFilter::new(
         rules,
         SeccompAction::Allow,                     // default: allow
+        SeccompAction::Errno(libc::EPERM as u32), // matched (dangerous): EPERM
