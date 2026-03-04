@@ -99,3 +99,6 @@ impl CompiledProfile {
             text: lines.join("\n"),
             original_lines,
             kept_lines,
+        }
+    }
+

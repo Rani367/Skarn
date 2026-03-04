@@ -158,3 +158,5 @@ fn network_is_denied_by_default_and_allowed_for_loopback() {
         .net(NetPolicy::DenyAll)
         .build();
     let denied = run_probe(&deny, "connect", &addr);
+
+    let allow = Policy::builder()

@@ -341,3 +341,5 @@ pub const fn backend() -> Backend {
         Backend::Seatbelt
     }
     #[cfg(target_os = "linux")]
+    {
+        Backend::Landlock

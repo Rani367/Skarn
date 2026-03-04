@@ -57,3 +57,5 @@ impl Compressor {
         Compressor::new(RuleSet::builtin())
     }
 
+    /// Build a compressor from a custom rule set, pre-compiling every profile.
+    pub fn new(ruleset: RuleSet) -> Compressor {

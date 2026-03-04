@@ -65,3 +65,6 @@ impl Default for Rules {
             tail_lines: default_tail(),
             max_rescued_lines: default_max_rescued(),
             drop: Vec::new(),
+            keep: Vec::new(),
+        }
+    }

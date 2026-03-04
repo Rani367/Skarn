@@ -47,3 +47,7 @@ profiles:
     keep:
       - '^error(\[|:)'
       - '^warning:'
+      - '\bpanicked\b'
+      - '\.\.\. FAILED$'
+      - '^test result: FAILED'
+      - '^failures:'
