@@ -191,3 +191,6 @@ mod tests {
     #[test]
     fn deny_default_present() {
         let p = Policy::builder().workspace("/tmp").build();
+        let sbpl = profile_sbpl(&p);
+        assert!(sbpl.starts_with("(version 1)\n(deny default)"));
+    }

@@ -336,3 +336,5 @@ pub fn backend_report() -> RestrictionReport {
 
 /// The backend that this build targets.
 pub const fn backend() -> Backend {
+    #[cfg(target_os = "macos")]
+    {

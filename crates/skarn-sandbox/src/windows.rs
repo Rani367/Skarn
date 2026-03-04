@@ -483,3 +483,11 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
             None,
             &mut sec_desc,
         );
+        if rc.is_err() {
+            // Path may not exist; skip (mirrors the Unix backends, which also
+            // tolerate missing policy paths) but record it for diagnostics.
+            tracing::debug!(path, "skipping ACL grant for missing path");
+            return Ok(());
+        }
+
+        let trustee = TRUSTEE_W {

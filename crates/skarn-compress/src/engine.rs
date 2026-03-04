@@ -90,3 +90,8 @@ impl CompiledProfile {
         if self.dedupe_consecutive {
             lines = dedupe(lines);
         }
+
+        // 5. Truncate, rescuing important (keep-matching) middle lines.
+        let kept_lines = lines.len();
+        let lines = self.truncate(lines);
+

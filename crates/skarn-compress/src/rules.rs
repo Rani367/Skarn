@@ -63,3 +63,4 @@ impl Default for Rules {
             max_lines: default_max_lines(),
             head_lines: default_head(),
             tail_lines: default_tail(),
+            max_rescued_lines: default_max_rescued(),

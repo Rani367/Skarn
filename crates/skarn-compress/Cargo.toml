@@ -4,3 +4,4 @@ description = "Declarative, YAML-driven token compression for noisy shell-comman
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+license.workspace = true

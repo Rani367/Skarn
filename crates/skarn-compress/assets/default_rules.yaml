@@ -44,3 +44,5 @@ profiles:
       - '^test result: ok\.'
       - '^\s*Doc-tests'
       - '^\s*$'
+    keep:
+      - '^error(\[|:)'

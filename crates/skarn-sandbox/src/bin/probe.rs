@@ -82,3 +82,4 @@ fn try_write(path: &str) -> std::io::Result<()> {
     Ok(())
 }
 
+fn try_read(path: &str) -> std::io::Result<()> {
