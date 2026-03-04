@@ -80,3 +80,4 @@ fn try_write(path: &str) -> std::io::Result<()> {
     f.write_all(b"skarn probe\n")?;
     f.sync_all()?;
     Ok(())
+}

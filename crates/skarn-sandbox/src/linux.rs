@@ -179,3 +179,4 @@ fn install_seccomp() -> std::result::Result<(), String> {
         .try_into()
         .map_err(|e| format!("seccomp arch: {e:?}"))?;
     let filter = SeccompFilter::new(
+        rules,

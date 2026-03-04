@@ -30,3 +30,4 @@ jobs:
       # `targets:` input, so install the target's std explicitly.
       - name: Add rust target
         run: rustup target add ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2

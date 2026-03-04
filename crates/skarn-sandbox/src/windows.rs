@@ -469,3 +469,13 @@ fn create_or_derive_sid() -> Result<PSID> {
 fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
     let mut wpath = wide(path);
     let mut old_dacl: *mut ACL = std::ptr::null_mut();
+    let mut sec_desc = windows::Win32::Security::PSECURITY_DESCRIPTOR::default();
+    // SAFETY: FFI calls into the Win32 authorization APIs with valid pointers;
+    // each return code is checked. `wpath` outlives the calls.
+    unsafe {
+        let rc = GetNamedSecurityInfoW(
+            PCWSTR(wpath.as_ptr()),
+            SE_FILE_OBJECT,
+            DACL_SECURITY_INFORMATION,
+            None,
+            None,

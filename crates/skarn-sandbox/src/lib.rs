@@ -329,3 +329,6 @@ impl RestrictionReport {
 ///
 /// Used by `skarn doctor`. The reported [`RestrictionStatus`] reflects whether
 /// the kernel actually supports the mechanism (e.g. Landlock on the running
+/// kernel, or `sandbox_init` being present).
+pub fn backend_report() -> RestrictionReport {
+    imp::probe()

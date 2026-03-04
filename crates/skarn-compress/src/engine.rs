@@ -87,3 +87,6 @@ impl CompiledProfile {
         }
 
         // 4. Dedupe adjacent identical lines.
+        if self.dedupe_consecutive {
+            lines = dedupe(lines);
+        }

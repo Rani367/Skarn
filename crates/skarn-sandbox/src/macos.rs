@@ -186,3 +186,6 @@ pub fn probe() -> RestrictionReport {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+
+    #[test]
