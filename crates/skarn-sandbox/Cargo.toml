@@ -39,3 +39,5 @@ features = [
     "Win32_Security",
     "Win32_Security_Authorization",
     "Win32_Security_Isolation",
+    "Win32_System_Threading",
+    "Win32_System_JobObjects",

@@ -466,3 +466,6 @@ fn create_or_derive_sid() -> Result<PSID> {
 }
 
 /// Grant `sid` `access_mask` on the filesystem object at `path` (inheritable).
+fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
+    let mut wpath = wide(path);
+    let mut old_dacl: *mut ACL = std::ptr::null_mut();

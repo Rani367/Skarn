@@ -324,3 +324,8 @@ impl RestrictionReport {
         self
     }
 }
+
+/// Describe the sandbox backend available on this host **without applying it**.
+///
+/// Used by `skarn doctor`. The reported [`RestrictionStatus`] reflects whether
+/// the kernel actually supports the mechanism (e.g. Landlock on the running

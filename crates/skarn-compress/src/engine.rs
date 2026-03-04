@@ -86,3 +86,4 @@ impl CompiledProfile {
             lines = collapse_blanks(lines);
         }
 
+        // 4. Dedupe adjacent identical lines.

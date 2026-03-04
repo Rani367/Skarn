@@ -55,3 +55,8 @@ pub struct Rules {
 
 impl Default for Rules {
     fn default() -> Self {
+        Self {
+            strip_ansi: true,
+            collapse_carriage_returns: true,
+            collapse_blank_lines: true,
+            dedupe_consecutive: true,

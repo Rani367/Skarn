@@ -174,3 +174,8 @@ fn install_seccomp() -> std::result::Result<(), String> {
         // Empty rule vec => unconditional match for that syscall number.
         rules.insert(sysno, Vec::new());
     }
+
+    let arch = std::env::consts::ARCH
+        .try_into()
+        .map_err(|e| format!("seccomp arch: {e:?}"))?;
+    let filter = SeccompFilter::new(

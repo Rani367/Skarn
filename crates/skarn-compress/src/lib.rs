@@ -51,3 +51,5 @@ pub struct Compressor {
     pub warnings: Vec<String>,
 }
 
+impl Compressor {
+    /// Build a compressor from the built-in rules.
