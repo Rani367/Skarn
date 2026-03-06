@@ -185,3 +185,5 @@ fn install_seccomp() -> std::result::Result<(), String> {
         arch,
     )
     .map_err(|e| format!("seccomp filter: {e}"))?;
+
+    let prog: seccompiler::BpfProgram = filter

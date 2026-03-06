@@ -4,3 +4,4 @@
 
 ## Context
 
+The Code Mode engine must execute untrusted, LLM-generated JS/TS that calls

@@ -54,3 +54,4 @@ cargo install skarn
 
 This installs the `skarn` binary.
 
+## Quickstart

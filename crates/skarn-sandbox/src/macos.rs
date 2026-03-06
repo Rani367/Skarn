@@ -205,3 +205,4 @@ mod tests {
     }
 
     #[test]
+    fn deny_all_omits_network_allow() {

@@ -162,3 +162,5 @@ fn network_is_denied_by_default_and_allowed_for_loopback() {
     let allow = Policy::builder()
         .workspace(&workspace)
         .net(NetPolicy::AllowLoopback)
+        .build();
+    let allowed = run_probe(&allow, "connect", &addr);

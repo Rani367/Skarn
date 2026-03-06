@@ -500,3 +500,8 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
         let ea = EXPLICIT_ACCESS_W {
             grfAccessPermissions: access_mask,
             grfAccessMode: GRANT_ACCESS,
+            grfInheritance: SUB_CONTAINERS_AND_OBJECTS_INHERIT,
+            Trustee: trustee,
+        };
+
+        let mut new_dacl: *mut ACL = std::ptr::null_mut();

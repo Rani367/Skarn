@@ -347,3 +347,8 @@ pub const fn backend() -> Backend {
     #[cfg(windows)]
     {
         Backend::AppContainer
+    }
+    #[cfg(not(any(target_os = "macos", target_os = "linux", windows)))]
+    {
+        Backend::None
+    }

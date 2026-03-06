@@ -83,3 +83,4 @@ fn try_write(path: &str) -> std::io::Result<()> {
 }
 
 fn try_read(path: &str) -> std::io::Result<()> {
+    let mut f = std::fs::File::open(path)?;
