@@ -505,3 +505,10 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
         };
 
         let mut new_dacl: *mut ACL = std::ptr::null_mut();
+        let rc = SetEntriesInAclW(Some(&[ea]), Some(old_dacl), &mut new_dacl);
+        if rc.is_err() {
+            return Err(Error::sandbox("SetEntriesInAclW failed"));
+        }
+
+        let rc = SetNamedSecurityInfoW(
+            PWSTR(wpath.as_mut_ptr()),

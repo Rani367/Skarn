@@ -352,3 +352,6 @@ pub const fn backend() -> Backend {
     {
         Backend::None
     }
+}
+
+#[cfg(test)]

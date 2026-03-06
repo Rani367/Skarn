@@ -63,3 +63,4 @@ impl Compressor {
         let (default, errs) = CompiledProfile::compile(&ruleset.default);
         warnings.extend(errs);
 
+        let mut compiled = BTreeMap::new();

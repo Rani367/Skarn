@@ -69,3 +69,7 @@ impl Default for Rules {
         }
     }
 }
+
+/// A per-tool override. Scalar fields are `Option` so "unset" inherits from
+/// `default`; `drop`/`keep` are additive (appended to the default lists).
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]
