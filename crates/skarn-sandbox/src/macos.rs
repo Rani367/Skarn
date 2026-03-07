@@ -212,3 +212,4 @@ mod tests {
     }
 
     #[test]
+    fn allow_all_network() {

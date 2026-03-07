@@ -57,3 +57,4 @@ This installs the `skarn` binary.
 ## Quickstart
 
 ```bash
+# 1. Scaffold a config and see integration snippets

@@ -110,3 +110,8 @@ impl CompiledProfile {
     }
 
     fn is_important(&self, line: &str) -> bool {
+        self.keep.is_match(line)
+    }
+
+    fn truncate(&self, lines: Vec<String>) -> Vec<String> {
+        if lines.len() <= self.max_lines {

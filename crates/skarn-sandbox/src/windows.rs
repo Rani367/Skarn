@@ -522,3 +522,6 @@ fn grant_access(sid: PSID, path: &str, access_mask: u32) -> Result<()> {
         if rc.is_err() {
             return Err(Error::sandbox("SetNamedSecurityInfoW failed"));
         }
+    }
+    Ok(())
+}

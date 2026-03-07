@@ -56,3 +56,5 @@ profiles:
   rustc:
     drop:
       - '^\s*Compiling '
+    keep:
+      - '^error'

@@ -89,3 +89,4 @@ fn try_read(path: &str) -> std::io::Result<()> {
     Ok(())
 }
 
+fn try_connect(hostport: &str) -> std::io::Result<()> {

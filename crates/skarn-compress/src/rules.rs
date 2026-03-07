@@ -73,3 +73,8 @@ impl Default for Rules {
 /// A per-tool override. Scalar fields are `Option` so "unset" inherits from
 /// `default`; `drop`/`keep` are additive (appended to the default lists).
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
+pub struct ProfilePatch {
+    #[serde(default)]
+    pub strip_ansi: Option<bool>,
+    #[serde(default)]
+    pub collapse_carriage_returns: Option<bool>,

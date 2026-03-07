@@ -67,3 +67,4 @@ impl Compressor {
         for tool in ruleset.profiles.keys() {
             let rules = ruleset.resolve(tool);
             let (prof, errs) = CompiledProfile::compile(&rules);
+            warnings.extend(errs);
