@@ -202,3 +202,8 @@ pub fn probe() -> RestrictionReport {
         .handle_access(AccessFs::from_all(abi))
         .and_then(|r| r.create())
     {
+        Ok(_) => RestrictionReport::new(Backend::Landlock, RestrictionStatus::FullyEnforced)
+            .note("Landlock available on this kernel"),
+        Err(e) => RestrictionReport::new(Backend::Landlock, RestrictionStatus::NotEnforced)
+            .note(format!("Landlock unavailable: {e}")),
+    }

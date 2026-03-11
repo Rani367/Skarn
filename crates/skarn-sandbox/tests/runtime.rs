@@ -176,3 +176,4 @@ fn network_is_denied_by_default_and_allowed_for_loopback() {
     assert_eq!(
         allowed, EXIT_OK,
         "AllowLoopback must permit loopback connections"
+    );

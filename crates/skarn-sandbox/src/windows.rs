@@ -545,3 +545,8 @@ fn quote_arg(arg: &str) -> String {
     let mut backslashes = 0;
     for c in arg.chars() {
         match c {
+            '\\' => {
+                backslashes += 1;
+                out.push('\\');
+            }
+            '"' => {

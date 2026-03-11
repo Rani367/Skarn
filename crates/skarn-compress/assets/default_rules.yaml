@@ -65,3 +65,6 @@ profiles:
     drop:
       - '^\.+$'
       - '^[.FsxX]+\s+\[\s*\d+%\]$'
+      - '(?i)\bPASSED\b'
+      - '^platform '
+      - '^cachedir:'

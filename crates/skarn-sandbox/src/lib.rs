@@ -376,3 +376,7 @@ mod tests {
             .net(NetPolicy::AllowLoopback)
             .fail_closed(false)
             .build();
+        assert_eq!(p.fs_read, vec![PathBuf::from("/etc/hosts")]);
+        assert_eq!(p.fs_read_write, vec![PathBuf::from("/work")]);
+        assert_eq!(p.fs_exec, vec![PathBuf::from("/usr/bin")]);
+        assert_eq!(p.net, NetPolicy::AllowLoopback);

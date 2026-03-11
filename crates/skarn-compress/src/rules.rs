@@ -80,3 +80,4 @@ pub struct ProfilePatch {
     pub collapse_carriage_returns: Option<bool>,
     #[serde(default)]
     pub collapse_blank_lines: Option<bool>,
+    #[serde(default)]

@@ -92,3 +92,4 @@ fn try_read(path: &str) -> std::io::Result<()> {
 fn try_connect(hostport: &str) -> std::io::Result<()> {
     let addr: std::net::SocketAddr = hostport
         .parse()
+        .map_err(|_| std::io::Error::new(std::io::ErrorKind::InvalidInput, "bad addr"))?;

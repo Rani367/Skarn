@@ -128,3 +128,7 @@ impl CompiledProfile {
         // Rescue important lines from the elided middle.
         let mut rescued: Vec<String> = lines[mid_start..mid_end]
             .iter()
+            .filter(|l| self.is_important(l))
+            .take(self.max_rescued_lines)
+            .cloned()
+            .collect();
