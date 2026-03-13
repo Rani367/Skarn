@@ -135,3 +135,9 @@ impl CompiledProfile {
 
         let elided = (mid_end - mid_start) - rescued.len();
         if elided > 0 {
+            out.push(format!("… {elided} lines hidden by skarn-compress …"));
+        }
+        if !rescued.is_empty() {
+            out.push("… kept important lines from the hidden region:".to_string());
+            out.append(&mut rescued);
+        }

@@ -73,3 +73,7 @@ impl Compressor {
 
         Compressor {
             ruleset,
+            compiled,
+            default,
+            warnings,
+        }

@@ -5,3 +5,4 @@
 ## Context
 
 The Code Mode engine must execute untrusted, LLM-generated JS/TS that calls
+async host functions bridging to MCP tools. The realistic Rust options are

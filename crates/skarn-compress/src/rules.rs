@@ -82,3 +82,4 @@ pub struct ProfilePatch {
     pub collapse_blank_lines: Option<bool>,
     #[serde(default)]
     pub dedupe_consecutive: Option<bool>,
+    #[serde(default)]

@@ -225,3 +225,4 @@ mod tests {
     fn quoting_escapes_quotes_and_backslashes() {
         assert_eq!(sbpl_quote("a\"b\\c"), "\"a\\\"b\\\\c\"");
     }
+}

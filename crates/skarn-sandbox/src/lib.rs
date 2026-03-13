@@ -386,3 +386,6 @@ mod tests {
     #[test]
     fn policy_serde_round_trips() {
         let p = Policy::builder().workspace("/work").build();
+        let json = serde_json::to_string(&p).unwrap();
+        let back: Policy = serde_json::from_str(&json).unwrap();
+        assert_eq!(back.fs_read_write, p.fs_read_write);
