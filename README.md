@@ -68,3 +68,5 @@ skarn doctor
 #    { "mcpServers": { "skarn": { "command": "skarn", "args": ["serve"] } } }
 
 # 4. (Optional) try a Code Mode script against your configured servers:
+skarn exec --code 'return (await skarn.listTools()).length'
+

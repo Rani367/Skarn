@@ -12,3 +12,5 @@ use skarn_common::{Error, Result};
 use crate::bridge::ToolBridge;
 
 /// Resource limits for a single Code Mode execution.
+#[derive(Clone, Copy, Debug, Serialize, Deserialize)]
+pub struct ExecLimits {

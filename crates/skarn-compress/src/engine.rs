@@ -203,3 +203,9 @@ mod tests {
     fn profile(rules: Rules) -> CompiledProfile {
         CompiledProfile::compile(&rules).0
     }
+
+    #[test]
+    fn strips_ansi() {
+        let p = profile(Rules::default());
+        let out = p.run(b"\x1b[31mred\x1b[0m\nplain\n");
+        assert_eq!(out.text, "red\nplain");

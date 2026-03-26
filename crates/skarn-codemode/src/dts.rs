@@ -3,3 +3,4 @@
 
 use crate::bridge::ToolDescriptor;
 
+/// Produce a `.d.ts` for the given tool manifest.

@@ -11,3 +11,6 @@
 //!
 //! This static pass is **defense in depth**, not the security boundary. The real
 //! guarantees are (1) the hermetic QuickJS context — no filesystem, network, or
+//! `fetch` bindings, so even arbitrary in-isolate code cannot reach the host —
+//! and (2) the OS-native sandbox the execution host runs under. The validator
+//! exists to reject obviously hostile scripts early with a clear message.

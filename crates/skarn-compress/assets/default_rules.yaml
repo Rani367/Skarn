@@ -106,3 +106,4 @@ profiles:
 
   pnpm:
     max_lines: 120
+    drop:
