@@ -193,3 +193,6 @@ fn dedupe(lines: Vec<String>) -> Vec<String> {
         i += count;
     }
     out
+}
+
+#[cfg(test)]

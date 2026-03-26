@@ -97,3 +97,4 @@ profiles:
       - '^\s*reify:'
       - '^\s*idealTree:'
       - '^npm http (fetch|cache)'
+      - '^\s*$'

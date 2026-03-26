@@ -121,3 +121,12 @@ impl RuleSet {
                 r.head_lines = v;
             }
             if let Some(v) = p.tail_lines {
+                r.tail_lines = v;
+            }
+            if let Some(v) = p.max_rescued_lines {
+                r.max_rescued_lines = v;
+            }
+            r.drop.extend(p.drop.iter().cloned());
+            r.keep.extend(p.keep.iter().cloned());
+        }
+        r

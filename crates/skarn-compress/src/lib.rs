@@ -111,3 +111,6 @@ impl Compressor {
             String::from_utf8_lossy(stdout),
             String::from_utf8_lossy(stderr)
         );
+        let savings = Savings {
+            before: estimate_tokens(&raw_before),
+            after: estimate_tokens(&text),

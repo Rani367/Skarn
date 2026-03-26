@@ -4,3 +4,5 @@
 //! anything that could escape the hermetic isolate — `import`/`require`/`eval`,
 //! `new Function`, `process`/`Deno`, `Reflect`, `.constructor`/`.__proto__`
 //! reflection hops, and so on. Because we ban the *identifiers* (not call
+//! sites), alias hops like `const e = eval; e("…")` are caught too: `eval`
+//! appears in the AST regardless of how it is later used. Banned property names
