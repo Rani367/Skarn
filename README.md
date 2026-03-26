@@ -60,3 +60,4 @@ This installs the `skarn` binary.
 # 1. Scaffold a config and see integration snippets
 skarn init
 
+# 2. Check which kernel sandbox is active on your machine

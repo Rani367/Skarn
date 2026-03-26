@@ -76,3 +76,4 @@ profiles:
       - '(?i)\bFAILED\b'
       - '(?i)\bERROR\b'
       - '^E\s+'
+      - '^>\s+'

@@ -4,3 +4,4 @@
 
 ## Context
 
+MCP tool names are only unique *per server*, so two aggregated servers can both

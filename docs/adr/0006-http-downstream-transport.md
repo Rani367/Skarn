@@ -4,3 +4,4 @@
 
 ## Context
 
+The gateway initially aggregated only stdio child-process MCP servers. Many

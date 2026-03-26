@@ -97,3 +97,5 @@ pub struct ProfilePatch {
 }
 
 impl RuleSet {
+    /// Resolve the effective [`Rules`] for a tool by layering its patch (if any)
+    /// over the default.

@@ -80,3 +80,7 @@ impl Compressor {
     }
 
     /// The rule set backing this compressor.
+    pub fn ruleset(&self) -> &RuleSet {
+        &self.ruleset
+    }
+
