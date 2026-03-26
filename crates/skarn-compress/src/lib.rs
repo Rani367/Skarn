@@ -102,3 +102,5 @@ impl Compressor {
             }
             text.push_str("─── stderr ───\n");
             text.push_str(&err.text);
+        }
+

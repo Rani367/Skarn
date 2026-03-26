@@ -113,3 +113,8 @@ impl RuleSet {
             }
             if let Some(v) = p.dedupe_consecutive {
                 r.dedupe_consecutive = v;
+            }
+            if let Some(v) = p.max_lines {
+                r.max_lines = v;
+            }
+            if let Some(v) = p.head_lines {

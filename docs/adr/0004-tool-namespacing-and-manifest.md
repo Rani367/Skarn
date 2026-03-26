@@ -6,3 +6,4 @@
 
 MCP tool names are only unique *per server*, so two aggregated servers can both
 expose `search`. The MCP spec does not define aggregation, namespacing, or
+discovery — a gateway must provide them. Exposing every downstream tool's schema

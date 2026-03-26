@@ -176,3 +176,11 @@ fn collapse_blanks(lines: Vec<String>) -> Vec<String> {
 }
 
 fn dedupe(lines: Vec<String>) -> Vec<String> {
+    let mut out: Vec<String> = Vec::with_capacity(lines.len());
+    let mut i = 0;
+    while i < lines.len() {
+        let mut count = 1;
+        while i + count < lines.len() && lines[i + count] == lines[i] {
+            count += 1;
+        }
+        if count > 1 && !lines[i].trim().is_empty() {

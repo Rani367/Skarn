@@ -87,3 +87,7 @@ profiles:
       - '^\s*File ".*", line \d+'
 
   npm:
+    max_lines: 120
+    drop:
+      - '^npm warn deprecated'
+      - '^npm WARN deprecated'
