@@ -104,3 +104,6 @@ impl Compressor {
             text.push_str(&err.text);
         }
 
+        // Measure savings against the raw (UTF-8) input so the numbers reflect
+        // what the agent would otherwise have paid for.
+        let raw_before = format!(

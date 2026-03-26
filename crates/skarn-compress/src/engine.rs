@@ -184,3 +184,8 @@ fn dedupe(lines: Vec<String>) -> Vec<String> {
             count += 1;
         }
         if count > 1 && !lines[i].trim().is_empty() {
+            out.push(format!("{}  (×{count})", lines[i]));
+        } else {
+            for _ in 0..count {
+                out.push(lines[i].clone());
+            }

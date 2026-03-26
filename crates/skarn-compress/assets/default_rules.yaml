@@ -91,3 +91,8 @@ profiles:
     drop:
       - '^npm warn deprecated'
       - '^npm WARN deprecated'
+      - '^added \d+ packages'
+      - '^changed \d+ packages'
+      - '^removed \d+ packages'
+      - '^\s*reify:'
+      - '^\s*idealTree:'

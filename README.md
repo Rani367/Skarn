@@ -62,3 +62,6 @@ skarn init
 
 # 2. Check which kernel sandbox is active on your machine
 skarn doctor
+
+# 3. Point your agent at the gateway (Claude Code / Cursor / Windsurf):
+#    add to your MCP config:
