@@ -6,3 +6,5 @@
 //! reflection hops, and so on. Because we ban the *identifiers* (not call
 //! sites), alias hops like `const e = eval; e("…")` are caught too: `eval`
 //! appears in the AST regardless of how it is later used. Banned property names
+//! are caught whether accessed with dot (`x.constructor`) or bracket notation
+//! (`x["constructor"]`, `` x[`constructor`] ``).

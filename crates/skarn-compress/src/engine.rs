@@ -196,3 +196,5 @@ fn dedupe(lines: Vec<String>) -> Vec<String> {
 }
 
 #[cfg(test)]
+mod tests {
+    use super::*;

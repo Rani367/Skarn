@@ -130,3 +130,7 @@ impl RuleSet {
             r.keep.extend(p.keep.iter().cloned());
         }
         r
+    }
+
+    /// Load the built-in default rule set (embedded at compile time).
+    pub fn builtin() -> RuleSet {

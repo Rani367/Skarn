@@ -98,3 +98,7 @@ profiles:
       - '^\s*idealTree:'
       - '^npm http (fetch|cache)'
       - '^\s*$'
+      - '[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏]'
+    keep:
+      - 'npm error'
+      - 'npm ERR!'

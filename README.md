@@ -65,3 +65,4 @@ skarn doctor
 
 # 3. Point your agent at the gateway (Claude Code / Cursor / Windsurf):
 #    add to your MCP config:
+#    { "mcpServers": { "skarn": { "command": "skarn", "args": ["serve"] } } }

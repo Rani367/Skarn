@@ -114,3 +114,6 @@ impl Compressor {
         let savings = Savings {
             before: estimate_tokens(&raw_before),
             after: estimate_tokens(&text),
+        };
+
+        Compressed {
