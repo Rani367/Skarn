@@ -5,3 +5,6 @@
 //! async operations the host fulfils. In production these are forwarded over a
 //! pipe to the parent gateway (which holds the MCP clients and credentials); in
 //! tests an in-process implementation is used. Either way, credentials, file
+//! paths, and connection state never enter the sandbox.
+
+use async_trait::async_trait;

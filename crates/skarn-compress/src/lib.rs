@@ -126,3 +126,8 @@ impl Compressor {
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]

@@ -21,3 +21,7 @@ pub struct ExecLimits {
     /// Wall-clock deadline for the whole run.
     pub wall_clock: Duration,
     /// Maximum number of host tool calls a script may make.
+    pub max_tool_calls: usize,
+    /// Maximum size of the returned result JSON (bytes) before it is rejected.
+    pub max_output_bytes: usize,
+}

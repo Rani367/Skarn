@@ -219,3 +219,7 @@ mod tests {
     }
 
     #[test]
+    fn dedupes_adjacent_lines() {
+        let p = profile(Rules::default());
+        let out = p.run(b"same\nsame\nsame\nother\n");
+        assert_eq!(out.text, "same  (×3)\nother");

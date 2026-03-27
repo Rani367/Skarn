@@ -4,3 +4,7 @@
 
 use std::sync::Arc;
 use std::time::Duration;
+
+use skarn_codemode::{Engine, ExecLimits, InProcessBridge, ToolBridge};
+
+fn math_bridge() -> Arc<dyn ToolBridge> {

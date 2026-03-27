@@ -142,3 +142,5 @@ impl RuleSet {
         serde_yaml_ng::from_str(s).map_err(|e| e.to_string())
     }
 
+    /// Merge another rule set into this one: `other`'s default replaces nothing
+    /// scalar-wise but its profiles override/add to ours (user overrides win).
