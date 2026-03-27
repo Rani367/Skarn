@@ -36,3 +36,8 @@ impl Default for ExecLimits {
             max_output_bytes: 1024 * 1024,
         }
     }
+}
+
+impl ExecLimits {
+    /// Clamp the limits to safe floors so a misconfiguration (e.g. a zero memory
+    /// or wall-clock value) can't make every script fail with a confusing error.

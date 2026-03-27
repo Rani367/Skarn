@@ -230,3 +230,8 @@ mod tests {
         let rules = Rules {
             drop: vec!["^noise".to_string()],
             keep: vec!["error".to_string()],
+            ..Rules::default()
+        };
+        let p = profile(rules);
+        let out = p.run(b"noise line\nnoise with error\nreal content\n");
+        // The middle line matches both drop and keep; keep wins.

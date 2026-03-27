@@ -112,3 +112,6 @@ profiles:
       - '[⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏]'
     keep:
       - '(?i)\berror\b'
+      - 'ELIFECYCLE'
+
+  node:

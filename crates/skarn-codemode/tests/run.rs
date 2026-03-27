@@ -16,3 +16,4 @@ fn math_bridge() -> Arc<dyn ToolBridge> {
                 let b = v["b"].as_i64().unwrap_or(0);
                 Ok(serde_json::json!(a + b).to_string())
             })
+            .with_tool("math", "double", "Double a number", |args| {

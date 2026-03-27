@@ -13,3 +13,4 @@ use serde::{Deserialize, Serialize};
 /// A single tool exposed by a downstream server, as the isolate sees it.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct ToolDescriptor {
+    /// The downstream server alias the tool belongs to.

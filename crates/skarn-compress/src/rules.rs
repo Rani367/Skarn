@@ -151,3 +151,5 @@ impl RuleSet {
         self
     }
 }
+
+fn yes() -> bool {
