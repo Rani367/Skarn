@@ -138,3 +138,7 @@ impl RuleSet {
     }
 
     /// Parse a rule set from YAML.
+    pub fn from_yaml(s: &str) -> Result<RuleSet, String> {
+        serde_yaml_ng::from_str(s).map_err(|e| e.to_string())
+    }
+

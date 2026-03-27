@@ -14,3 +14,6 @@ use crate::bridge::ToolBridge;
 /// Resource limits for a single Code Mode execution.
 #[derive(Clone, Copy, Debug, Serialize, Deserialize)]
 pub struct ExecLimits {
+    /// QuickJS heap limit in bytes.
+    pub memory_bytes: usize,
+    /// Maximum native stack in bytes.

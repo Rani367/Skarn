@@ -3,3 +3,4 @@
 //! rquickjs' async runtime is `!Send`, so these run on a current-thread runtime.
 
 use std::sync::Arc;
+use std::time::Duration;
