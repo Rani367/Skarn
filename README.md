@@ -71,3 +71,5 @@ skarn doctor
 skarn exec --code 'return (await skarn.listTools()).length'
 
 # 5. (Optional) compress + sandbox the agent's shell commands directly:
+skarn run --net deny -- cargo test
+```

@@ -8,3 +8,6 @@ use std::time::Duration;
 use skarn_codemode::{Engine, ExecLimits, InProcessBridge, ToolBridge};
 
 fn math_bridge() -> Arc<dyn ToolBridge> {
+    Arc::new(
+        InProcessBridge::new()
+            .with_tool("math", "add", "Add two numbers", |args| {

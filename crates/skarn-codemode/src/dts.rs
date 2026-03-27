@@ -8,3 +8,4 @@ use crate::bridge::ToolDescriptor;
 /// The output documents the global `skarn` object plus a typed `skarn.server()`
 /// surface per downstream server, with each tool's description carried through
 /// as a JSDoc comment.
+pub fn generate_dts(tools: &[ToolDescriptor]) -> String {

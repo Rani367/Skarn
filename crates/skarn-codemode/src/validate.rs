@@ -20,3 +20,6 @@
 
 use std::path::Path;
 
+use oxc_allocator::Allocator;
+use oxc_ast::ast::*;
+use oxc_ast_visit::Visit;

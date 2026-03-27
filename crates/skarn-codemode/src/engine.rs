@@ -25,3 +25,7 @@ pub struct ExecLimits {
     /// Maximum size of the returned result JSON (bytes) before it is rejected.
     pub max_output_bytes: usize,
 }
+
+impl Default for ExecLimits {
+    fn default() -> Self {
+        Self {

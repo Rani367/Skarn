@@ -8,3 +8,6 @@
 //! paths, and connection state never enter the sandbox.
 
 use async_trait::async_trait;
+use serde::{Deserialize, Serialize};
+
+/// A single tool exposed by a downstream server, as the isolate sees it.
