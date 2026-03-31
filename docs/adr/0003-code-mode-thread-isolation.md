@@ -10,3 +10,4 @@ multi-threaded Tokio runtime that created them; `rmcp`'s child-process `Drop`
 calls `tokio::spawn`, which panics ("no reactor running") if it runs outside a
 runtime context.
 
+An early design ran everything single-threaded using `rmcp`'s `local` feature

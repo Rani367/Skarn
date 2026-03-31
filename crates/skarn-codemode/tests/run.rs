@@ -21,3 +21,4 @@ fn math_bridge() -> Arc<dyn ToolBridge> {
                 let n = v["n"].as_i64().unwrap_or(0);
                 Ok(serde_json::json!(n * 2).to_string())
             }),
+    )

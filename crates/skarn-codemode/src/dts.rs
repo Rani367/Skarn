@@ -15,3 +15,4 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
     // Group tools by server, preserving first-seen order.
     let mut servers: Vec<String> = Vec::new();
     for t in tools {
+        if !servers.contains(&t.server) {

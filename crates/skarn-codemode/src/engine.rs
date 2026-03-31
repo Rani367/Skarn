@@ -47,3 +47,4 @@ impl ExecLimits {
     fn sanitized(self) -> Self {
         Self {
             memory_bytes: self.memory_bytes.max(1024 * 1024),
+            max_stack_bytes: self.max_stack_bytes.max(64 * 1024),

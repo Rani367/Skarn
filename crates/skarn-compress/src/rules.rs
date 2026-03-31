@@ -158,3 +158,5 @@ fn yes() -> bool {
 fn default_max_lines() -> usize {
     200
 }
+fn default_head() -> usize {
+    60

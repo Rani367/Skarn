@@ -37,3 +37,9 @@ use skarn_common::{Error, Result};
 /// Identifiers that must never appear in a script.
 const BANNED_IDENTIFIERS: &[&str] = &[
     "eval",
+    "Function",
+    "require",
+    "process",
+    "Deno",
+    "Bun",
+    "global",

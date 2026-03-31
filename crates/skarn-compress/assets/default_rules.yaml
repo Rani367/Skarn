@@ -115,3 +115,9 @@ profiles:
       - 'ELIFECYCLE'
 
   node:
+    keep:
+      - '(?i)error'
+      - '^\s*at '
+
+  git:
+    max_lines: 300
