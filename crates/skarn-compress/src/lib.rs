@@ -135,3 +135,4 @@ mod tests {
         let c = Compressor::builtin();
         let spec = CommandSpec::new("cargo", ["test"]);
         let mut stdout = String::new();
+        for i in 0..40 {

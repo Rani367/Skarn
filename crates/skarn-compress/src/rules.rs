@@ -160,3 +160,4 @@ fn default_max_lines() -> usize {
 }
 fn default_head() -> usize {
     60
+}

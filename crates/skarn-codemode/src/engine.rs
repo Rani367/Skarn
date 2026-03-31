@@ -48,3 +48,7 @@ impl ExecLimits {
         Self {
             memory_bytes: self.memory_bytes.max(1024 * 1024),
             max_stack_bytes: self.max_stack_bytes.max(64 * 1024),
+            wall_clock: self.wall_clock.max(Duration::from_millis(100)),
+            max_tool_calls: self.max_tool_calls,
+            max_output_bytes: self.max_output_bytes.max(1024),
+        }

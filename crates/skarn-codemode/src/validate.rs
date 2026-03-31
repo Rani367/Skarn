@@ -43,3 +43,8 @@ const BANNED_IDENTIFIERS: &[&str] = &[
     "Deno",
     "Bun",
     "global",
+    "globalThis",
+    "self",
+    "window",
+    "WebAssembly",
+    "importScripts",

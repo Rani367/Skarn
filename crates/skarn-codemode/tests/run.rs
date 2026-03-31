@@ -22,3 +22,5 @@ fn math_bridge() -> Arc<dyn ToolBridge> {
                 Ok(serde_json::json!(n * 2).to_string())
             }),
     )
+}
+

@@ -16,3 +16,5 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
     let mut servers: Vec<String> = Vec::new();
     for t in tools {
         if !servers.contains(&t.server) {
+            servers.push(t.server.clone());
+        }

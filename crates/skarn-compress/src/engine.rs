@@ -237,3 +237,8 @@ mod tests {
         // The middle line matches both drop and keep; keep wins.
         assert!(out.text.contains("noise with error"));
         assert!(out.text.contains("real content"));
+        assert!(!out.text.contains("noise line"));
+    }
+
+    #[test]
+    fn empty_input_yields_empty_output() {

@@ -16,3 +16,4 @@ pub struct ToolDescriptor {
     /// The downstream server alias the tool belongs to.
     pub server: String,
     /// The (un-namespaced) tool name on that server.
+    pub name: String,
