@@ -31,3 +31,4 @@ async fn runs_a_pure_script() {
     let out = engine
         .run("const x = 20; return x + 22;", bridge)
         .await
+        .unwrap();

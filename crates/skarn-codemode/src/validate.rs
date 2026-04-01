@@ -58,3 +58,7 @@ const BANNED_IDENTIFIERS: &[&str] = &[
     "Reflect",
     "Atomics",
     "SharedArrayBuffer",
+];
+
+/// Member-access property names that must never appear (reflection escapes).
+const BANNED_PROPERTIES: &[&str] = &["constructor", "__proto__", "prototype"];

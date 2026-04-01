@@ -164,3 +164,5 @@ fn default_head() -> usize {
 fn default_tail() -> usize {
     40
 }
+fn default_max_rescued() -> usize {
+    40

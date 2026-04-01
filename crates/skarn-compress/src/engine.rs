@@ -254,3 +254,8 @@ mod tests {
         let p = profile(Rules::default());
         // Lone continuation bytes are replaced with U+FFFD rather than panicking.
         let out = p.run(b"ok line\n\xff\xfe bad bytes\nmore\n");
+        assert!(out.text.contains("ok line"));
+        assert!(out.text.contains("more"));
+    }
+
+    #[test]

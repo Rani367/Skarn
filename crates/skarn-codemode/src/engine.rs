@@ -58,3 +58,7 @@ impl ExecLimits {
 /// The result of running a Code Mode script.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Outcome {
+    /// Whether the script completed without throwing.
+    pub ok: bool,
+    /// The value the script returned (JSON `null` if it returned nothing).
+    pub value: serde_json::Value,

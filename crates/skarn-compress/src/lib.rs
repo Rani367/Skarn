@@ -145,3 +145,5 @@ mod tests {
         let stderr = b"error[E0277]: the trait bound is not satisfied\n  --> src/lib.rs:10:5\n";
 
         let out = c.compress(&spec, stdout.as_bytes(), stderr);
+        assert!(out.text.contains("error[E0277]"), "errors survive");
+        assert!(!out.text.contains("Compiling"), "compile spam dropped");
