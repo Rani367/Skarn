@@ -244,3 +244,10 @@ mod tests {
     fn empty_input_yields_empty_output() {
         let p = profile(Rules::default());
         let out = p.run(b"");
+        assert_eq!(out.text, "");
+        assert_eq!(out.original_lines, 0);
+        assert_eq!(out.kept_lines, 0);
+    }
+
+    #[test]
+    fn invalid_utf8_does_not_panic() {

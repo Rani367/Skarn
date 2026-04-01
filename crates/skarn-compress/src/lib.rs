@@ -139,3 +139,6 @@ mod tests {
             stdout.push_str(&format!("   Compiling crate{i} v0.1.0\n"));
         }
         for i in 0..200 {
+            stdout.push_str(&format!("test module::case{i} ... ok\n"));
+        }
+        stdout.push_str("test result: ok. 200 passed; 0 failed\n");

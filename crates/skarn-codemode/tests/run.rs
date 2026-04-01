@@ -25,3 +25,6 @@ fn math_bridge() -> Arc<dyn ToolBridge> {
 }
 
 #[tokio::test(flavor = "current_thread")]
+async fn runs_a_pure_script() {
+    let engine = Engine::with_defaults();
+    let bridge: Arc<dyn ToolBridge> = Arc::new(InProcessBridge::new());

@@ -21,3 +21,5 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
     }
 
     for server in &servers {
+        let iface = server_interface_name(server);
+        out.push_str(&format!(

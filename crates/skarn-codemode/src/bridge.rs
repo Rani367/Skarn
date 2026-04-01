@@ -20,3 +20,5 @@ pub struct ToolDescriptor {
     /// Human-readable description (often used as a JSDoc comment in `.d.ts`).
     #[serde(default)]
     pub description: String,
+    /// The tool's JSON Schema for its arguments.
+    #[serde(default)]

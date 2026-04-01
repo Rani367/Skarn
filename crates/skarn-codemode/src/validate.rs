@@ -51,3 +51,6 @@ const BANNED_IDENTIFIERS: &[&str] = &[
     "XMLHttpRequest",
     "module",
     "__dirname",
+    "__filename",
+    // Reflection / shared-memory primitives: `Reflect.get(x, "constructor")` is a
+    // string-keyed hop around the property ban, and Atomics/SharedArrayBuffer are

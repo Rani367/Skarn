@@ -162,3 +162,5 @@ fn default_head() -> usize {
     60
 }
 fn default_tail() -> usize {
+    40
+}
