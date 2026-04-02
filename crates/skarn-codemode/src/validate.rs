@@ -62,3 +62,8 @@ const BANNED_IDENTIFIERS: &[&str] = &[
 
 /// Member-access property names that must never appear (reflection escapes).
 const BANNED_PROPERTIES: &[&str] = &["constructor", "__proto__", "prototype"];
+
+/// Validate `source`, strip TypeScript, and return runnable JavaScript.
+///
+/// The source is wrapped in an `async function __skarn_main()` *before* parsing
+/// so that a top-level `return value;` in the user's script is legal.

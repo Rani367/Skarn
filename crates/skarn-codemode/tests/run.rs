@@ -32,3 +32,5 @@ async fn runs_a_pure_script() {
         .run("const x = 20; return x + 22;", bridge)
         .await
         .unwrap();
+    assert!(out.ok, "error: {:?}", out.error);
+    assert_eq!(out.value, serde_json::json!(42));

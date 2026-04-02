@@ -259,3 +259,6 @@ mod tests {
     }
 
     #[test]
+    fn no_hidden_banner_when_nothing_is_elided() {
+        // 12 lines > max_lines(10), but every middle line is important and fits
+        // under the rescue cap, so nothing is actually hidden.

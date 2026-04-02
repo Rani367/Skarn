@@ -23,3 +23,4 @@ pub struct ToolDescriptor {
     /// The tool's JSON Schema for its arguments.
     #[serde(default)]
     pub input_schema: serde_json::Value,
+}

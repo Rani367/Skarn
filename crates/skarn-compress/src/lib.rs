@@ -147,3 +147,5 @@ mod tests {
         let out = c.compress(&spec, stdout.as_bytes(), stderr);
         assert!(out.text.contains("error[E0277]"), "errors survive");
         assert!(!out.text.contains("Compiling"), "compile spam dropped");
+        assert!(!out.text.contains("... ok"), "passing tests dropped");
+        // Should be a large reduction.

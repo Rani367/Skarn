@@ -127,3 +127,4 @@ profiles:
       - '^@@'
       - '^[+-]'
       - '^index '
+      - '^(modified|new file|deleted|renamed):'

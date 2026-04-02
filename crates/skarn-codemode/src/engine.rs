@@ -62,3 +62,5 @@ pub struct Outcome {
     pub ok: bool,
     /// The value the script returned (JSON `null` if it returned nothing).
     pub value: serde_json::Value,
+    /// The error message + stack if the script threw.
+    pub error: Option<String>,

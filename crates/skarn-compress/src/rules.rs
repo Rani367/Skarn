@@ -166,3 +166,6 @@ fn default_tail() -> usize {
 }
 fn default_max_rescued() -> usize {
     40
+}
+
+/// The built-in rules. Authored to hit the 70–90% reductions documented in the

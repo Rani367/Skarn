@@ -25,3 +25,6 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
         out.push_str(&format!(
             "\n/** Tools exposed by the `{server}` server. */\n"
         ));
+        out.push_str(&format!("interface {iface} {{\n"));
+        for t in tools.iter().filter(|t| &t.server == server) {
+            if !t.description.is_empty() {
