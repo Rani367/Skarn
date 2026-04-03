@@ -64,3 +64,4 @@ pub struct Outcome {
     pub value: serde_json::Value,
     /// The error message + stack if the script threw.
     pub error: Option<String>,
+    /// Lines emitted via `skarn.log(...)`.

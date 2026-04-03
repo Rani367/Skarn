@@ -128,3 +128,8 @@ profiles:
       - '^[+-]'
       - '^index '
       - '^(modified|new file|deleted|renamed):'
+
+  ls:
+    max_lines: 60
+    head_lines: 30
+    tail_lines: 15

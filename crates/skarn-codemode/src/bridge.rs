@@ -24,3 +24,4 @@ pub struct ToolDescriptor {
     #[serde(default)]
     pub input_schema: serde_json::Value,
 }
+

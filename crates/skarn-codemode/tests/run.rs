@@ -34,3 +34,5 @@ async fn runs_a_pure_script() {
         .unwrap();
     assert!(out.ok, "error: {:?}", out.error);
     assert_eq!(out.value, serde_json::json!(42));
+    assert_eq!(out.tool_calls, 0);
+}

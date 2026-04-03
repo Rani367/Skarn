@@ -149,3 +149,4 @@ mod tests {
         assert!(!out.text.contains("Compiling"), "compile spam dropped");
         assert!(!out.text.contains("... ok"), "passing tests dropped");
         // Should be a large reduction.
+        assert!(

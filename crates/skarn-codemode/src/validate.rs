@@ -67,3 +67,6 @@ const BANNED_PROPERTIES: &[&str] = &["constructor", "__proto__", "prototype"];
 ///
 /// The source is wrapped in an `async function __skarn_main()` *before* parsing
 /// so that a top-level `return value;` in the user's script is legal.
+pub fn validate_and_transpile(source: &str) -> Result<String> {
+    let wrapped = format!("async function __skarn_main() {{\n{source}\n}}");
+
