@@ -271,3 +271,9 @@ mod tests {
             ..Rules::default()
         };
         let mut input = String::new();
+        for i in 0..12 {
+            input.push_str(&format!("KEEP line {i}\n"));
+        }
+        let p = profile(rules);
+        let out = p.run(input.as_bytes());
+        assert!(

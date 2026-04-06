@@ -137,3 +137,4 @@ profiles:
 
   tree:
     max_lines: 80
+    head_lines: 40

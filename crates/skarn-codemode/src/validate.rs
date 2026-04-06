@@ -78,3 +78,8 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
         let msg = parsed
             .errors
             .iter()
+            .map(|d| d.to_string())
+            .collect::<Vec<_>>()
+            .join("; ");
+        return Err(Error::CodeModeRejected(format!(
+            "syntax error: {}",

@@ -73,3 +73,8 @@ pub struct Outcome {
 /// The Code Mode engine. Cheap to construct; one is reused per worker.
 pub struct Engine {
     limits: ExecLimits,
+}
+
+impl Engine {
+    pub fn new(limits: ExecLimits) -> Self {
+        Self { limits }

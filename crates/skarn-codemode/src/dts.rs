@@ -32,3 +32,4 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
             }
             out.push_str(&format!(
                 "  {}(args?: Record<string, unknown>): Promise<unknown>;\n",
+                js_ident(&t.name)

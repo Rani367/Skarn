@@ -156,3 +156,5 @@ mod tests {
         );
     }
 
+    #[test]
+    fn unknown_tool_uses_default_profile() {
