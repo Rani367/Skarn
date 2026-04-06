@@ -186,3 +186,5 @@ mod tests {
 
     #[test]
     fn resolve_layers_patch_over_default() {
+        let rs = RuleSet::builtin();
+        let cargo = rs.resolve("cargo");

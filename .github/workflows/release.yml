@@ -48,3 +48,4 @@ jobs:
         run: |
           BIN=skarn
           DIR="skarn-${{ matrix.target }}"
+          mkdir "$DIR"

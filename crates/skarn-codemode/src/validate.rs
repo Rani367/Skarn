@@ -93,3 +93,5 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
 
     // Security walk.
     let mut validator = Validator {
+        violations: Vec::new(),
+    };

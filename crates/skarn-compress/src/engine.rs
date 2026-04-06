@@ -290,3 +290,7 @@ mod tests {
             max_lines: 10,
             head_lines: 2,
             tail_lines: 2,
+            keep: vec!["BOOM".to_string()],
+            ..Rules::default()
+        };
+        let mut input = String::new();

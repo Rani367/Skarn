@@ -161,3 +161,5 @@ mod tests {
         let c = Compressor::builtin();
         let spec = CommandSpec::new("weirdtool", ["--x"]);
         let out = c.compress(&spec, b"hello\nworld\n", b"");
+        assert_eq!(out.profile, "default");
+        assert_eq!(out.text, "hello\nworld");

@@ -35,3 +35,5 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
                 js_ident(&t.name)
             ));
         }
+        out.push_str("}\n");
+    }

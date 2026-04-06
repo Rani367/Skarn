@@ -86,3 +86,8 @@ impl Engine {
 
     /// Validate, transpile, and run `source` against `bridge`.
     pub async fn run(&self, source: &str, bridge: Arc<dyn ToolBridge>) -> Result<Outcome> {
+        let prepared = crate::validate::validate_and_transpile(source)?;
+        self.run_prepared(&prepared, bridge).await
+    }
+
+    /// Run already-validated JavaScript (the output of

@@ -33,3 +33,4 @@ pub struct ToolDescriptor {
 ///
 /// The trait is `?Send`: the QuickJS isolate is single-threaded, and the
 /// production bridge wraps a (single-threaded) local MCP client, so requiring
+/// `Send` would be both unnecessary and impossible.
