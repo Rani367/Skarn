@@ -163,3 +163,4 @@ mod tests {
         let out = c.compress(&spec, b"hello\nworld\n", b"");
         assert_eq!(out.profile, "default");
         assert_eq!(out.text, "hello\nworld");
+    }

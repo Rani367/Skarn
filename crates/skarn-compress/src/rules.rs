@@ -188,3 +188,7 @@ mod tests {
     fn resolve_layers_patch_over_default() {
         let rs = RuleSet::builtin();
         let cargo = rs.resolve("cargo");
+        // cargo adds drop patterns on top of the (possibly empty) default.
+        assert!(!cargo.drop.is_empty());
+        assert!(cargo.keep.iter().any(|k| k.contains("error")));
+    }

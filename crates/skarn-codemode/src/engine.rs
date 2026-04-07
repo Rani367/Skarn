@@ -91,3 +91,6 @@ impl Engine {
     }
 
     /// Run already-validated JavaScript (the output of
+    /// [`crate::validate::validate_and_transpile`]).
+    pub async fn run_prepared(
+        &self,

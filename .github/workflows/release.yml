@@ -49,3 +49,4 @@ jobs:
           BIN=skarn
           DIR="skarn-${{ matrix.target }}"
           mkdir "$DIR"
+          if [ "${{ runner.os }}" = "Windows" ]; then

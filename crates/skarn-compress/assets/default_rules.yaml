@@ -141,3 +141,5 @@ profiles:
     tail_lines: 20
     keep: []
 
+  grep:
+    max_lines: 100

@@ -95,3 +95,5 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
     let mut validator = Validator {
         violations: Vec::new(),
     };
+    validator.visit_program(&parsed.program);
+    if !validator.violations.is_empty() {

@@ -294,3 +294,7 @@ mod tests {
             ..Rules::default()
         };
         let mut input = String::new();
+        for i in 0..50 {
+            if i == 25 {
+                input.push_str("BOOM an error here\n");
+            } else {

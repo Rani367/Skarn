@@ -51,3 +51,4 @@ async fn calls_tools_and_aggregates_locally() {
     assert_eq!(
         out.value,
         serde_json::json!({ "a": 5, "b": 10, "total": 15 })
+    );
