@@ -52,3 +52,6 @@ async fn calls_tools_and_aggregates_locally() {
         out.value,
         serde_json::json!({ "a": 5, "b": 10, "total": 15 })
     );
+    assert_eq!(out.tool_calls, 2, "two downstream calls were made");
+    assert!(out.logs.iter().any(|l| l.contains("intermediate 5 10")));
+}

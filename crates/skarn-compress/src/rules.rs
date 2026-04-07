@@ -192,3 +192,7 @@ mod tests {
         assert!(!cargo.drop.is_empty());
         assert!(cargo.keep.iter().any(|k| k.contains("error")));
     }
+
+    #[test]
+    fn unknown_tool_falls_back_to_default() {
+        let rs = RuleSet::builtin();

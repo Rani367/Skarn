@@ -6,3 +6,4 @@
 //! 1. [`validate_and_transpile`] parses the script with `oxc`, rejects anything
 //!    that could escape the isolate (`import`/`eval`/`process`/`.constructor`…),
 //!    and strips TypeScript types.
+//! 2. [`Engine::run`] executes the result inside a QuickJS isolate (via

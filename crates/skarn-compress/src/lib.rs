@@ -164,3 +164,5 @@ mod tests {
         assert_eq!(out.profile, "default");
         assert_eq!(out.text, "hello\nworld");
     }
+
+    #[test]

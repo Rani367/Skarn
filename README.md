@@ -80,3 +80,4 @@ Downstream servers can be local (`transport = "stdio"`) or remote
 
 ## What you get
 
+### 1. Code Mode — give the agent an API, not a schema dump

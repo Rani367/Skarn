@@ -143,3 +143,5 @@ profiles:
 
   grep:
     max_lines: 100
+    head_lines: 50
+    tail_lines: 30

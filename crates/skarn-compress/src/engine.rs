@@ -298,3 +298,5 @@ mod tests {
             if i == 25 {
                 input.push_str("BOOM an error here\n");
             } else {
+                input.push_str(&format!("line {i}\n"));
+            }

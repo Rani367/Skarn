@@ -94,3 +94,7 @@ impl Engine {
     /// [`crate::validate::validate_and_transpile`]).
     pub async fn run_prepared(
         &self,
+        prepared_js: &str,
+        bridge: Arc<dyn ToolBridge>,
+    ) -> Result<Outcome> {
+        let limits = self.limits.sanitized();

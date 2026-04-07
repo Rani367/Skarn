@@ -97,3 +97,5 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
     };
     validator.visit_program(&parsed.program);
     if !validator.violations.is_empty() {
+        // De-duplicate while preserving order.
+        let mut seen = std::collections::HashSet::new();
