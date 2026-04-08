@@ -35,3 +35,5 @@ pub struct ToolDescriptor {
 /// production bridge wraps a (single-threaded) local MCP client, so requiring
 /// `Send` would be both unnecessary and impossible.
 #[async_trait(?Send)]
+pub trait ToolBridge {
+    /// Call `tool` on `server` with `args_json` (a JSON object). Returns the

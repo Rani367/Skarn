@@ -42,3 +42,5 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
     for server in &servers {
         out.push_str(&format!(
             "  {}: {};\n",
+            json_key(server),
+            server_interface_name(server)

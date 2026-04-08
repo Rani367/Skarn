@@ -170,3 +170,5 @@ mod tests {
         let c = Compressor::builtin();
         assert!(
             c.warnings.is_empty(),
+            "builtin rules compile cleanly: {:?}",
+            c.warnings

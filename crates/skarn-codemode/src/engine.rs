@@ -102,3 +102,9 @@ impl Engine {
 
         let runtime = AsyncRuntime::new().map_err(|e| Error::CodeMode(e.to_string()))?;
         runtime.set_memory_limit(limits.memory_bytes).await;
+        runtime.set_max_stack_size(limits.max_stack_bytes).await;
+        let deadline = Instant::now() + limits.wall_clock;
+        runtime
+            .set_interrupt_handler(Some(Box::new(move || Instant::now() >= deadline)))
+            .await;
+

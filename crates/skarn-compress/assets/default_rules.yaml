@@ -147,3 +147,6 @@ profiles:
     tail_lines: 30
     keep: []
 
+  rg:
+    max_lines: 100
+    head_lines: 50

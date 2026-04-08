@@ -103,3 +103,8 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
             .violations
             .into_iter()
             .filter(|v| seen.insert(v.clone()))
+            .collect();
+        return Err(Error::CodeModeRejected(unique.join("; ")));
+    }
+
+    // Strip TypeScript types -> JavaScript.

@@ -302,3 +302,6 @@ mod tests {
             }
         }
         let p = profile(rules);
+        let out = p.run(input.as_bytes());
+        assert!(out.text.contains("lines hidden"));
+        assert!(
