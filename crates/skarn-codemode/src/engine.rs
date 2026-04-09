@@ -118,3 +118,9 @@ impl Engine {
         let bridge_for_js = bridge.clone();
         let counter_for_js = counter.clone();
         let max_calls = limits.max_tool_calls;
+        let setup: std::result::Result<(), String> = async_with!(context => |ctx| {
+            install_host(&ctx, bridge_for_js, counter_for_js, max_calls)
+                .map_err(|e| e.to_string())?;
+            ctx.eval::<(), _>(setup_source)
+                .catch(&ctx)
+                .map_err(|e| e.to_string())?;

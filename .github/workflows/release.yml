@@ -50,3 +50,4 @@ jobs:
           DIR="skarn-${{ matrix.target }}"
           mkdir "$DIR"
           if [ "${{ runner.os }}" = "Windows" ]; then
+            cp "target/${{ matrix.target }}/release/$BIN.exe" "$DIR/"

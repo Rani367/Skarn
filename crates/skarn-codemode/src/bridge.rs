@@ -40,3 +40,5 @@ pub trait ToolBridge {
     /// tool result as a JSON string, or an error message.
     async fn call_tool(
         &self,
+        server: &str,
+        tool: &str,

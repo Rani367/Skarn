@@ -47,3 +47,4 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
         ));
     }
     out.push_str("}\n");
+

@@ -309,3 +309,4 @@ mod tests {
             "important line rescued"
         );
         assert!(out.text.lines().count() < 50);
+    }

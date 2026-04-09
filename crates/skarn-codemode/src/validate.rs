@@ -118,3 +118,9 @@ pub fn validate_and_transpile(source: &str) -> Result<String> {
         .build_with_scoping(scoping, &mut program);
     if !result.errors.is_empty() {
         let msg = result
+            .errors
+            .iter()
+            .map(|d| d.to_string())
+            .collect::<Vec<_>>()
+            .join("; ");
+        return Err(Error::CodeModeRejected(format!("transform error: {msg}")));

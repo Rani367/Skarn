@@ -61,3 +61,6 @@ async fn parallel_helper_runs_calls() {
     let engine = Engine::with_defaults();
     let src = r#"
         const results = await skarn.parallel(
+            [1, 2, 3, 4].map((n) => () => skarn.server("math").double({ n })),
+            { concurrency: 2 }
+        );
