@@ -146,3 +146,9 @@ impl Validator {
 fn static_string_key<'b, 'a>(expr: &'b Expression<'a>) -> Option<&'b str> {
     match expr {
         Expression::StringLiteral(lit) => Some(lit.value.as_str()),
+        Expression::TemplateLiteral(tpl) if tpl.expressions.is_empty() && tpl.quasis.len() == 1 => {
+            tpl.quasis[0].value.cooked.as_ref().map(|c| c.as_str())
+        }
+        _ => None,
+    }
+}

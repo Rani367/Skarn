@@ -80,3 +80,6 @@ async fn thrown_errors_are_reported_not_panicked() {
         .await
         .unwrap();
     assert!(!out.ok);
+    assert!(out.error.unwrap().contains("boom"));
+}
+

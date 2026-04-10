@@ -85,3 +85,4 @@ Downstream servers can be local (`transport = "stdio"`) or remote
 Instead of injecting every tool's schema, the gateway exposes three meta-tools. The model calls `search()` to find tools, then writes a short script and hands it to `execute()`:
 
 ```ts
+// The model writes this; Skarn runs it in a hermetic, OS-sandboxed isolate.

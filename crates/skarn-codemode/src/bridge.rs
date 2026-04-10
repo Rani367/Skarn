@@ -49,3 +49,8 @@ pub trait ToolBridge {
     /// string, or an error message.
     async fn read_resource(&self, server: &str, uri: &str) -> std::result::Result<String, String> {
         let _ = (server, uri);
+        Err("readResource is not supported by this bridge".to_string())
+    }
+
+    /// List all available tools as a JSON array of [`ToolDescriptor`].
+    async fn list_tools(&self) -> std::result::Result<String, String>;

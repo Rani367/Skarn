@@ -57,3 +57,5 @@ fn server_interface_name(server: &str) -> String {
     for c in server.chars() {
         if c.is_ascii_alphanumeric() {
             s.push(c);
+        } else {
+            s.push('_');

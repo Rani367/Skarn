@@ -147,3 +147,8 @@ impl Engine {
         })?;
 
         if raw.len() > limits.max_output_bytes {
+            return Err(Error::CodeMode(format!(
+                "script output exceeded the {} byte limit",
+                limits.max_output_bytes
+            )));
+        }
