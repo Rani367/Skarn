@@ -144,3 +144,5 @@ impl Validator {
 /// string literal (`"x"`) or a no-substitution template (`` `x` ``). Returns
 /// `None` for dynamic keys, which cannot be reasoned about statically.
 fn static_string_key<'b, 'a>(expr: &'b Expression<'a>) -> Option<&'b str> {
+    match expr {
+        Expression::StringLiteral(lit) => Some(lit.value.as_str()),

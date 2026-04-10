@@ -12,3 +12,4 @@ A core product promise is a **small, single, cross-platform binary with no heavy
 toolchain** — so embedding cost matters as much as raw throughput.
 
 ## Decision
+

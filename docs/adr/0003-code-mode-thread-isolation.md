@@ -17,3 +17,4 @@ QuickJS executor would drive host futures (and later drop MCP clients) in a
 context detached from the Tokio reactor.
 
 ## Decision
+

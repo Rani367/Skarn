@@ -138,3 +138,12 @@ impl Engine {
 
         // Phase 3: read the JSON result the runner stored on the global object.
         let result_json: Option<String> = async_with!(context => |ctx| {
+            ctx.globals().get::<_, String>("__skarn_result").ok()
+        })
+        .await;
+
+        let raw = result_json.ok_or_else(|| {
+            Error::CodeMode("script did not produce a result (likely timed out)".to_string())
+        })?;
+
+        if raw.len() > limits.max_output_bytes {

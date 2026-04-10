@@ -54,3 +54,6 @@ pub fn generate_dts(tools: &[ToolDescriptor]) -> String {
 
 fn server_interface_name(server: &str) -> String {
     let mut s = String::from("Server_");
+    for c in server.chars() {
+        if c.is_ascii_alphanumeric() {
+            s.push(c);

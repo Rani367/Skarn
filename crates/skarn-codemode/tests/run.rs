@@ -74,3 +74,9 @@ async fn parallel_helper_runs_calls() {
 
 #[tokio::test(flavor = "current_thread")]
 async fn thrown_errors_are_reported_not_panicked() {
+    let engine = Engine::with_defaults();
+    let out = engine
+        .run("throw new Error('boom');", Arc::new(InProcessBridge::new()))
+        .await
+        .unwrap();
+    assert!(!out.ok);
