@@ -59,3 +59,8 @@ fn server_interface_name(server: &str) -> String {
             s.push(c);
         } else {
             s.push('_');
+        }
+    }
+    s
+}
+

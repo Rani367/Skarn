@@ -53,3 +53,4 @@ jobs:
             cp "target/${{ matrix.target }}/release/$BIN.exe" "$DIR/"
           else
             cp "target/${{ matrix.target }}/release/$BIN" "$DIR/"
+          fi

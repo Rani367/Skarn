@@ -152,3 +152,9 @@ fn static_string_key<'b, 'a>(expr: &'b Expression<'a>) -> Option<&'b str> {
         _ => None,
     }
 }
+
+impl<'a> Visit<'a> for Validator {
+    fn visit_identifier_reference(&mut self, it: &IdentifierReference<'a>) {
+        if BANNED_IDENTIFIERS.contains(&it.name.as_str()) {
+            self.flag(format!("use of forbidden identifier `{}`", it.name));
+        }

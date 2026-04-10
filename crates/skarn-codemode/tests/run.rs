@@ -83,3 +83,7 @@ async fn thrown_errors_are_reported_not_panicked() {
     assert!(out.error.unwrap().contains("boom"));
 }
 
+#[tokio::test(flavor = "current_thread")]
+async fn tool_errors_surface_in_the_script() {
+    let engine = Engine::with_defaults();
+    let src = r#"

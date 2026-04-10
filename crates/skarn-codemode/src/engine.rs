@@ -152,3 +152,8 @@ impl Engine {
                 limits.max_output_bytes
             )));
         }
+
+        let parsed: RawOutcome = serde_json::from_str(&raw)
+            .map_err(|e| Error::CodeMode(format!("could not parse script result: {e}")))?;
+
+        Ok(Outcome {

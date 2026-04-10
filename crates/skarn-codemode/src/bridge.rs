@@ -54,3 +54,6 @@ pub trait ToolBridge {
 
     /// List all available tools as a JSON array of [`ToolDescriptor`].
     async fn list_tools(&self) -> std::result::Result<String, String>;
+}
+
+/// A trivial in-process bridge for tests and demos: it dispatches to a set of
