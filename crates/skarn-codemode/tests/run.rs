@@ -92,3 +92,8 @@ async fn tool_errors_surface_in_the_script() {
             return "should not reach";
         } catch (e) {
             return "caught: " + e.message;
+        }
+    "#;
+    let out = engine.run(src, math_bridge()).await.unwrap();
+    assert!(out.ok);
+    assert!(out.value.as_str().unwrap().contains("caught"));

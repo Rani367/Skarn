@@ -169,3 +169,9 @@ impl<'a> Visit<'a> for Validator {
             ));
         }
         walk_static_member_expression(self, it);
+    }
+
+    fn visit_computed_member_expression(&mut self, it: &ComputedMemberExpression<'a>) {
+        // Bracket access with a statically-known string key (`x["constructor"]`
+        // or `` x[`constructor`] ``) is the same reflection hop as dot access, so
+        // it must be caught here too.

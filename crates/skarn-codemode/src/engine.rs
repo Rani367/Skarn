@@ -171,3 +171,7 @@ struct RawOutcome {
     ok: bool,
     #[serde(default)]
     value: serde_json::Value,
+    #[serde(default)]
+    error: Option<String>,
+    #[serde(default)]
+    logs: Vec<String>,

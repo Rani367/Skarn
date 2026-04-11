@@ -69,3 +69,7 @@ fn js_ident(name: &str) -> String {
     let valid = !name.is_empty()
         && name.chars().enumerate().all(|(i, c)| {
             c == '_' || c == '$' || c.is_ascii_alphabetic() || (i > 0 && c.is_ascii_digit())
+        });
+    if valid {
+        name.to_string()
+    } else {
