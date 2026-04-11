@@ -87,3 +87,5 @@ async fn thrown_errors_are_reported_not_panicked() {
 async fn tool_errors_surface_in_the_script() {
     let engine = Engine::with_defaults();
     let src = r#"
+        try {
+            await skarn.callTool("math", "nonexistent", {});

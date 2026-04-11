@@ -157,3 +157,11 @@ impl Engine {
             .map_err(|e| Error::CodeMode(format!("could not parse script result: {e}")))?;
 
         Ok(Outcome {
+            ok: parsed.ok,
+            value: parsed.value,
+            error: parsed.error,
+            logs: parsed.logs,
+            tool_calls: counter.load(Ordering::SeqCst),
+        })
+    }
+}

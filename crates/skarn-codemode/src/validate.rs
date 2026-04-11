@@ -158,3 +158,6 @@ impl<'a> Visit<'a> for Validator {
         if BANNED_IDENTIFIERS.contains(&it.name.as_str()) {
             self.flag(format!("use of forbidden identifier `{}`", it.name));
         }
+        walk_identifier_reference(self, it);
+    }
+

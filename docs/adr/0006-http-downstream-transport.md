@@ -13,3 +13,4 @@ internally. There is no separate "SSE client" transport in `rmcp` 1.8 — the
 Streamable HTTP transport is the one client surface.
 
 ## Decision
+

@@ -64,3 +64,5 @@ fn server_interface_name(server: &str) -> String {
     s
 }
 
+fn js_ident(name: &str) -> String {
+    // If the tool name is a valid JS identifier, emit it bare; otherwise quote.

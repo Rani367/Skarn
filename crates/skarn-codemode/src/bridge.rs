@@ -57,3 +57,5 @@ pub trait ToolBridge {
 }
 
 /// A trivial in-process bridge for tests and demos: it dispatches to a set of
+/// registered closures keyed by `"server/tool"`.
+pub struct InProcessBridge {
