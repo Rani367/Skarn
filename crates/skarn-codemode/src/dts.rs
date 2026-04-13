@@ -77,3 +77,8 @@ fn js_ident(name: &str) -> String {
     }
 }
 
+fn json_key(name: &str) -> String {
+    if js_ident(name) == name {
+        name.to_string()
+    } else {
+        format!("\"{}\"", name.replace('"', "\\\""))

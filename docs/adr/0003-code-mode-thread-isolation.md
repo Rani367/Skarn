@@ -20,3 +20,4 @@ context detached from the Tokio reactor.
 
 Run the gateway on a normal **multi-threaded** Tokio runtime (`rmcp` without the
 `local` feature, so MCP types are `Send`/`Sync`). Execute each Code Mode script
+on a **dedicated thread** with its own current-thread runtime (via

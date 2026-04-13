@@ -185,3 +185,10 @@ impl<'a> Visit<'a> for Validator {
 
     fn visit_import_declaration(&mut self, _it: &ImportDeclaration<'a>) {
         self.flag("`import` declarations are not allowed in Code Mode scripts");
+    }
+
+    fn visit_import_expression(&mut self, it: &ImportExpression<'a>) {
+        self.flag("dynamic `import()` is not allowed");
+        walk_import_expression(self, it);
+    }
+

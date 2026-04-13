@@ -107,3 +107,5 @@ async fn infinite_loops_are_interrupted() {
     };
     let engine = Engine::new(limits);
     let result = engine
+        .run("while (true) {}", Arc::new(InProcessBridge::new()))
+        .await;

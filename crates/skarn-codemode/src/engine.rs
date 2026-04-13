@@ -183,3 +183,10 @@ fn install_host(
     bridge: Arc<dyn ToolBridge>,
     counter: Arc<AtomicUsize>,
     max_calls: usize,
+) -> rquickjs::Result<()> {
+    let globals = ctx.globals();
+
+    {
+        let bridge = bridge.clone();
+        let counter = counter.clone();
+        globals.set(

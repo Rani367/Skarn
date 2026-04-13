@@ -68,3 +68,4 @@ pub struct InProcessBridge {
 }
 
 impl Default for InProcessBridge {
+    fn default() -> Self {
