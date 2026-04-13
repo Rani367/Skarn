@@ -76,3 +76,4 @@ fn js_ident(name: &str) -> String {
         format!("[\"{}\"]", name.replace('"', "\\\""))
     }
 }
+

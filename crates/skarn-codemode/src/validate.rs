@@ -179,3 +179,9 @@ impl<'a> Visit<'a> for Validator {
             && BANNED_PROPERTIES.contains(&key)
         {
             self.flag(format!("access to forbidden property `[{key:?}]`"));
+        }
+        walk_computed_member_expression(self, it);
+    }
+
+    fn visit_import_declaration(&mut self, _it: &ImportDeclaration<'a>) {
+        self.flag("`import` declarations are not allowed in Code Mode scripts");

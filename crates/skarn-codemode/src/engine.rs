@@ -179,3 +179,7 @@ struct RawOutcome {
 
 /// Install the three host functions the `skarn` shim depends on.
 fn install_host(
+    ctx: &rquickjs::Ctx<'_>,
+    bridge: Arc<dyn ToolBridge>,
+    counter: Arc<AtomicUsize>,
+    max_calls: usize,

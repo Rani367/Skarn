@@ -65,3 +65,6 @@ pub struct InProcessBridge {
         String,
         Box<dyn Fn(&str) -> std::result::Result<String, String> + Send + Sync>,
     >,
+}
+
+impl Default for InProcessBridge {

@@ -12,3 +12,5 @@
 //! 3. The script returns a small value (and `skarn.log` lines); everything else
 //!    stays in the sandbox.
 //!
+//! In production the isolate runs inside an OS-native sandbox (see
+//! `skarn-sandbox`) for defense in depth, and the [`ToolBridge`] forwards calls

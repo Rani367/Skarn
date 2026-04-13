@@ -101,3 +101,9 @@ async fn tool_errors_surface_in_the_script() {
 
 #[tokio::test(flavor = "current_thread")]
 async fn infinite_loops_are_interrupted() {
+    let limits = ExecLimits {
+        wall_clock: Duration::from_millis(300),
+        ..ExecLimits::default()
+    };
+    let engine = Engine::new(limits);
+    let result = engine

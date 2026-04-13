@@ -15,3 +15,4 @@ can deadlock on the allocator lock held by another thread at fork time.
 
 ## Decision
 
+- **Unix (`skarn run`):** spawn the target with `std::process::Command` and a
