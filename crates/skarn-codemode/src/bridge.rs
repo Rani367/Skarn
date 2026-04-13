@@ -60,3 +60,8 @@ pub trait ToolBridge {
 /// registered closures keyed by `"server/tool"`.
 pub struct InProcessBridge {
     tools: Vec<ToolDescriptor>,
+    #[allow(clippy::type_complexity)]
+    handlers: std::collections::HashMap<
+        String,
+        Box<dyn Fn(&str) -> std::result::Result<String, String> + Send + Sync>,
+    >,

@@ -175,3 +175,7 @@ struct RawOutcome {
     error: Option<String>,
     #[serde(default)]
     logs: Vec<String>,
+}
+
+/// Install the three host functions the `skarn` shim depends on.
+fn install_host(

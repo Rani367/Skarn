@@ -73,3 +73,6 @@ fn js_ident(name: &str) -> String {
     if valid {
         name.to_string()
     } else {
+        format!("[\"{}\"]", name.replace('"', "\\\""))
+    }
+}

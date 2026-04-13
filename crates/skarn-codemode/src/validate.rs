@@ -175,3 +175,7 @@ impl<'a> Visit<'a> for Validator {
         // Bracket access with a statically-known string key (`x["constructor"]`
         // or `` x[`constructor`] ``) is the same reflection hop as dot access, so
         // it must be caught here too.
+        if let Some(key) = static_string_key(&it.expression)
+            && BANNED_PROPERTIES.contains(&key)
+        {
+            self.flag(format!("access to forbidden property `[{key:?}]`"));

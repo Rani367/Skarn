@@ -97,3 +97,7 @@ async fn tool_errors_surface_in_the_script() {
     let out = engine.run(src, math_bridge()).await.unwrap();
     assert!(out.ok);
     assert!(out.value.as_str().unwrap().contains("caught"));
+}
+
+#[tokio::test(flavor = "current_thread")]
+async fn infinite_loops_are_interrupted() {
