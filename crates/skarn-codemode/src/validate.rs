@@ -192,3 +192,10 @@ impl<'a> Visit<'a> for Validator {
         walk_import_expression(self, it);
     }
 
+    fn visit_export_named_declaration(&mut self, _it: &ExportNamedDeclaration<'a>) {
+        self.flag("`export` is not allowed in Code Mode scripts");
+    }
+
+    fn visit_export_all_declaration(&mut self, _it: &ExportAllDeclaration<'a>) {
+        self.flag("`export` is not allowed in Code Mode scripts");
+    }

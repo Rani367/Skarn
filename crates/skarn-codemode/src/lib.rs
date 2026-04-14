@@ -14,3 +14,4 @@
 //!
 //! In production the isolate runs inside an OS-native sandbox (see
 //! `skarn-sandbox`) for defense in depth, and the [`ToolBridge`] forwards calls
+//! over a pipe to the parent gateway.

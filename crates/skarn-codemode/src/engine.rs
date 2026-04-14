@@ -190,3 +190,13 @@ fn install_host(
         let bridge = bridge.clone();
         let counter = counter.clone();
         globals.set(
+            "__skarn_call_tool",
+            Func::from(Async(move |server: String, tool: String, args: String| {
+                let bridge = bridge.clone();
+                let counter = counter.clone();
+                async move {
+                    // Reserve a slot, then hand it back if we're over budget so
+                    // the reported `tool_calls` reflects only accepted calls and
+                    // never exceeds `max_calls`.
+                    if counter.fetch_add(1, Ordering::SeqCst) >= max_calls {
+                        counter.fetch_sub(1, Ordering::SeqCst);
