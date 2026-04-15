@@ -111,3 +111,8 @@ async fn infinite_loops_are_interrupted() {
         .await;
     // The interrupt handler aborts the run; we surface it as an error.
     assert!(
+        result.is_err(),
+        "infinite loop must not run forever: {result:?}"
+    );
+}
+

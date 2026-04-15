@@ -204,3 +204,6 @@ impl<'a> Visit<'a> for Validator {
         if let Expression::Identifier(id) = &it.callee
             && id.name.as_str() == "Function"
         {
+            self.flag("`new Function(...)` is not allowed");
+        }
+        walk_new_expression(self, it);

@@ -204,3 +204,10 @@ fn install_host(
                             "tool-call budget of {max_calls} exceeded"
                         ));
                     }
+                    match bridge.call_tool(&server, &tool, &args).await {
+                        Ok(result) => ok_envelope(&result),
+                        Err(e) => error_envelope(&e),
+                    }
+                }
+            })),
+        )?;
