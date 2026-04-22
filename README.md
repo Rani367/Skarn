@@ -95,3 +95,4 @@ return { staleCount: stale.length };                                // only this
 The 1,000-row intermediate result never touches the context window.
 
 | Scenario | Classic MCP (input tokens) | Skarn Code Mode | Reduction |
+|---|---:|---:|---:|

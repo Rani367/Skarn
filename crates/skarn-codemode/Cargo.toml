@@ -21,3 +21,4 @@ async-trait = "0.1"
 tokio = { workspace = true }
 futures = { workspace = true }
 rquickjs = { version = "0.9", features = ["futures", "macro"] }
+oxc_allocator = "0.95"

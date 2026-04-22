@@ -2,3 +2,4 @@
 //! Mode tool surface (`search` / `read_tool_docs` / `execute`).
 //!
 //! ```no_run
+//! # async fn run() -> skarn_common::Result<()> {

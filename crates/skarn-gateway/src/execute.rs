@@ -9,3 +9,9 @@
 //!   the main runtime over an mpsc channel. The isolate is hermetic but shares
 //!   the gateway's address space.
 //!
+//! * **Worker** ([`execute_worker`], Unix only): the isolate runs in a child
+//!   process that confines *itself* with the OS-native sandbox before touching
+//!   the script, bridged back to the parent over its stdio pipes
+//!   (newline-delimited JSON, see [`crate::worker_proto`]). A hypothetical
+//!   isolate escape lands in a kernel-confined process with no network and no
+//!   workspace writes.

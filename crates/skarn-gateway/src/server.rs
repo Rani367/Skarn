@@ -4,3 +4,4 @@
 //! constant surface — `search`, `read_tool_docs`, and `execute` — plus, if
 //! configured, the namespaced downstream tools in passthrough mode.
 
+use std::sync::Arc;

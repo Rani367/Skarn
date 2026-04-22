@@ -226,3 +226,6 @@ mod tests {
             Err(Error::CodeModeRejected(m)) => m,
             Err(e) => panic!("wrong error: {e}"),
             Ok(_) => panic!("expected rejection for: {src}"),
+        }
+    }
+

@@ -127,3 +127,5 @@ async fn tool_call_budget_is_enforced() {
         let n = 0;
         for (let i = 0; i < 10; i++) {
             try { await skarn.server("math").double({ n: i }); n++; }
+            catch (e) { return { calls: n, stopped: e.message }; }
+        }
