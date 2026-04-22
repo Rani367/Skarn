@@ -82,3 +82,12 @@ fn json_key(name: &str) -> String {
         name.to_string()
     } else {
         format!("\"{}\"", name.replace('"', "\\\""))
+    }
+}
+
+const DTS_HEADER: &str = r#"// Skarn Code Mode — ambient type declarations (auto-generated).
+//
+// Write an async script body. Use `return value;` to return a result to the
+// model; only what you return (or `skarn.log`) leaves the sandbox. Intermediate
+// data stays local — fetch, filter, and summarize here.
+

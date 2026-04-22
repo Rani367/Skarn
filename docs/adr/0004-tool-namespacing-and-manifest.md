@@ -12,3 +12,5 @@ upstream also reintroduces exactly the context bloat we set out to remove.
 ## Decision
 
 1. **Namespacing.** Each downstream tool is exposed as `"<server><sep><tool>"`
+   (default separator `__`, configurable; both `__` and `.` are legal in the MCP
+   name charset). A reverse map (`Registry::resolve`) restores `(server, tool)`

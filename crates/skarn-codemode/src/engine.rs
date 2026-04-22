@@ -190,3 +190,36 @@ fn install_host(
         let bridge = bridge.clone();
         let counter = counter.clone();
         globals.set(
+            "__skarn_call_tool",
+            Func::from(Async(move |server: String, tool: String, args: String| {
+                let bridge = bridge.clone();
+                let counter = counter.clone();
+                async move {
+                    // Reserve a slot, then hand it back if we're over budget so
+                    // the reported `tool_calls` reflects only accepted calls and
+                    // never exceeds `max_calls`.
+                    if counter.fetch_add(1, Ordering::SeqCst) >= max_calls {
+                        counter.fetch_sub(1, Ordering::SeqCst);
+                        return error_envelope(&format!(
+                            "tool-call budget of {max_calls} exceeded"
+                        ));
+                    }
+                    match bridge.call_tool(&server, &tool, &args).await {
+                        Ok(result) => ok_envelope(&result),
+                        Err(e) => error_envelope(&e),
+                    }
+                }
+            })),
+        )?;
+    }
+
+    {
+        let bridge = bridge.clone();
+        globals.set(
+            "__skarn_read_resource",
+            Func::from(Async(move |server: String, uri: String| {
+                let bridge = bridge.clone();
+                async move {
+                    match bridge.read_resource(&server, &uri).await {
+                        Ok(result) => ok_envelope(&result),
+                        Err(e) => error_envelope(&e),

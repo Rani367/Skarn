@@ -192,3 +192,29 @@ impl<'a> Visit<'a> for Validator {
         walk_import_expression(self, it);
     }
 
+    fn visit_export_named_declaration(&mut self, _it: &ExportNamedDeclaration<'a>) {
+        self.flag("`export` is not allowed in Code Mode scripts");
+    }
+
+    fn visit_export_all_declaration(&mut self, _it: &ExportAllDeclaration<'a>) {
+        self.flag("`export` is not allowed in Code Mode scripts");
+    }
+
+    fn visit_new_expression(&mut self, it: &NewExpression<'a>) {
+        if let Expression::Identifier(id) = &it.callee
+            && id.name.as_str() == "Function"
+        {
+            self.flag("`new Function(...)` is not allowed");
+        }
+        walk_new_expression(self, it);
+    }
+
+    fn visit_meta_property(&mut self, it: &MetaProperty<'a>) {
+        self.flag(format!(
+            "meta property `{}.{}` is not allowed",
+            it.meta.name, it.property.name
+        ));
+    }
+}
+
+#[cfg(test)]
