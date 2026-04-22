@@ -6,3 +6,6 @@
 //!
 //! * **In-process** ([`execute_in_process`]): the `!Send` QuickJS isolate runs
 //!   on a dedicated thread with its own current-thread runtime, bridged back to
+//!   the main runtime over an mpsc channel. The isolate is hermetic but shares
+//!   the gateway's address space.
+//!

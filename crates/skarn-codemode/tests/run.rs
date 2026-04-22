@@ -124,3 +124,6 @@ async fn tool_call_budget_is_enforced() {
     };
     let engine = Engine::new(limits);
     let src = r#"
+        let n = 0;
+        for (let i = 0; i < 10; i++) {
+            try { await skarn.server("math").double({ n: i }); n++; }

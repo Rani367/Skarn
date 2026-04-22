@@ -17,3 +17,4 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
 - **Add a hidden `skarn __worker` subcommand.** It reads a job (policy + limits +
   script) from stdin, calls `Policy::apply_to_current_process()` to confine
   *itself* (deny network, no workspace writes — the isolate needs neither), then
+  runs the isolate, bridging each `skarn.callTool` back to the parent over its

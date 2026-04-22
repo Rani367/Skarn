@@ -81,3 +81,5 @@ impl InProcessBridge {
         }
     }
 
+    /// Register a synchronous tool handler. `handler` receives the args JSON
+    /// string and returns a result JSON string.
