@@ -17,3 +17,4 @@
 //! over a pipe to the parent gateway.
 
 mod bridge;
+mod dts;

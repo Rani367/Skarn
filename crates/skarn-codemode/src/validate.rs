@@ -215,3 +215,6 @@ impl<'a> Visit<'a> for Validator {
             it.meta.name, it.property.name
         ));
     }
+}
+
+#[cfg(test)]

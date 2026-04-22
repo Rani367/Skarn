@@ -121,3 +121,5 @@ async fn tool_call_budget_is_enforced() {
     let limits = ExecLimits {
         max_tool_calls: 3,
         ..ExecLimits::default()
+    };
+    let engine = Engine::new(limits);

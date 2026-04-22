@@ -19,3 +19,5 @@ thiserror = { workspace = true }
 tracing = { workspace = true }
 async-trait = "0.1"
 tokio = { workspace = true }
+futures = { workspace = true }
+rquickjs = { version = "0.9", features = ["futures", "macro"] }

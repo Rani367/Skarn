@@ -78,3 +78,4 @@ impl InProcessBridge {
         Self {
             tools: Vec::new(),
             handlers: std::collections::HashMap::new(),
+        }
