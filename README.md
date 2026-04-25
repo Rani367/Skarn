@@ -98,3 +98,4 @@ The 1,000-row intermediate result never touches the context window.
 |---|---:|---:|---:|
 | 16 servers / 508 tools, multi-step task | ~150,000 | ~2,000 | **~99%** |
 | Single 3-tool workflow | ~20,700 | ~1,100 | **~95%** |
+

@@ -132,3 +132,6 @@ async fn tool_call_budget_is_enforced() {
         return { calls: n };
     "#;
     let out = engine.run(src, math_bridge()).await.unwrap();
+    assert!(out.ok, "error: {:?}", out.error);
+    // The 4th call trips the budget.
+    let stopped = out.value["stopped"].as_str().unwrap_or("");

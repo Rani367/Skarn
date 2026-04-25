@@ -14,3 +14,6 @@ use rmcp::transport::TokioChildProcess;
 use rmcp::{RoleClient, ServiceExt};
 use skarn_codemode::{ToolBridge, ToolDescriptor};
 use skarn_common::{Error, Result};
+
+use crate::config::{GatewayConfig, TransportConfig};
+use crate::registry::Registry;

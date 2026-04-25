@@ -7,3 +7,4 @@ use serde::{Deserialize, Serialize};
 use skarn_common::{Error, Result};
 
 /// Top-level gateway configuration.
+#[derive(Clone, Debug, Default, Serialize, Deserialize)]

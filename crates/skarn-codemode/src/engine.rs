@@ -239,3 +239,6 @@ fn install_host(
                     match bridge.list_tools().await {
                         Ok(result) => ok_envelope(&result),
                         Err(e) => error_envelope(&e),
+                    }
+                }
+            })),

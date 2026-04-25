@@ -237,3 +237,9 @@ mod tests {
     }
 
     #[test]
+    fn strips_typescript_types() {
+        let js = validate_and_transpile("const x: number = 1; const y: string = 'a'; return x;")
+            .unwrap();
+        assert!(!js.contains(": number"));
+        assert!(!js.contains(": string"));
+    }
