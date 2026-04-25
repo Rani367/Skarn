@@ -85,3 +85,5 @@ impl InProcessBridge {
     /// string and returns a result JSON string.
     pub fn with_tool(
         mut self,
+        server: &str,
+        name: &str,

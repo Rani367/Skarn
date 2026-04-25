@@ -8,3 +8,6 @@ use skarn_common::{Error, Result};
 
 /// Top-level gateway configuration.
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
+#[serde(default)]
+pub struct GatewayConfig {
+    /// Upstream-facing settings.

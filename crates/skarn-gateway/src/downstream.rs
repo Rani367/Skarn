@@ -17,3 +17,8 @@ use skarn_common::{Error, Result};
 
 use crate::config::{GatewayConfig, TransportConfig};
 use crate::registry::Registry;
+
+type JsonObject = serde_json::Map<String, serde_json::Value>;
+type Client = RunningService<RoleClient, ()>;
+
+/// Holds one MCP client per downstream server plus the namespaced registry.

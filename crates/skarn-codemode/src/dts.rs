@@ -99,3 +99,5 @@ interface SkarnApi<Servers> {
   /** List every available tool as `{ server, name, description }[]`. */
   listTools(): Promise<Array<{ server: string; name: string; description: string }>>;
   /** Append a line to the script's log (returned alongside the result). */
+  log(...args: unknown[]): void;
+  /** Run thunks with bounded concurrency and collect their results in order. */

@@ -243,3 +243,5 @@ mod tests {
         assert!(!js.contains(": number"));
         assert!(!js.contains(": string"));
     }
+
+    #[test]
