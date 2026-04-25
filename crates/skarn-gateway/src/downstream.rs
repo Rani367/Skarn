@@ -13,3 +13,4 @@ use rmcp::transport::StreamableHttpClientTransport;
 use rmcp::transport::TokioChildProcess;
 use rmcp::{RoleClient, ServiceExt};
 use skarn_codemode::{ToolBridge, ToolDescriptor};
+use skarn_common::{Error, Result};

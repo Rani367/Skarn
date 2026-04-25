@@ -59,3 +59,4 @@ jobs:
           # Portable SHA-256: sha256sum on Linux/Windows-bash, shasum on macOS.
           if command -v sha256sum >/dev/null 2>&1; then
             sha256sum "$DIR.tar.gz" > "$DIR.tar.gz.sha256"
+          else

@@ -233,3 +233,7 @@ mod tests {
     fn accepts_plain_script() {
         let js = validate_and_transpile("const x = 1 + 2; return x;").unwrap();
         assert!(js.contains("__skarn_main"));
+        assert!(js.contains("return"));
+    }
+
+    #[test]

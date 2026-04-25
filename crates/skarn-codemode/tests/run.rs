@@ -129,3 +129,6 @@ async fn tool_call_budget_is_enforced() {
             try { await skarn.server("math").double({ n: i }); n++; }
             catch (e) { return { calls: n, stopped: e.message }; }
         }
+        return { calls: n };
+    "#;
+    let out = engine.run(src, math_bridge()).await.unwrap();

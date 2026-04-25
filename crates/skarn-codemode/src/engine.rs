@@ -236,3 +236,6 @@ fn install_host(
             Func::from(Async(move || {
                 let bridge = bridge.clone();
                 async move {
+                    match bridge.list_tools().await {
+                        Ok(result) => ok_envelope(&result),
+                        Err(e) => error_envelope(&e),
