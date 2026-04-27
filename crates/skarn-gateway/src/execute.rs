@@ -35,3 +35,11 @@ use crate::downstream::DownstreamManager;
 // ---------------------------------------------------------------------------
 
 /// Run `code` against `manager` using the requested [`Isolation`] strategy.
+pub async fn execute_code(
+    manager: Arc<DownstreamManager>,
+    limits: ExecLimits,
+    code: String,
+    isolation: Isolation,
+) -> Result<Outcome> {
+    let use_worker = match isolation {
+        Isolation::InProcess => false,

@@ -91,3 +91,5 @@ impl InProcessBridge {
         handler: impl Fn(&str) -> std::result::Result<String, String> + Send + Sync + 'static,
     ) -> Self {
         self.tools.push(ToolDescriptor {
+            server: server.to_string(),
+            name: name.to_string(),

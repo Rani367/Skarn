@@ -4,3 +4,5 @@
 //! ```no_run
 //! # async fn run() -> skarn_common::Result<()> {
 //! use skarn_codemode::ExecLimits;
+//! use skarn_gateway::{GatewayConfig, build_server, serve_stdio};
+//!

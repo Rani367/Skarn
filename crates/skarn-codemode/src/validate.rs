@@ -248,3 +248,5 @@ mod tests {
     fn rejects_eval_and_aliases() {
         assert!(rejected("eval('1')").contains("eval"));
         assert!(rejected("const e = eval; e('1');").contains("eval"));
+    }
+

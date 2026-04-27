@@ -1,3 +1,4 @@
 [package]
 name = "skarn-gateway"
 description = "MCP gateway: aggregate downstream servers behind a small Code Mode tool surface."
+version.workspace = true

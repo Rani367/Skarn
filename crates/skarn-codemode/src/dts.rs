@@ -103,3 +103,4 @@ interface SkarnApi<Servers> {
   /** Run thunks with bounded concurrency and collect their results in order. */
   parallel<T>(calls: Array<() => Promise<T>>, opts?: { concurrency?: number }): Promise<T[]>;
   /** A per-run key/value scratch space. */
+  stash: { put(key: string, value: unknown): void; get(key: string): unknown; keys(): string[] };

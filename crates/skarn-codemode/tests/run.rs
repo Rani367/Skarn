@@ -138,3 +138,5 @@ async fn tool_call_budget_is_enforced() {
     assert!(
         stopped.contains("budget"),
         "expected budget error, got {:?}",
+        out.value
+    );

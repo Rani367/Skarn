@@ -247,3 +247,5 @@ fn install_host(
 
     Ok(())
 }
+
+/// Wrap a (valid JSON) result string in a success envelope.
