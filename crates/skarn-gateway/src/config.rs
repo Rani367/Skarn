@@ -11,3 +11,6 @@ use skarn_common::{Error, Result};
 #[serde(default)]
 pub struct GatewayConfig {
     /// Upstream-facing settings.
+    pub gateway: GatewaySettings,
+    /// Downstream MCP servers to aggregate, keyed by alias.
+    pub servers: BTreeMap<String, ServerConfig>,

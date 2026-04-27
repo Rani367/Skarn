@@ -101,3 +101,5 @@ interface SkarnApi<Servers> {
   /** Append a line to the script's log (returned alongside the result). */
   log(...args: unknown[]): void;
   /** Run thunks with bounded concurrency and collect their results in order. */
+  parallel<T>(calls: Array<() => Promise<T>>, opts?: { concurrency?: number }): Promise<T[]>;
+  /** A per-run key/value scratch space. */

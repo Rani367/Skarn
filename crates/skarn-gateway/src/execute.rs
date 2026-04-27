@@ -32,3 +32,6 @@ use crate::downstream::DownstreamManager;
 
 // ---------------------------------------------------------------------------
 // Dispatcher
+// ---------------------------------------------------------------------------
+
+/// Run `code` against `manager` using the requested [`Isolation`] strategy.

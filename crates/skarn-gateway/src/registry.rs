@@ -9,3 +9,6 @@ pub struct NamespacedTool {
     /// Downstream server alias.
     pub server: String,
     /// Original tool name on that server.
+    pub tool: String,
+    /// The namespaced name the gateway exposes (`server__tool`).
+    pub namespaced: String,

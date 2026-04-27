@@ -26,3 +26,6 @@ pub struct DownstreamManager {
     clients: HashMap<String, Client>,
     registry: ArcSwap<Registry>,
     separator: String,
+}
+
+impl DownstreamManager {
