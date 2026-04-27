@@ -14,3 +14,7 @@ pub struct GatewayConfig {
     pub gateway: GatewaySettings,
     /// Downstream MCP servers to aggregate, keyed by alias.
     pub servers: BTreeMap<String, ServerConfig>,
+}
+
+/// Settings for the server Skarn presents to the AI client.
+#[derive(Clone, Debug, Serialize, Deserialize)]

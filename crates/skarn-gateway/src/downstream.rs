@@ -29,3 +29,4 @@ pub struct DownstreamManager {
 }
 
 impl DownstreamManager {
+    /// Connect to every enabled server in `config`, list its tools, and build

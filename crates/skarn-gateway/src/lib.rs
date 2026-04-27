@@ -6,3 +6,5 @@
 //! use skarn_codemode::ExecLimits;
 //! use skarn_gateway::{GatewayConfig, build_server, serve_stdio};
 //!
+//! let config = GatewayConfig::load("skarn.toml")?;
+//! let server = build_server(&config, ExecLimits::default()).await?;

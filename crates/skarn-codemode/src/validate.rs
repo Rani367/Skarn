@@ -250,3 +250,8 @@ mod tests {
         assert!(rejected("const e = eval; e('1');").contains("eval"));
     }
 
+    #[test]
+    fn rejects_function_constructor() {
+        assert!(rejected("const f = new Function('return 1'); f();").contains("Function"));
+        assert!(rejected("Function('return 1')()").contains("Function"));
+    }

@@ -23,3 +23,4 @@ Run the gateway on a normal **multi-threaded** Tokio runtime (`rmcp` without the
 on a **dedicated thread** with its own current-thread runtime (via
 `spawn_blocking`), and bridge every `skarn.callTool` back to the main runtime
 over an `mpsc` + `oneshot` channel pair:
+

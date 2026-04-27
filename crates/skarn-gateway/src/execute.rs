@@ -43,3 +43,9 @@ pub async fn execute_code(
 ) -> Result<Outcome> {
     let use_worker = match isolation {
         Isolation::InProcess => false,
+        Isolation::Worker => {
+            if !worker_available() {
+                return Err(Error::CodeMode(
+                    "isolation = \"worker\" was requested but the cross-process \
+                     OS-sandboxed worker is unavailable on this platform; set \
+                     isolation = \"in_process\" to run the hermetic isolate alone"
