@@ -104,3 +104,6 @@ interface SkarnApi<Servers> {
   parallel<T>(calls: Array<() => Promise<T>>, opts?: { concurrency?: number }): Promise<T[]>;
   /** A per-run key/value scratch space. */
   stash: { put(key: string, value: unknown): void; get(key: string): unknown; keys(): string[] };
+  /** A typed proxy for a server's tools: `skarn.server("db").query({...})`. */
+  server<K extends keyof Servers & string>(name: K): Servers[K];
+}

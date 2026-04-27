@@ -140,3 +140,4 @@ async fn tool_call_budget_is_enforced() {
         "expected budget error, got {:?}",
         out.value
     );
+    // The rejected 4th call must not be counted: only accepted calls show up.

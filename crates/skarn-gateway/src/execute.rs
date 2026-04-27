@@ -49,3 +49,8 @@ pub async fn execute_code(
                     "isolation = \"worker\" was requested but the cross-process \
                      OS-sandboxed worker is unavailable on this platform; set \
                      isolation = \"in_process\" to run the hermetic isolate alone"
+                        .to_string(),
+                ));
+            }
+            true
+        }

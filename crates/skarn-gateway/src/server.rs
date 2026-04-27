@@ -15,3 +15,5 @@ use rmcp::{ErrorData as McpError, RoleServer, ServerHandler};
 use skarn_codemode::ExecLimits;
 
 use crate::config::Isolation;
+use crate::downstream::DownstreamManager;
+use crate::execute::execute_code;

@@ -255,3 +255,7 @@ mod tests {
         assert!(rejected("const f = new Function('return 1'); f();").contains("Function"));
         assert!(rejected("Function('return 1')()").contains("Function"));
     }
+
+    #[test]
+    fn rejects_constructor_hop() {
+        assert!(

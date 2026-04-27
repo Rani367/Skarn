@@ -12,3 +12,5 @@ pub struct NamespacedTool {
     pub tool: String,
     /// The namespaced name the gateway exposes (`server__tool`).
     pub namespaced: String,
+    /// Description (may be empty).
+    pub description: String,
