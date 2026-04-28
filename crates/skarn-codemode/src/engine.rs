@@ -252,3 +252,8 @@ fn install_host(
 fn ok_envelope(result_json: &str) -> String {
     let val: serde_json::Value = serde_json::from_str(result_json)
         .unwrap_or_else(|_| serde_json::Value::String(result_json.to_string()));
+    serde_json::json!({ "ok": true, "result": val }).to_string()
+}
+
+fn error_envelope(msg: &str) -> String {
+    serde_json::json!({ "ok": false, "error": msg }).to_string()

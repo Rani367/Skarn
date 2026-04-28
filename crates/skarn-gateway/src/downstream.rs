@@ -32,3 +32,5 @@ impl DownstreamManager {
     /// Connect to every enabled server in `config`, list its tools, and build
     /// the namespaced registry. Servers that fail to start are reported but do
     /// not abort the others.
+    pub async fn connect(config: &GatewayConfig) -> Result<Self> {
+        let separator = config.gateway.namespace_separator.clone();

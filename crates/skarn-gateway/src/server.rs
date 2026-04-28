@@ -17,3 +17,7 @@ use skarn_codemode::ExecLimits;
 use crate::config::Isolation;
 use crate::downstream::DownstreamManager;
 use crate::execute::execute_code;
+
+/// The gateway's upstream MCP server handler.
+pub struct GatewayServer {
+    manager: Arc<DownstreamManager>,

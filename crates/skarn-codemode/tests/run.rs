@@ -141,3 +141,5 @@ async fn tool_call_budget_is_enforced() {
         out.value
     );
     // The rejected 4th call must not be counted: only accepted calls show up.
+    assert_eq!(
+        out.tool_calls, 3,

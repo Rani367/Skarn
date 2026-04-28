@@ -19,3 +19,5 @@ pub struct GatewayConfig {
 /// Settings for the server Skarn presents to the AI client.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default)]
+pub struct GatewaySettings {
+    /// Also expose the namespaced downstream tools directly (in addition to the

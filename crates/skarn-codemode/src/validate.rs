@@ -259,3 +259,6 @@ mod tests {
     #[test]
     fn rejects_constructor_hop() {
         assert!(
+            rejected("const p = [].constructor.constructor; p('return 1')();")
+                .contains("constructor")
+        );

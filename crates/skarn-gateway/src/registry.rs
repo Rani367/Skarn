@@ -14,3 +14,4 @@ pub struct NamespacedTool {
     pub namespaced: String,
     /// Description (may be empty).
     pub description: String,
+    /// JSON Schema of the tool's arguments.

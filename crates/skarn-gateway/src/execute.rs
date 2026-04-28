@@ -54,3 +54,4 @@ pub async fn execute_code(
             }
             true
         }
+        Isolation::Auto => worker_available(),
