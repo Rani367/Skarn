@@ -47,3 +47,5 @@ impl DownstreamManager {
                     );
                     per_server.push((alias.clone(), descriptors));
                     clients.insert(alias.clone(), client);
+                }
+                Err(e) => {

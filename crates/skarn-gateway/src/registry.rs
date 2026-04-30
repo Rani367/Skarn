@@ -26,3 +26,5 @@ impl NamespacedTool {
             description: self.description.clone(),
             input_schema: self.input_schema.clone(),
         }
+    }
+}

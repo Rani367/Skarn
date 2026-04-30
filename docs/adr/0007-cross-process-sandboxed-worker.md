@@ -18,3 +18,4 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
   script) from stdin, calls `Policy::apply_to_current_process()` to confine
   *itself* (deny network, no workspace writes — the isolate needs neither), then
   runs the isolate, bridging each `skarn.callTool` back to the parent over its
+  stdio pipes as newline-delimited JSON (`worker_proto`). This mirrors the

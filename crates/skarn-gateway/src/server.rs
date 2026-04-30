@@ -36,3 +36,4 @@ impl GatewayServer {
         instructions: String,
     ) -> Self {
         Self {
+            manager,

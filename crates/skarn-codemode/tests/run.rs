@@ -153,3 +153,5 @@ async fn output_cap_is_enforced() {
         max_output_bytes: 256,
         ..ExecLimits::default()
     };
+    let engine = Engine::new(limits);
+    let result = engine

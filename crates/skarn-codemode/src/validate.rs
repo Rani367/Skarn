@@ -270,3 +270,5 @@ mod tests {
         assert!(rejected(r#"const c = [] ["constructor"]; c;"#).contains("constructor"));
         assert!(rejected("const c = ({})[`constructor`]; c;").contains("constructor"));
         assert!(rejected(r#"const p = {} ["__proto__"]; p;"#).contains("__proto__"));
+        // The classic full bypass chain.
+        assert!(

@@ -33,3 +33,5 @@ pub struct GatewaySettings {
 impl Default for GatewaySettings {
     fn default() -> Self {
         Self {
+            passthrough: false,
+            namespace_separator: "__".to_string(),

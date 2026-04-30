@@ -96,3 +96,5 @@ impl InProcessBridge {
             description: description.to_string(),
             input_schema: serde_json::json!({"type": "object"}),
         });
+        self.handlers
+            .insert(format!("{server}/{name}"), Box::new(handler));

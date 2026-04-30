@@ -80,3 +80,8 @@ fn worker_available() -> bool {
 
 /// One host operation requested by the isolate, with a reply channel.
 struct BridgeRequest {
+    op: BridgeOp,
+    reply: oneshot::Sender<std::result::Result<String, String>>,
+}
+
+enum BridgeOp {

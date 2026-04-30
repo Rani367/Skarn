@@ -113,3 +113,6 @@ interface SkarnApi<Servers> {
 mod tests {
     use super::*;
 
+    fn tool(server: &str, name: &str, desc: &str) -> ToolDescriptor {
+        ToolDescriptor {
+            server: server.to_string(),
