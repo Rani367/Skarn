@@ -1,3 +1,4 @@
 # cargo-deny configuration. Run: cargo deny check
 #
 # Enforces the project's "permissive licenses only, no known advisories" policy.
+

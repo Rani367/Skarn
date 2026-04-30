@@ -11,3 +11,5 @@
 //! serve_stdio(server).await?;
 //! # Ok(()) }
 //! ```
+//!
+//! Runs on a normal multi-threaded Tokio runtime. The `!Send` QuickJS isolate is

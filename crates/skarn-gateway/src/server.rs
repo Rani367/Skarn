@@ -33,3 +33,4 @@ impl GatewayServer {
         limits: ExecLimits,
         passthrough: bool,
         isolation: Isolation,
+        instructions: String,

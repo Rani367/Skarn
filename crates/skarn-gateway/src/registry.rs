@@ -23,3 +23,4 @@ impl NamespacedTool {
         ToolDescriptor {
             server: self.server.clone(),
             name: self.tool.clone(),
+            description: self.description.clone(),

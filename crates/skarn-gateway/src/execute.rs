@@ -69,3 +69,11 @@ pub async fn execute_code(
 
 /// Whether the cross-process OS-sandboxed worker can run here. It is Unix-only
 /// (the worker self-applies the sandbox; on Windows a process cannot move itself
+/// into an AppContainer, so in-gateway execution uses the hermetic isolate).
+fn worker_available() -> bool {
+    cfg!(unix) && skarn_sandbox::backend() != Backend::None
+}
+
+// ---------------------------------------------------------------------------
+// In-process execution
+// ---------------------------------------------------------------------------

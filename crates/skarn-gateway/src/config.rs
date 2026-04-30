@@ -30,3 +30,4 @@ pub struct GatewaySettings {
     pub isolation: Isolation,
 }
 
+impl Default for GatewaySettings {

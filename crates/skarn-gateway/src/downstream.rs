@@ -43,3 +43,5 @@ impl DownstreamManager {
                     tracing::info!(
                         server = alias,
                         tools = descriptors.len(),
+                        "connected downstream MCP server"
+                    );

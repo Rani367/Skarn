@@ -270,3 +270,8 @@ const skarn = {
     if (!r.ok) throw new Error(r.error || "tool error");
     return r.result;
   },
+  async readResource(server, uri) {
+    const raw = await __skarn_read_resource(String(server), String(uri));
+    const r = JSON.parse(raw);
+    if (!r.ok) throw new Error(r.error || "resource error");
+    return r.result;
