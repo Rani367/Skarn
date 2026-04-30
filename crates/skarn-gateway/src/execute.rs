@@ -77,3 +77,6 @@ fn worker_available() -> bool {
 // ---------------------------------------------------------------------------
 // In-process execution
 // ---------------------------------------------------------------------------
+
+/// One host operation requested by the isolate, with a reply channel.
+struct BridgeRequest {

@@ -151,3 +151,5 @@ async fn tool_call_budget_is_enforced() {
 async fn output_cap_is_enforced() {
     let limits = ExecLimits {
         max_output_bytes: 256,
+        ..ExecLimits::default()
+    };

@@ -34,3 +34,5 @@ impl GatewayServer {
         passthrough: bool,
         isolation: Isolation,
         instructions: String,
+    ) -> Self {
+        Self {

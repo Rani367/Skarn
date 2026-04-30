@@ -45,3 +45,5 @@ impl DownstreamManager {
                         tools = descriptors.len(),
                         "connected downstream MCP server"
                     );
+                    per_server.push((alias.clone(), descriptors));
+                    clients.insert(alias.clone(), client);

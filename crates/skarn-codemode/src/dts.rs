@@ -111,3 +111,5 @@ interface SkarnApi<Servers> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+

@@ -275,3 +275,6 @@ const skarn = {
     const r = JSON.parse(raw);
     if (!r.ok) throw new Error(r.error || "resource error");
     return r.result;
+  },
+  async listTools() {
+    const raw = await __skarn_list_tools();

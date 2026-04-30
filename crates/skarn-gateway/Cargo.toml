@@ -4,3 +4,4 @@ description = "MCP gateway: aggregate downstream servers behind a small Code Mod
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+license.workspace = true

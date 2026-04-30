@@ -21,3 +21,4 @@ mod dts;
 mod engine;
 mod validate;
 
+pub use bridge::{InProcessBridge, ToolBridge, ToolDescriptor};

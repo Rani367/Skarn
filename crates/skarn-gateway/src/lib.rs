@@ -13,3 +13,4 @@
 //! ```
 //!
 //! Runs on a normal multi-threaded Tokio runtime. The `!Send` QuickJS isolate is
+//! confined to a dedicated thread (see [`execute`]) and bridged back over

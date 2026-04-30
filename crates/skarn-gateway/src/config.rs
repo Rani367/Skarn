@@ -31,3 +31,5 @@ pub struct GatewaySettings {
 }
 
 impl Default for GatewaySettings {
+    fn default() -> Self {
+        Self {
