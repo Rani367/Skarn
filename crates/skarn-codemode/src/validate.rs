@@ -286,3 +286,7 @@ mod tests {
 
     #[test]
     fn allows_benign_computed_access() {
+        // Dynamic indexing of ordinary data must still be allowed.
+        let js =
+            validate_and_transpile(r#"const o = { a: 1 }; const k = "a"; return o[k];"#).unwrap();
+        assert!(js.contains("__skarn_main"));

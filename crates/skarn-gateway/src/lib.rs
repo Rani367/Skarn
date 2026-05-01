@@ -17,3 +17,4 @@
 //! channels, so the MCP clients keep a stable reactor for their whole lifetime.
 
 mod config;
+mod downstream;

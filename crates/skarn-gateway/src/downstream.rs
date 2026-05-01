@@ -58,3 +58,7 @@ impl DownstreamManager {
         Ok(Self {
             clients,
             registry: ArcSwap::from_pointee(registry),
+            separator,
+        })
+    }
+

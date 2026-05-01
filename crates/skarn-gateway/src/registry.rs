@@ -41,3 +41,6 @@ impl Registry {
         let mut tools = Vec::new();
         for (server, descriptors) in per_server {
             for d in descriptors {
+                let namespaced = format!("{server}{separator}{}", d.name);
+                tools.push(NamespacedTool {
+                    server: server.clone(),

@@ -120,3 +120,4 @@ mod tests {
             description: desc.to_string(),
             input_schema: serde_json::json!({"type": "object"}),
         }
+    }

@@ -102,3 +102,6 @@ enum BridgeOp {
 struct ChannelBridge {
     tx: mpsc::UnboundedSender<BridgeRequest>,
 }
+
+#[async_trait(?Send)]
+impl ToolBridge for ChannelBridge {

@@ -162,3 +162,4 @@ async fn output_cap_is_enforced() {
 }
 
 #[tokio::test(flavor = "current_thread")]
+async fn zero_wall_clock_is_clamped_not_instant_fail() {

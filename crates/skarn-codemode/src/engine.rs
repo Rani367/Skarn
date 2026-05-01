@@ -287,3 +287,5 @@ const skarn = {
       args.map((a) => (typeof a === "string" ? a : JSON.stringify(a))).join(" ")
     );
   },
+  async parallel(calls, opts) {
+    const concurrency = Math.max(1, (opts && opts.concurrency) || 8);

@@ -38,3 +38,4 @@ impl Default for GatewaySettings {
             isolation: Isolation::default(),
         }
     }
+}
