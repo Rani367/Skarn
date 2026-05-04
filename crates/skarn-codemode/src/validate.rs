@@ -293,3 +293,6 @@ mod tests {
         let js2 = validate_and_transpile(r#"const xs = [1,2,3]; return xs["length"];"#).unwrap();
         assert!(js2.contains("length"));
     }
+
+    #[test]
+    fn rejects_process_and_deno() {

@@ -43,3 +43,4 @@ impl Default for GatewaySettings {
 /// How `execute` runs Code Mode scripts.
 ///
 /// Both modes run the script inside the hermetic QuickJS isolate (no filesystem,
+/// network, or `fetch`). The worker adds a second layer: the isolate runs in a

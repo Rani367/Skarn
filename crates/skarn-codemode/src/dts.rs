@@ -121,3 +121,4 @@ mod tests {
             input_schema: serde_json::json!({"type": "object"}),
         }
     }
+

@@ -65,3 +65,7 @@ impl DownstreamManager {
     async fn connect_one(
         alias: &str,
         transport: &TransportConfig,
+    ) -> Result<(Client, Vec<ToolDescriptor>)> {
+        // Both transports erase to `RunningService<RoleClient, ()>`, so the rest
+        // of the manager is transport-agnostic.
+        let client = match transport {

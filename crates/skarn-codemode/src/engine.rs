@@ -293,3 +293,5 @@ const skarn = {
     let next = 0;
     async function worker() {
       while (next < calls.length) {
+        const idx = next++;
+        results[idx] = await calls[idx]();

@@ -1,1 +1,3 @@
 # Example Skarn gateway configuration.
+#
+# Copy to `skarn.toml` (or run `skarn init`) and edit. `skarn serve` reads this,

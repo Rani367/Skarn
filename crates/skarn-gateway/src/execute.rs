@@ -107,3 +107,4 @@ struct ChannelBridge {
 impl ToolBridge for ChannelBridge {
     async fn call_tool(
         &self,
+        server: &str,
