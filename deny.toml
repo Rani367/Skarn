@@ -2,3 +2,5 @@
 #
 # Enforces the project's "permissive licenses only, no known advisories" policy.
 
+[advisories]
+version = 2

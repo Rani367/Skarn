@@ -116,3 +116,7 @@ impl ToolBridge for ChannelBridge {
             tool: tool.to_string(),
             args: args_json.to_string(),
         })
+        .await
+    }
+
+    async fn read_resource(&self, server: &str, uri: &str) -> std::result::Result<String, String> {

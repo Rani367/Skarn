@@ -300,3 +300,4 @@ mod tests {
         assert!(rejected("Deno.readFile('/etc/passwd')").contains("Deno"));
     }
 
+    #[test]

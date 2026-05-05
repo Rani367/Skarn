@@ -52,3 +52,6 @@ impl GatewayServer {
                 "Search the connected MCP servers for tools relevant to a task. \
                  Returns ranked tool names you can then call from `execute` via skarn.callTool().",
                 schema(serde_json::json!({
+                    "type": "object",
+                    "properties": {
+                        "query": { "type": "string", "description": "What you want to do" },

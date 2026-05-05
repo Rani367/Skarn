@@ -74,3 +74,4 @@ impl DownstreamManager {
                 args,
                 env,
                 cwd,
+            } => {

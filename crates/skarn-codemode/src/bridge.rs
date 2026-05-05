@@ -108,3 +108,4 @@ impl ToolBridge for InProcessBridge {
         &self,
         server: &str,
         tool: &str,
+        args_json: &str,

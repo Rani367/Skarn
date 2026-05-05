@@ -48,3 +48,5 @@ impl Default for GatewaySettings {
 /// before touching the script, so a hypothetical isolate escape still lands in a
 /// kernel-confined process with no network and no workspace writes.
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum Isolation {

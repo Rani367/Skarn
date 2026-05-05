@@ -301,3 +301,5 @@ const skarn = {
     await Promise.all(Array.from({ length: n }, () => worker()));
     return results;
   },
+  stash: (() => {
+    const m = new Map();

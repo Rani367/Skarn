@@ -22,3 +22,5 @@ mod execute;
 mod registry;
 mod server;
 pub mod worker_proto;
+
+use std::sync::Arc;
