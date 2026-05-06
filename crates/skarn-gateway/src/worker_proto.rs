@@ -12,3 +12,4 @@ use skarn_codemode::{ExecLimits, Outcome};
 use skarn_sandbox::Policy;
 
 /// The job the parent hands the worker: the OS-sandbox policy the worker applies
+/// to itself (Unix) or that the parent applied when launching it (Windows

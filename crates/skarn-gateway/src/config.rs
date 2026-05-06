@@ -53,3 +53,5 @@ pub enum Isolation {
     /// Use the cross-process OS-sandboxed worker when a sandbox backend is
     /// available on this platform; otherwise fall back to in-process.
     #[default]
+    Auto,
+    /// Always use the cross-process OS-sandboxed worker. Errors if no sandbox

@@ -109,3 +109,4 @@ impl ToolBridge for InProcessBridge {
         server: &str,
         tool: &str,
         args_json: &str,
+    ) -> std::result::Result<String, String> {

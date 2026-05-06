@@ -171,3 +171,5 @@ async fn zero_wall_clock_is_clamped_not_instant_fail() {
     };
     let engine = Engine::new(limits);
     let out = engine
+        .run("return 1 + 1;", Arc::new(InProcessBridge::new()))
+        .await

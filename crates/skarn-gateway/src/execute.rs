@@ -129,3 +129,9 @@ impl ToolBridge for ChannelBridge {
 
     async fn list_tools(&self) -> std::result::Result<String, String> {
         self.send(BridgeOp::ListTools).await
+    }
+}
+
+impl ChannelBridge {
+    async fn send(&self, op: BridgeOp) -> std::result::Result<String, String> {
+        let (reply, rx) = oneshot::channel();

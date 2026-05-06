@@ -1,3 +1,4 @@
 # Example Skarn gateway configuration.
 #
 # Copy to `skarn.toml` (or run `skarn init`) and edit. `skarn serve` reads this,
+# launches each downstream server, and aggregates them behind the Code Mode

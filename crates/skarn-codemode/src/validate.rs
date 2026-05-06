@@ -305,3 +305,5 @@ mod tests {
         assert!(
             rejected("import fs from 'fs';")
                 .to_lowercase()
+                .contains("import")
+        );

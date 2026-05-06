@@ -51,3 +51,5 @@ impl Registry {
                 });
             }
         }
+        Registry { tools }
+    }
