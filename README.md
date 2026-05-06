@@ -108,3 +108,4 @@ skarn run --stats -- cargo test
 ```
 
 | Command | Raw tokens | Compressed | Reduction |
+|---|---:|---:|---:|

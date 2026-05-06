@@ -307,3 +307,7 @@ mod tests {
                 .to_lowercase()
                 .contains("import")
         );
+        assert!(rejected("const fs = require('fs');").contains("require"));
+        assert!(
+            rejected("const m = await import('fs');")
+                .to_lowercase()

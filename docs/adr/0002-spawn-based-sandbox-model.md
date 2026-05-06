@@ -22,3 +22,4 @@ can deadlock on the allocator lock held by another thread at fork time.
   parent is single-threaded at fork time, avoiding the deadlock.
 - **Windows:** the parent launches the child directly into an AppContainer via
   `CreateProcessW` (a process cannot move itself into one).
+- The same `Policy::apply_to_current_process()` is exercised directly by the

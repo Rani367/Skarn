@@ -82,3 +82,4 @@ impl DownstreamManager {
                 }
                 if let Some(dir) = cwd {
                     cmd.current_dir(dir);
+                }

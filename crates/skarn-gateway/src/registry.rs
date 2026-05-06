@@ -53,3 +53,4 @@ impl Registry {
         }
         Registry { tools }
     }
+

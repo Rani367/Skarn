@@ -126,3 +126,5 @@ mod tests {
     fn generates_typed_surface() {
         let tools = vec![
             tool("db", "query", "Run a SQL query"),
+            tool("db", "insert", "Insert a row"),
+            tool("slack", "post-message", "Post to a channel"),

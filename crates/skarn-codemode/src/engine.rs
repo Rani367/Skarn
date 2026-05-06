@@ -310,3 +310,4 @@ const skarn = {
     };
   })(),
   server(name) {
+    return new Proxy({}, { get: (_t, tool) => (args) => skarn.callTool(name, String(tool), args) });

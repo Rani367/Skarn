@@ -135,3 +135,5 @@ impl ToolBridge for ChannelBridge {
 impl ChannelBridge {
     async fn send(&self, op: BridgeOp) -> std::result::Result<String, String> {
         let (reply, rx) = oneshot::channel();
+        self.tx
+            .send(BridgeRequest { op, reply })

@@ -59,3 +59,5 @@ impl GatewayServer {
                     },
                     "required": ["query"]
                 })),
+            ),
+            Tool::new(
