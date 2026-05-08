@@ -317,3 +317,6 @@ mod tests {
 
     #[test]
     fn rejects_globalthis_escape() {
+        assert!(rejected("globalThis.foo = 1;").contains("globalThis"));
+    }
+

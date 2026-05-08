@@ -14,3 +14,5 @@ use skarn_sandbox::Policy;
 /// The job the parent hands the worker: the OS-sandbox policy the worker applies
 /// to itself (Unix) or that the parent applied when launching it (Windows
 /// AppContainer), the execution limits, and the script source.
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct JobMsg {

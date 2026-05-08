@@ -144,3 +144,6 @@ impl ChannelBridge {
 }
 
 /// Validate, transpile, and run `code` in-process against the downstream servers
+/// in `manager`, returning the script's outcome.
+pub async fn execute_in_process(
+    manager: Arc<DownstreamManager>,

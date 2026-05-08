@@ -59,3 +59,5 @@ pub enum Isolation {
     Worker,
     /// Always run in-process (hermetic QuickJS isolate only, no OS sandbox).
     InProcess,
+}
+

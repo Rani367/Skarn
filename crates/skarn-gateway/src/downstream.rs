@@ -86,3 +86,4 @@ impl DownstreamManager {
                 let transport = TokioChildProcess::new(cmd)
                     .map_err(|e| Error::Mcp(format!("spawning `{command}` for `{alias}`: {e}")))?;
                 ().serve(transport)
+                    .await

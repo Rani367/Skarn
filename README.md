@@ -109,3 +109,4 @@ skarn run --stats -- cargo test
 
 | Command | Raw tokens | Compressed | Reduction |
 |---|---:|---:|---:|
+| `cargo test` | ~25,000 | ~2,500 | **~90%** |

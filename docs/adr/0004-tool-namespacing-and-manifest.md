@@ -16,3 +16,4 @@ upstream also reintroduces exactly the context bloat we set out to remove.
    name charset). A reverse map (`Registry::resolve`) restores `(server, tool)`
    for routing. Names stay within the 128-char limit.
 2. **Constant upstream surface.** Regardless of catalog size, the gateway exposes
+   exactly three meta-tools — `search`, `read_tool_docs`, `execute` — plus, only

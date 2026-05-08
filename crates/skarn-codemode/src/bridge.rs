@@ -114,3 +114,4 @@ impl ToolBridge for InProcessBridge {
             Some(h) => h(args_json),
             None => Err(format!("unknown tool {server}/{tool}")),
         }
+    }

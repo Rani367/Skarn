@@ -131,3 +131,4 @@ mod tests {
         ];
         let dts = generate_dts(&tools);
         assert!(dts.contains("interface Server_db"));
+        assert!(dts.contains("query(args?:"));
