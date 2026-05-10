@@ -19,3 +19,4 @@ Streamable HTTP transport is the one client surface.
   preferentially read from an environment variable (`auth_bearer_env`) so secrets
   stay out of `skarn.toml`.
 - **Keep the rest of the manager transport-agnostic.** Both transports erase to
+  `RunningService<RoleClient, ()>`, so only `connect_one` branches; aggregation,

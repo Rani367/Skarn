@@ -104,3 +104,6 @@ impl DownstreamManager {
                     .await
                     .map_err(|e| Error::Mcp(format!("initializing `{alias}` over HTTP: {e}")))?
             }
+        };
+
+        let tools = client

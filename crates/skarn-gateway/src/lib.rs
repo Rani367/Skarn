@@ -32,3 +32,4 @@ use skarn_common::{Error, Result};
 pub use config::{GatewayConfig, GatewaySettings, Isolation, ServerConfig, TransportConfig};
 pub use downstream::{DownstreamManager, GatewayBridge};
 pub use execute::run_worker_job;
+pub use registry::{NamespacedTool, Registry, SearchHit};

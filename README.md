@@ -110,3 +110,5 @@ skarn run --stats -- cargo test
 | Command | Raw tokens | Compressed | Reduction |
 |---|---:|---:|---:|
 | `cargo test` | ~25,000 | ~2,500 | **~90%** |
+| `npm install` | ~16,000 | ~3,200 | **~80%** |
+| `git diff` | ~10,000 | ~2,500 | **~75%** |

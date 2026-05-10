@@ -69,3 +69,5 @@ pub struct ServerConfig {
     pub enabled: bool,
     /// How to reach the server.
     #[serde(flatten)]
+    pub transport: TransportConfig,
+}

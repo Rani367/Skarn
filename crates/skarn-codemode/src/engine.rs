@@ -328,3 +328,5 @@ const RUNNER_JS: &str = r#"
     });
   } catch (e) {
     let msg = String(e && e.message !== undefined ? e.message : e);
+    if (e && e.name) msg = e.name + ": " + msg;
+    if (e && e.stack) msg = msg + "\n" + String(e.stack);

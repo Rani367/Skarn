@@ -71,3 +71,4 @@ impl Registry {
         let mut names = Vec::new();
         for t in &self.tools {
             if !names.contains(&t.server) {
+                names.push(t.server.clone());

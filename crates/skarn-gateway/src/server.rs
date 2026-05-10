@@ -73,3 +73,5 @@ impl GatewayServer {
                 })),
             ),
             Tool::new(
+                "execute",
+                "Run a sandboxed JavaScript/TypeScript orchestration script. Use \

@@ -328,3 +328,7 @@ mod tests {
             skarn.log("done", summary.length);
             return summary;
         "#;
+        let js = validate_and_transpile(src).unwrap();
+        assert!(js.contains("callTool"));
+    }
+}

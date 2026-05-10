@@ -175,3 +175,6 @@ pub async fn execute_in_process(
             let _ = req.reply.send(result);
         }
     });
+
+    // Run the isolate on a dedicated blocking thread with its own runtime.
+    let join = tokio::task::spawn_blocking(move || -> Result<Outcome> {
