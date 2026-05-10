@@ -25,3 +25,4 @@ pub use bridge::{InProcessBridge, ToolBridge, ToolDescriptor};
 pub use dts::generate_dts;
 pub use engine::{Engine, ExecLimits, Outcome};
 pub use skarn_common::{Error, Result};
+pub use validate::validate_and_transpile;

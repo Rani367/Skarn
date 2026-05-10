@@ -165,3 +165,8 @@ pub async fn execute_in_process(
                     .map_err(|e| e.to_string()),
                 BridgeOp::ReadResource { server, uri } => servicer_manager
                     .read_resource(&server, &uri)
+                    .await
+                    .map_err(|e| e.to_string()),
+                BridgeOp::ListTools => {
+                    serde_json::to_string(&servicer_manager.registry().descriptors())
+                        .map_err(|e| e.to_string())

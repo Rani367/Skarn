@@ -98,3 +98,8 @@ impl DownstreamManager {
                 ensure_crypto_provider();
                 let cfg = http_client_config(alias, url, auth_bearer, auth_bearer_env, headers)?;
                 // The only `from_config` is on `StreamableHttpClientTransport<reqwest::Client>`,
+                // so `C` is inferred without naming reqwest (not a direct dep here).
+                let transport = StreamableHttpClientTransport::from_config(cfg);
+                ().serve(transport)
+                    .await
+                    .map_err(|e| Error::Mcp(format!("initializing `{alias}` over HTTP: {e}")))?

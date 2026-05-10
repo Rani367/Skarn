@@ -62,3 +62,6 @@ impl Registry {
         self.tools.len()
     }
 
+    pub fn is_empty(&self) -> bool {
+        self.tools.is_empty()
+    }

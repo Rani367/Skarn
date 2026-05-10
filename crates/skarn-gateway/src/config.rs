@@ -63,3 +63,5 @@ pub enum Isolation {
 
 /// A single downstream MCP server.
 #[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct ServerConfig {
+    /// Whether this server is connected on startup.
