@@ -107,3 +107,5 @@ impl DownstreamManager {
         };
 
         let tools = client
+            .list_all_tools()
+            .await

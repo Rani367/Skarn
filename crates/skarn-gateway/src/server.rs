@@ -75,3 +75,4 @@ impl GatewayServer {
             Tool::new(
                 "execute",
                 "Run a sandboxed JavaScript/TypeScript orchestration script. Use \
+                 `await skarn.callTool(server, tool, args)` or `skarn.server(name).tool(args)` to \

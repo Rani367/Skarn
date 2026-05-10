@@ -68,3 +68,4 @@ jobs:
           path: |
             skarn-${{ matrix.target }}.tar.gz
             skarn-${{ matrix.target }}.tar.gz.sha256
+

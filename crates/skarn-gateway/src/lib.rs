@@ -33,3 +33,4 @@ pub use config::{GatewayConfig, GatewaySettings, Isolation, ServerConfig, Transp
 pub use downstream::{DownstreamManager, GatewayBridge};
 pub use execute::run_worker_job;
 pub use registry::{NamespacedTool, Registry, SearchHit};
+pub use server::GatewayServer;

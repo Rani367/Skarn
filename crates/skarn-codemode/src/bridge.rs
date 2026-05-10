@@ -119,3 +119,4 @@ impl ToolBridge for InProcessBridge {
     async fn list_tools(&self) -> std::result::Result<String, String> {
         serde_json::to_string(&self.tools).map_err(|e| e.to_string())
     }
+}

@@ -136,3 +136,5 @@ mod tests {
         // A non-identifier tool name must be quoted.
         assert!(dts.contains("[\"post-message\"]"));
         assert!(dts.contains("declare const skarn"));
+    }
+}

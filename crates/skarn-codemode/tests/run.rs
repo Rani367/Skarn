@@ -183,3 +183,5 @@ async fn rejects_dangerous_scripts_before_running() {
     let err = engine
         .run("const e = eval; e('1');", Arc::new(InProcessBridge::new()))
         .await
+        .unwrap_err();
+    assert!(err.to_string().contains("eval"), "got: {err}");

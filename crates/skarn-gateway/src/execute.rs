@@ -178,3 +178,8 @@ pub async fn execute_in_process(
 
     // Run the isolate on a dedicated blocking thread with its own runtime.
     let join = tokio::task::spawn_blocking(move || -> Result<Outcome> {
+        let runtime = tokio::runtime::Builder::new_current_thread()
+            .enable_all()
+            .build()
+            .map_err(|e| Error::CodeMode(format!("isolate runtime: {e}")))?;
+        let bridge: Arc<dyn ToolBridge> = Arc::new(ChannelBridge { tx });

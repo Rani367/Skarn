@@ -71,3 +71,7 @@ pub struct ServerConfig {
     #[serde(flatten)]
     pub transport: TransportConfig,
 }
+
+/// The transport for a downstream server.
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(tag = "transport", rename_all = "snake_case")]

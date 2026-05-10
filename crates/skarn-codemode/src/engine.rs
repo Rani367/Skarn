@@ -330,3 +330,4 @@ const RUNNER_JS: &str = r#"
     let msg = String(e && e.message !== undefined ? e.message : e);
     if (e && e.name) msg = e.name + ": " + msg;
     if (e && e.stack) msg = msg + "\n" + String(e.stack);
+    globalThis.__skarn_result = JSON.stringify({ ok: false, error: msg, logs: globalThis.__skarn_logs });
