@@ -181,3 +181,4 @@ async fn zero_wall_clock_is_clamped_not_instant_fail() {
 async fn rejects_dangerous_scripts_before_running() {
     let engine = Engine::with_defaults();
     let err = engine
+        .run("const e = eval; e('1');", Arc::new(InProcessBridge::new()))

@@ -68,3 +68,8 @@ impl GatewayServer {
                     "type": "object",
                     "properties": {
                         "name": { "type": "string", "description": "Namespaced tool name" }
+                    },
+                    "required": ["name"]
+                })),
+            ),
+            Tool::new(
