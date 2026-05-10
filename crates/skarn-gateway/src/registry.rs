@@ -59,3 +59,6 @@ impl Registry {
     }
 
     pub fn len(&self) -> usize {
+        self.tools.len()
+    }
+

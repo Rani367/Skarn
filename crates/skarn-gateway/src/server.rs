@@ -70,3 +70,6 @@ impl GatewayServer {
                         "name": { "type": "string", "description": "Namespaced tool name" }
                     },
                     "required": ["name"]
+                })),
+            ),
+            Tool::new(

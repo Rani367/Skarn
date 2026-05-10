@@ -94,3 +94,7 @@ impl DownstreamManager {
                 auth_bearer,
                 auth_bearer_env,
                 headers,
+            } => {
+                ensure_crypto_provider();
+                let cfg = http_client_config(alias, url, auth_bearer, auth_bearer_env, headers)?;
+                // The only `from_config` is on `StreamableHttpClientTransport<reqwest::Client>`,

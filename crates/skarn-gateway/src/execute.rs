@@ -157,3 +157,11 @@ pub async fn execute_in_process(
     // through a `!Send` bridge.
     let servicer_manager = manager.clone();
     let servicer = tokio::spawn(async move {
+        while let Some(req) = rx.recv().await {
+            let result = match req.op {
+                BridgeOp::CallTool { server, tool, args } => servicer_manager
+                    .call(&server, &tool, &args)
+                    .await
+                    .map_err(|e| e.to_string()),
+                BridgeOp::ReadResource { server, uri } => servicer_manager
+                    .read_resource(&server, &uri)

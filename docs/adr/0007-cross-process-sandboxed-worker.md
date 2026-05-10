@@ -21,3 +21,4 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
   stdio pipes as newline-delimited JSON (`worker_proto`). This mirrors the
   existing in-process channel servicer, with the OS process boundary replacing
   the dedicated-thread boundary of ADR 0003.
+- **Gate selection on an `isolation` setting** (`auto` | `worker` | `in_process`,

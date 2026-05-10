@@ -18,3 +18,4 @@ use skarn_sandbox::Policy;
 pub struct JobMsg {
     /// The OS-sandbox policy confining the isolate.
     pub policy: Policy,
+    /// Resource limits for the run.

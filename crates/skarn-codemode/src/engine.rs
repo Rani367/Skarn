@@ -325,3 +325,4 @@ const RUNNER_JS: &str = r#"
       ok: true,
       value: value === undefined ? null : value,
       logs: globalThis.__skarn_logs,
+    });
