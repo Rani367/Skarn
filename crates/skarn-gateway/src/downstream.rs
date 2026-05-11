@@ -115,3 +115,7 @@ impl DownstreamManager {
             .map(|t| tool_to_descriptor(alias, t))
             .collect();
         Ok((client, descriptors))
+    }
+
+    /// A lock-free snapshot of the current registry.
+    pub fn registry(&self) -> Arc<Registry> {

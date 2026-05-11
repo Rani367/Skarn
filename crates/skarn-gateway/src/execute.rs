@@ -193,3 +193,8 @@ pub async fn execute_in_process(
         Ok(result) => result,
         Err(e) => Err(Error::CodeMode(format!("isolate thread failed: {e}"))),
     }
+}
+
+// ---------------------------------------------------------------------------
+// Cross-process worker execution (parent side, Unix only)
+// ---------------------------------------------------------------------------

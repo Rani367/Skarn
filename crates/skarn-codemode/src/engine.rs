@@ -333,3 +333,4 @@ const RUNNER_JS: &str = r#"
     globalThis.__skarn_result = JSON.stringify({ ok: false, error: msg, logs: globalThis.__skarn_logs });
   }
 })();
+"#;

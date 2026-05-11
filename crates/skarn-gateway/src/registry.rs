@@ -79,3 +79,8 @@ impl Registry {
 
     /// Resolve a namespaced name back to `(server, tool)`.
     pub fn resolve(&self, namespaced: &str) -> Option<(&str, &str)> {
+        self.tools
+            .iter()
+            .find(|t| t.namespaced == namespaced)
+            .map(|t| (t.server.as_str(), t.tool.as_str()))
+    }

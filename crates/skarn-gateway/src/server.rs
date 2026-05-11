@@ -84,3 +84,4 @@ impl GatewayServer {
                     "properties": {
                         "code": { "type": "string", "description": "The script body (async; use `return`)" },
                         "language": { "type": "string", "enum": ["js", "ts"], "description": "Defaults to ts" }
+                    },

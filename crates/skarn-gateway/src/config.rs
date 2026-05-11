@@ -78,3 +78,8 @@ pub struct ServerConfig {
 pub enum TransportConfig {
     /// Launch a child process and speak MCP over its stdio.
     Stdio {
+        /// The program to run.
+        command: String,
+        /// Arguments.
+        #[serde(default)]
+        args: Vec<String>,
