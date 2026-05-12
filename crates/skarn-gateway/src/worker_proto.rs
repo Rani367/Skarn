@@ -27,3 +27,4 @@ pub struct JobMsg {
 /// One host operation the worker's isolate needs the parent to fulfil.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(tag = "op", rename_all = "snake_case")]
+pub enum BridgeOpWire {

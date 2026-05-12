@@ -101,3 +101,5 @@ impl GatewayServer {
         let hits = self.manager.registry().search(query, limit);
         let body = serde_json::json!({
             "query": query,
+            "matches": hits,
+            "hint": "Call these with skarn.callTool(server, tool, args) inside an `execute` script.",

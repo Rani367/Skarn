@@ -228,3 +228,14 @@ fn to_reply(result: Result<String>) -> (bool, String) {
     }
 }
 
+/// Spawn the OS-sandboxed worker, hand it the job, and service its tool calls
+/// over its stdio pipes until it returns a result.
+#[cfg(unix)]
+async fn execute_worker(
+    manager: Arc<DownstreamManager>,
+    limits: ExecLimits,
+    code: String,
+) -> Result<Outcome> {
+    use std::process::Stdio;
+    use tokio::io::{AsyncBufReadExt, BufReader};
+

@@ -139,3 +139,7 @@ impl DownstreamManager {
                 per_server.push((alias.clone(), descriptors));
             }
         }
+        let registry = Registry::build(&self.separator, per_server);
+        self.registry.store(Arc::new(registry));
+        Ok(())
+    }
