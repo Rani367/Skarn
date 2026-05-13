@@ -95,3 +95,5 @@ impl Registry {
         let terms: Vec<String> = query
             .split(|c: char| !c.is_alphanumeric())
             .filter(|t| !t.is_empty())
+            .map(|t| t.to_ascii_lowercase())
+            .collect();

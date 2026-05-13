@@ -145,3 +145,5 @@ impl DownstreamManager {
     }
 
     /// Call `tool` on `server`, returning the result as a JSON string.
+    pub async fn call(&self, server: &str, tool: &str, args_json: &str) -> Result<String> {
+        let client = self

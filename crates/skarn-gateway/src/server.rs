@@ -107,3 +107,7 @@ impl GatewayServer {
         CallToolResult::success(vec![Content::text(body.to_string())])
     }
 
+    fn handle_read_tool_docs(&self, args: &serde_json::Value) -> CallToolResult {
+        let name = args.get("name").and_then(|v| v.as_str()).unwrap_or("");
+        let registry = self.manager.registry();
+        match registry.tools().iter().find(|t| t.namespaced == name) {

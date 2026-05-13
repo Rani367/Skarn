@@ -247,3 +247,13 @@ async fn execute_worker(
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())
         .stderr(Stdio::inherit())
+        .spawn()
+        .map_err(|e| {
+            Error::CodeMode(format!("spawning Code Mode worker {}: {e}", bin.display()))
+        })?;
+
+    let mut stdin = child
+        .stdin
+        .take()
+        .ok_or_else(|| Error::CodeMode("worker stdin unavailable".to_string()))?;
+    let stdout = child
