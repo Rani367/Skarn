@@ -97,3 +97,7 @@ impl Registry {
             .filter(|t| !t.is_empty())
             .map(|t| t.to_ascii_lowercase())
             .collect();
+
+        let mut scored: Vec<(i32, &NamespacedTool)> = self
+            .tools
+            .iter()

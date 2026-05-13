@@ -44,3 +44,4 @@ pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<
     let instructions = build_instructions(&dts, &manager);
 
     Ok(GatewayServer::new(
+        manager,

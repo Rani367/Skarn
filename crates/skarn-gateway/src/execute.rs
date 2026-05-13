@@ -257,3 +257,9 @@ async fn execute_worker(
         .take()
         .ok_or_else(|| Error::CodeMode("worker stdin unavailable".to_string()))?;
     let stdout = child
+        .stdout
+        .take()
+        .ok_or_else(|| Error::CodeMode("worker stdout unavailable".to_string()))?;
+    let mut lines = BufReader::new(stdout).lines();
+
+    // Hand over the job.

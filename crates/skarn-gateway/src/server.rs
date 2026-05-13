@@ -111,3 +111,5 @@ impl GatewayServer {
         let name = args.get("name").and_then(|v| v.as_str()).unwrap_or("");
         let registry = self.manager.registry();
         match registry.tools().iter().find(|t| t.namespaced == name) {
+            Some(t) => {
+                let body = serde_json::json!({
