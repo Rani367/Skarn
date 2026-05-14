@@ -120,3 +120,7 @@ impl GatewayConfig {
             toml::from_str(s).map_err(|e| Error::config(format!("invalid skarn.toml: {e}")))?;
         config.validate()?;
         Ok(config)
+    }
+
+    /// Check invariants that serde cannot express on its own.
+    fn validate(&self) -> Result<()> {

@@ -53,3 +53,4 @@ pub async fn build_server(config: &GatewayConfig, limits: ExecLimits) -> Result<
 }
 
 /// Connect to the configured downstream servers and run a single Code Mode
+/// script against them, returning its outcome. Used by `skarn exec`.

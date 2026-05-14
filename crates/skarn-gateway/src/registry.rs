@@ -116,3 +116,5 @@ impl Registry {
             .into_iter()
             .take(limit)
             .map(|(score, t)| SearchHit {
+                server: t.server.clone(),
+                tool: t.tool.clone(),

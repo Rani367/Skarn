@@ -31,3 +31,5 @@ pub enum BridgeOpWire {
     /// Call a downstream tool.
     CallTool {
         server: String,
+        tool: String,
+        args: String,

@@ -174,3 +174,9 @@ impl DownstreamManager {
         let client = self
             .clients
             .get(server)
+            .ok_or_else(|| Error::UnknownTool(format!("{server} (resource {uri})")))?;
+        let result = client
+            .read_resource(ReadResourceRequestParams::new(uri.to_string()))
+            .await
+            .map_err(|e| Error::Mcp(format!("reading `{uri}` from `{server}`: {e}")))?;
+

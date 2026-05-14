@@ -289,3 +289,6 @@ async fn execute_worker(
 
         let line = match next {
             Ok(Some(line)) => line,
+            Ok(None) => {
+                let status = child.wait().await.ok();
+                return Err(Error::CodeMode(format!(
