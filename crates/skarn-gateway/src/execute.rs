@@ -288,3 +288,4 @@ async fn execute_worker(
         };
 
         let line = match next {
+            Ok(Some(line)) => line,

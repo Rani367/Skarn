@@ -28,3 +28,4 @@ over an `mpsc` + `oneshot` channel pair:
 main runtime                          dedicated isolate thread
 ────────────                          ────────────────────────
 servicer task  ◀── mpsc(request) ───  ChannelBridge (ToolBridge)
+  manager.call(...)  (rmcp, Send)       │  awaits oneshot

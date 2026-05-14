@@ -170,3 +170,7 @@ impl DownstreamManager {
     }
 
     /// Read a resource by URI from `server`.
+    pub async fn read_resource(&self, server: &str, uri: &str) -> Result<String> {
+        let client = self
+            .clients
+            .get(server)

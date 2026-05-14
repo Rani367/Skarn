@@ -112,3 +112,11 @@ pub enum TransportConfig {
 fn default_true() -> bool {
     true
 }
+
+impl GatewayConfig {
+    /// Parse a configuration from a TOML string.
+    pub fn from_toml(s: &str) -> Result<GatewayConfig> {
+        let config: GatewayConfig =
+            toml::from_str(s).map_err(|e| Error::config(format!("invalid skarn.toml: {e}")))?;
+        config.validate()?;
+        Ok(config)

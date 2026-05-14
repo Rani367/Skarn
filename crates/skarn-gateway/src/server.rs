@@ -127,3 +127,5 @@ impl GatewayServer {
         }
     }
 
+    async fn handle_execute(&self, args: &serde_json::Value) -> CallToolResult {
+        let code = match args.get("code").and_then(|v| v.as_str()) {

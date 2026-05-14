@@ -113,3 +113,6 @@ impl Registry {
                 .then_with(|| a.1.namespaced.cmp(&b.1.namespaced))
         });
         scored
+            .into_iter()
+            .take(limit)
+            .map(|(score, t)| SearchHit {
