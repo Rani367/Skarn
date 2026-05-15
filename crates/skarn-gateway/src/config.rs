@@ -124,3 +124,8 @@ impl GatewayConfig {
 
     /// Check invariants that serde cannot express on its own.
     fn validate(&self) -> Result<()> {
+        let sep = &self.gateway.namespace_separator;
+        // Namespaced tool names (`server<sep>tool`) must stay within the MCP
+        // tool-name charset, or downstream clients will reject them.
+        if sep.is_empty()
+            || !sep

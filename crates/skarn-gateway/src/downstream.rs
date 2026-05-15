@@ -180,3 +180,4 @@ impl DownstreamManager {
             .await
             .map_err(|e| Error::Mcp(format!("reading `{uri}` from `{server}`: {e}")))?;
 
+        let parts: Vec<serde_json::Value> = result

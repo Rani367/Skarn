@@ -118,3 +118,6 @@ impl Registry {
             .map(|(score, t)| SearchHit {
                 server: t.server.clone(),
                 tool: t.tool.clone(),
+                namespaced: t.namespaced.clone(),
+                description: t.description.clone(),
+                score,

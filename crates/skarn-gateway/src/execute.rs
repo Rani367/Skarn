@@ -292,3 +292,11 @@ async fn execute_worker(
             Ok(None) => {
                 let status = child.wait().await.ok();
                 return Err(Error::CodeMode(format!(
+                    "Code Mode worker exited without a result ({status:?})"
+                )));
+            }
+            Err(e) => return Err(Error::CodeMode(format!("reading from worker: {e}"))),
+        };
+
+        if line.len() > max_line {
+            let _ = child.start_kill();

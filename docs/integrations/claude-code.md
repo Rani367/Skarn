@@ -12,3 +12,4 @@ Add Skarn to your MCP config (e.g. `.mcp.json` or the Claude Code settings):
   "mcpServers": {
     "skarn": {
       "command": "skarn",
+      "args": ["serve"]

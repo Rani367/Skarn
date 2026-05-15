@@ -131,3 +131,4 @@ impl GatewayServer {
         let code = match args.get("code").and_then(|v| v.as_str()) {
             Some(c) => c,
             None => {
+                return CallToolResult::error(vec![Content::text("missing `code` argument")]);
