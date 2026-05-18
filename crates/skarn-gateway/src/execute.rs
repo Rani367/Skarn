@@ -308,3 +308,15 @@ async fn execute_worker(
         match serde_json::from_str::<WorkerMsg>(&line)
             .map_err(|e| Error::CodeMode(format!("malformed worker message: {e}")))?
         {
+            WorkerMsg::Request { id, op } => {
+                let (ok, payload) = match op {
+                    BridgeOpWire::CallTool { server, tool, args } => {
+                        to_reply(manager.call(&server, &tool, &args).await)
+                    }
+                    BridgeOpWire::ReadResource { server, uri } => {
+                        to_reply(manager.read_resource(&server, &uri).await)
+                    }
+                    BridgeOpWire::ListTools => to_reply(
+                        serde_json::to_string(&manager.registry().descriptors())
+                            .map_err(|e| Error::Mcp(e.to_string())),
+                    ),

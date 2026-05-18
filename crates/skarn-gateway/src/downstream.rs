@@ -193,3 +193,6 @@ impl DownstreamManager {
             })
             .collect();
         Ok(serde_json::Value::Array(parts).to_string())
+    }
+}
+

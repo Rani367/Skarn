@@ -127,3 +127,5 @@ impl Registry {
 }
 
 /// A search result.
+#[derive(Clone, Debug, Serialize)]
+pub struct SearchHit {
