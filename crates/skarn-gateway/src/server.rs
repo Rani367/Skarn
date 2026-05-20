@@ -142,3 +142,8 @@ impl GatewayServer {
         )
         .await
         {
+            Ok(outcome) if outcome.ok => {
+                let body = serde_json::json!({
+                    "result": outcome.value,
+                    "logs": outcome.logs,
+                    "toolCalls": outcome.tool_calls,

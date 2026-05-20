@@ -202,3 +202,5 @@ impl DownstreamManager {
 fn ensure_crypto_provider() {
     use std::sync::Once;
     static ONCE: Once = Once::new();
+    ONCE.call_once(|| {
+        // Ignore the error if another component already installed a default.

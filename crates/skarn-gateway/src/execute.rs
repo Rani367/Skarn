@@ -332,3 +332,6 @@ async fn execute_worker(
     let _ = child.wait().await;
     Ok(outcome)
 }
+
+#[cfg(unix)]
+async fn write_json_line<W, T>(writer: &mut W, value: &T) -> Result<()>
