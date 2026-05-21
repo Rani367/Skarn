@@ -149,3 +149,4 @@ impl GatewayServer {
                     "toolCalls": outcome.tool_calls,
                 });
                 CallToolResult::success(vec![Content::text(body.to_string())])
+            }

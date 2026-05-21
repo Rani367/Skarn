@@ -134,3 +134,7 @@ pub struct SearchHit {
     pub namespaced: String,
     pub description: String,
     pub score: i32,
+}
+
+fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
+    if terms.is_empty() {

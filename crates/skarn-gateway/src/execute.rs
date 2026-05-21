@@ -343,3 +343,6 @@ where
     let mut line = serde_json::to_string(value).map_err(|e| Error::CodeMode(e.to_string()))?;
     line.push('\n');
     writer
+        .write_all(line.as_bytes())
+        .await
+        .map_err(|e| Error::CodeMode(format!("writing to worker: {e}")))?;

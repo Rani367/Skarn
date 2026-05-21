@@ -209,3 +209,6 @@ fn ensure_crypto_provider() {
 }
 
 /// Build a Streamable HTTP client config from an `Http` transport entry,
+/// resolving the bearer token (env var takes precedence) and validating headers.
+fn http_client_config(
+    alias: &str,
