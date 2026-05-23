@@ -158,3 +158,6 @@ impl GatewayServer {
                 if !outcome.logs.is_empty() {
                     msg.push_str("\n\nlogs:\n");
                     msg.push_str(&outcome.logs.join("\n"));
+                }
+                CallToolResult::error(vec![Content::text(msg)])
+            }

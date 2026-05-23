@@ -147,3 +147,8 @@ impl GatewayConfig {
     }
 
     /// The enabled downstream servers.
+    pub fn enabled_servers(&self) -> impl Iterator<Item = (&String, &ServerConfig)> {
+        self.servers.iter().filter(|(_, c)| c.enabled)
+    }
+}
+

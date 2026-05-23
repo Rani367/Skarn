@@ -66,3 +66,4 @@ pub async fn run_script(
 /// Serve a gateway over stdio (the default transport for Claude Code / Cursor).
 pub async fn serve_stdio(server: GatewayServer) -> Result<()> {
     let running = server
+        .serve(rmcp::transport::stdio())

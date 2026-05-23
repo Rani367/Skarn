@@ -22,3 +22,7 @@ pub struct ServeArgs {
     config: Option<PathBuf>,
     /// Expose the namespaced downstream tools directly, in addition to the meta-tools.
     #[arg(long)]
+    passthrough: bool,
+    #[command(flatten)]
+    limits: LimitArgs,
+}
