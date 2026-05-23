@@ -68,3 +68,5 @@ pub async fn serve_stdio(server: GatewayServer) -> Result<()> {
     let running = server
         .serve(rmcp::transport::stdio())
         .await
+        .map_err(|e| Error::Mcp(format!("serving over stdio: {e}")))?;
+    running

@@ -8,3 +8,5 @@ pub const SKARN_TOML_TEMPLATE: &str = r#"# Skarn gateway configuration.
 # (`search`, `read_tool_docs`, `execute`).
 
 [gateway]
+# Also expose the namespaced downstream tools directly (e.g. `fs__read_file`),
+# in addition to the Code Mode meta-tools. Leave false to get the full

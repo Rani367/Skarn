@@ -9,3 +9,5 @@ untrusted code, so we hold a high bar for correctness and clarity.
 git clone https://github.com/Rani367/Skarn
 cd Skarn
 cargo build --workspace
+cargo test --workspace
+```

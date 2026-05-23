@@ -34,3 +34,5 @@ pub struct ExecArgs {
     config: Option<PathBuf>,
     /// Inline script source.
     #[arg(long, short = 'e', conflicts_with = "file")]
+    code: Option<String>,
+    /// Read the script from a file (`-` for stdin).

@@ -43,3 +43,4 @@ pub enum BridgeOpWire {
 /// A message from the worker to the parent.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(tag = "kind", rename_all = "snake_case")]
+pub enum WorkerMsg {

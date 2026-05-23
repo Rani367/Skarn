@@ -147,3 +147,6 @@ fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
     for term in terms {
         if name == *term {
             score += 10;
+        } else if name.contains(term) {
+            score += 6;
+        }

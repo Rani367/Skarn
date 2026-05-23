@@ -377,3 +377,9 @@ pub fn run_worker_job() -> Result<()> {
     }
 }
 
+#[cfg(unix)]
+mod worker {
+    use std::collections::HashMap;
+    use std::io::{BufRead, Write};
+    use std::sync::Arc;
+    use std::sync::Mutex;

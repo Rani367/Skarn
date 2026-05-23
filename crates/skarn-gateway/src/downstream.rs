@@ -225,3 +225,6 @@ fn http_client_config(
         None => auth_bearer.clone(),
     };
 
+    let mut custom = std::collections::HashMap::new();
+    for (k, v) in headers {
+        let name = HeaderName::from_bytes(k.as_bytes())
