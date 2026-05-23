@@ -165,3 +165,6 @@ impl GatewayServer {
         }
     }
 
+    async fn handle_passthrough(&self, name: &str, args_json: &str) -> CallToolResult {
+        let registry = self.manager.registry();
+        match registry.resolve(name) {

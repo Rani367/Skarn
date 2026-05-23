@@ -228,3 +228,8 @@ fn http_client_config(
     let mut custom = std::collections::HashMap::new();
     for (k, v) in headers {
         let name = HeaderName::from_bytes(k.as_bytes())
+            .map_err(|e| Error::config(format!("invalid header name `{k}` for `{alias}`: {e}")))?;
+        let value = HeaderValue::from_str(v).map_err(|e| {
+            Error::config(format!("invalid header value for `{k}` on `{alias}`: {e}"))
+        })?;
+        custom.insert(name, value);

@@ -5,3 +5,5 @@
 //!     behind a Code Mode tool surface,
 //!   * a **sandboxing, output-compressing shell wrapper** (`skarn run -- …`)
 //!     designed to be dropped into an agent's PreToolUse hook,
+//!   * a **Code Mode runner** (`skarn exec`) for trying scripts against your
+//!     configured servers.

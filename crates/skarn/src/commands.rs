@@ -36,3 +36,9 @@ pub struct ExecArgs {
     #[arg(long, short = 'e', conflicts_with = "file")]
     code: Option<String>,
     /// Read the script from a file (`-` for stdin).
+    #[arg(long, short)]
+    file: Option<PathBuf>,
+    #[command(flatten)]
+    limits: LimitArgs,
+}
+

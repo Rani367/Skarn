@@ -383,3 +383,6 @@ mod worker {
     use std::io::{BufRead, Write};
     use std::sync::Arc;
     use std::sync::Mutex;
+    use std::sync::atomic::{AtomicU64, Ordering};
+
+    use async_trait::async_trait;
