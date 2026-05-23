@@ -15,3 +15,5 @@ namespace_separator = "__"
 
 # How `execute` scripts are isolated:
 #   "auto"        – cross-process OS-sandboxed worker when available (macOS/Linux),
+#                   otherwise the in-process hermetic isolate (default)
+#   "worker"      – always use the sandboxed worker (errors if unavailable)

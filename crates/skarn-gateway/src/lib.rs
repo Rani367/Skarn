@@ -62,3 +62,8 @@ pub async fn run_script(
     let manager = Arc::new(DownstreamManager::connect(config).await?);
     execute::execute_code(manager, limits, code.to_string(), config.gateway.isolation).await
 }
+
+/// Serve a gateway over stdio (the default transport for Claude Code / Cursor).
+pub async fn serve_stdio(server: GatewayServer) -> Result<()> {
+    let running = server
+        .serve(rmcp::transport::stdio())

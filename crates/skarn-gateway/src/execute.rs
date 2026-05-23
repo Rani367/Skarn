@@ -346,3 +346,20 @@ where
         .write_all(line.as_bytes())
         .await
         .map_err(|e| Error::CodeMode(format!("writing to worker: {e}")))?;
+    writer
+        .flush()
+        .await
+        .map_err(|e| Error::CodeMode(format!("flushing to worker: {e}")))?;
+    Ok(())
+}
+
+// ---------------------------------------------------------------------------
+// Cross-process worker execution (child side)
+// ---------------------------------------------------------------------------
+
+/// Entry point for the hidden `skarn __worker` subcommand: read the job from
+/// stdin, confine this process with the OS sandbox, run the isolate, and report
+/// the outcome on stdout. Always emits exactly one terminal message.
+///
+/// Returns `Ok(())` whenever a terminal message was emitted (including failures,
+/// which are reported as [`WorkerMsg::Failed`]); only an I/O failure writing that

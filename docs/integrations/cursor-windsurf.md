@@ -16,3 +16,5 @@ Edit `~/.cursor/mcp.json` (global) or `.cursor/mcp.json` (per-project):
     }
   }
 }
+```
+

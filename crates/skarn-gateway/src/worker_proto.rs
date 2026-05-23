@@ -39,3 +39,6 @@ pub enum BridgeOpWire {
     /// List all downstream tools.
     ListTools,
 }
+
+/// A message from the worker to the parent.
+#[derive(Clone, Debug, Serialize, Deserialize)]

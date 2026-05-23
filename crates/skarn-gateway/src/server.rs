@@ -150,3 +150,14 @@ impl GatewayServer {
                 });
                 CallToolResult::success(vec![Content::text(body.to_string())])
             }
+            Ok(outcome) => {
+                let mut msg = format!(
+                    "Script error: {}",
+                    outcome.error.unwrap_or_else(|| "unknown".into())
+                );
+                if !outcome.logs.is_empty() {
+                    msg.push_str("\n\nlogs:\n");
+                    msg.push_str(&outcome.logs.join("\n"));
+                }
+                CallToolResult::error(vec![Content::text(msg)])
+            }
