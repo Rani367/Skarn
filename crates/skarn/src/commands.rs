@@ -29,3 +29,8 @@ pub struct ServeArgs {
 
 #[derive(Args, Debug)]
 pub struct ExecArgs {
+    /// Path to the gateway config (default: ./skarn.toml if present).
+    #[arg(long, short)]
+    config: Option<PathBuf>,
+    /// Inline script source.
+    #[arg(long, short = 'e', conflicts_with = "file")]

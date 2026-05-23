@@ -7,3 +7,4 @@ pub const SKARN_TOML_TEMPLATE: &str = r#"# Skarn gateway configuration.
 # and exposes them to your AI client through the Code Mode meta-tools
 # (`search`, `read_tool_docs`, `execute`).
 
+[gateway]

@@ -224,3 +224,4 @@ fn http_client_config(
         Some(var) => std::env::var(var).ok().or_else(|| auth_bearer.clone()),
         None => auth_bearer.clone(),
     };
+

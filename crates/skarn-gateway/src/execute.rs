@@ -370,3 +370,10 @@ pub fn run_worker_job() -> Result<()> {
         worker::run()
     }
     #[cfg(not(unix))]
+    {
+        Err(Error::CodeMode(
+            "the Code Mode worker is only available on Unix".to_string(),
+        ))
+    }
+}
+

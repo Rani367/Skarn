@@ -146,3 +146,4 @@ fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
     let mut score = 0;
     for term in terms {
         if name == *term {
+            score += 10;
