@@ -71,3 +71,4 @@ pub async fn serve_stdio(server: GatewayServer) -> Result<()> {
         .map_err(|e| Error::Mcp(format!("serving over stdio: {e}")))?;
     running
         .waiting()
+        .await

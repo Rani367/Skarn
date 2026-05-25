@@ -157,3 +157,4 @@ mod tests {
     use super::*;
 
     #[test]
+    fn parses_stdio_servers() {

@@ -51,3 +51,5 @@ pub struct RunArgs {
     #[arg(long)]
     workspace: Option<PathBuf>,
     /// Disable OS-native sandboxing (runs the command unconfined).
+    #[arg(long)]
+    no_sandbox: bool,

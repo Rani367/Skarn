@@ -389,3 +389,6 @@ mod worker {
     use skarn_codemode::{Engine, ExecLimits, Outcome, ToolBridge};
     use skarn_common::{Error, Result};
     use tokio::sync::{mpsc, oneshot};
+
+    use crate::worker_proto::{BridgeOpWire, JobMsg, ReplyMsg, WorkerMsg};
+

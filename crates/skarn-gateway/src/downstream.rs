@@ -233,3 +233,6 @@ fn http_client_config(
             Error::config(format!("invalid header value for `{k}` on `{alias}`: {e}"))
         })?;
         custom.insert(name, value);
+    }
+
+    let mut cfg =

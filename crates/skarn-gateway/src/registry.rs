@@ -153,3 +153,6 @@ fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
         if server.contains(term) {
             score += 3;
         }
+        if desc.contains(term) {
+            score += 2;
+        }
