@@ -22,3 +22,4 @@ while the published spec has advanced to `2025-11-25`.
 - **Do not enable the `local` feature.** It relaxes `Send` for a single-threaded
   deployment, but it made running the `!Send` Code Mode isolate alongside live
   MCP clients fragile (see ADR 0003). We run multi-threaded and isolate the
+  engine on its own thread instead.

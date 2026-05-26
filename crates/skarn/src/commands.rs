@@ -62,3 +62,4 @@ pub struct RunArgs {
     /// The command to run, after `--`.
     #[arg(last = true, required = true)]
     command: Vec<String>,
+}

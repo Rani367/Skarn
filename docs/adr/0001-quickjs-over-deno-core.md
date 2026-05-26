@@ -26,3 +26,4 @@ Use **`rquickjs`** with the `futures` + `macro` features.
   is exactly the `skarn.callTool(...)` pattern we need.
 - **Hard limits exist:** `set_memory_limit`, `set_max_stack_size`, and an
   interrupt handler (wall-clock deadline → uncatchable abort) cover the
+  untrusted-execution requirements.

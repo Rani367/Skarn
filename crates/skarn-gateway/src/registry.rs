@@ -160,3 +160,5 @@ fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
     score
 }
 
+#[cfg(test)]
+mod tests {

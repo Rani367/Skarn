@@ -175,3 +175,6 @@ impl GatewayServer {
                     Err(e) => CallToolResult::error(vec![Content::text(e.to_string())]),
                 }
             }
+            None => CallToolResult::error(vec![Content::text(format!("unknown tool `{name}`"))]),
+        }
+    }

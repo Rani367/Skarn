@@ -166,3 +166,4 @@ mod tests {
             transport = "stdio"
             command = "npx"
             args = ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+

@@ -20,3 +20,4 @@ namespace_separator = "__"
 #   "in_process"  – hermetic isolate only, no extra OS sandbox
 isolation = "auto"
 
+# ---------------------------------------------------------------------------
