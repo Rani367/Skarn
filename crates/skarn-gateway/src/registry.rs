@@ -156,3 +156,6 @@ fn score_tool(tool: &NamespacedTool, terms: &[String]) -> i32 {
         if desc.contains(term) {
             score += 2;
         }
+    }
+    score
+}

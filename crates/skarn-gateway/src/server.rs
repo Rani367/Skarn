@@ -171,3 +171,5 @@ impl GatewayServer {
             Some((server, tool)) => {
                 let (server, tool) = (server.to_string(), tool.to_string());
                 match self.manager.call(&server, &tool, args_json).await {
+                    Ok(json) => CallToolResult::success(vec![Content::text(json)]),
+                    Err(e) => CallToolResult::error(vec![Content::text(e.to_string())]),

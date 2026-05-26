@@ -53,3 +53,7 @@ pub struct RunArgs {
     /// Disable OS-native sandboxing (runs the command unconfined).
     #[arg(long)]
     no_sandbox: bool,
+    /// Do not compress the command output.
+    #[arg(long)]
+    no_compress: bool,
+    /// Print a one-line token-savings summary to stderr.

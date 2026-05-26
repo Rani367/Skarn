@@ -27,3 +27,4 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
   which a process can do on macOS (Seatbelt) and Linux (Landlock + seccomp) but
   not on Windows (a process cannot move *itself* into an AppContainer). On Windows
   `execute` uses the in-process hermetic isolate; AppContainer is instead wired
+  into `skarn run` for shell commands (where the parent launches the child).

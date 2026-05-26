@@ -45,3 +45,4 @@ pub enum BridgeOpWire {
 #[serde(tag = "kind", rename_all = "snake_case")]
 pub enum WorkerMsg {
     /// A host operation, awaiting a [`ReplyMsg`] with the same `id`.
+    Request { id: u64, op: BridgeOpWire },

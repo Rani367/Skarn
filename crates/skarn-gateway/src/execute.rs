@@ -392,3 +392,5 @@ mod worker {
 
     use crate::worker_proto::{BridgeOpWire, JobMsg, ReplyMsg, WorkerMsg};
 
+    pub fn run() -> Result<()> {
+        let job = match read_job() {

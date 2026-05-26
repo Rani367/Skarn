@@ -133,3 +133,4 @@ each script in a dedicated **worker process that sandboxes itself** (deny networ
 no workspace writes) before touching model-generated code, so an isolate escape
 still lands in a kernel-confined process. Configure it with `isolation` in
 `skarn.toml` (`auto` / `worker` / `in_process`).
+

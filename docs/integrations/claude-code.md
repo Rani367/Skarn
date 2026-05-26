@@ -18,3 +18,4 @@ Add Skarn to your MCP config (e.g. `.mcp.json` or the Claude Code settings):
 }
 ```
 
+Configure which downstream servers it aggregates in `skarn.toml` (run

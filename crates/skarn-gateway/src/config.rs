@@ -158,3 +158,7 @@ mod tests {
 
     #[test]
     fn parses_stdio_servers() {
+        let toml = r#"
+            [gateway]
+            passthrough = true
+

@@ -236,3 +236,4 @@ fn http_client_config(
     }
 
     let mut cfg =
+        StreamableHttpClientTransportConfig::with_uri(url.to_string()).custom_headers(custom);
