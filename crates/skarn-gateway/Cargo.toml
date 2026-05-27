@@ -35,3 +35,4 @@ rmcp = { version = "1.8.0", features = [
     "transport-streamable-http-client-reqwest",
 ] }
 # Pin the reqwest TLS stack to rustls + ring (not aws-lc-rs): a smaller, more
+# cross-compile-friendly crypto backend that keeps the single-binary goal. The

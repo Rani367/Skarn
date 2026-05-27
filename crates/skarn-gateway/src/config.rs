@@ -168,3 +168,4 @@ mod tests {
             args = ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
 
             [servers.disabled]
+            enabled = false

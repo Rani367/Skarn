@@ -3,3 +3,4 @@ name = "skarn"
 description = "Skarn — a cross-platform MCP gateway with OS-native sandboxing, Code Mode, and token compression."
 version.workspace = true
 edition.workspace = true
+rust-version.workspace = true

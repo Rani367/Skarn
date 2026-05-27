@@ -412,3 +412,8 @@ mod worker {
         let runtime = match tokio::runtime::Builder::new_current_thread()
             .enable_all()
             .build()
+        {
+            Ok(rt) => rt,
+            Err(e) => {
+                return emit(&WorkerMsg::Failed {
+                    error: format!("worker runtime: {e}"),

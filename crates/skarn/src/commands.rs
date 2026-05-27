@@ -73,3 +73,6 @@ pub struct InitArgs {
 
 #[derive(Args, Debug)]
 struct LimitArgs {
+    /// QuickJS heap limit (MB) for `execute`.
+    #[arg(long, default_value_t = 64)]
+    mem_mb: usize,

@@ -33,3 +33,4 @@ servicer task  ◀── mpsc(request) ───  ChannelBridge (ToolBridge)
                                         QuickJS isolate (!Send)
 ```
 
+The MCP clients live their whole life on the main runtime (stable reactor; clean

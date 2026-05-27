@@ -250,3 +250,6 @@ fn tool_to_descriptor(alias: &str, t: Tool) -> ToolDescriptor {
         description: t.description.map(|d| d.to_string()).unwrap_or_default(),
         input_schema: serde_json::Value::Object((*t.input_schema).clone()),
     }
+}
+
+fn parse_args(s: &str) -> Result<Option<JsonObject>> {
