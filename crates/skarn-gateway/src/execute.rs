@@ -421,3 +421,10 @@ mod worker {
             }
         };
 
+        let result = runtime.block_on(run_isolate(job.limits, &job.code));
+        match result {
+            Ok(outcome) => emit(&WorkerMsg::Result { outcome }),
+            Err(e) => emit(&WorkerMsg::Failed {
+                error: e.to_string(),
+            }),
+        }

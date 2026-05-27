@@ -256,3 +256,4 @@ fn parse_args(s: &str) -> Result<Option<JsonObject>> {
     let trimmed = s.trim();
     if trimmed.is_empty() || trimmed == "null" {
         return Ok(None);
+    }

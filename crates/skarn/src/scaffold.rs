@@ -19,3 +19,4 @@ passthrough = false
 # ---------------------------------------------------------------------------
 
 # A local filesystem server (uncomment and adjust):
+# [servers.fs]

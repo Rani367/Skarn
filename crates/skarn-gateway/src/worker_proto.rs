@@ -47,3 +47,4 @@ pub enum WorkerMsg {
     /// A host operation, awaiting a [`ReplyMsg`] with the same `id`.
     Request { id: u64, op: BridgeOpWire },
     /// The script finished; this is the final message.
+    Result { outcome: Outcome },

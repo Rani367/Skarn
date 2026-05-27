@@ -36,3 +36,4 @@ rmcp = { version = "1.8.0", features = [
 ] }
 # Pin the reqwest TLS stack to rustls + ring (not aws-lc-rs): a smaller, more
 # cross-compile-friendly crypto backend that keeps the single-binary goal. The
+# ring provider is installed as the process default before the first HTTPS use.

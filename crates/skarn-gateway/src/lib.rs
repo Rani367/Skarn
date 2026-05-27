@@ -74,3 +74,5 @@ pub async fn serve_stdio(server: GatewayServer) -> Result<()> {
         .await
         .map_err(|e| Error::Mcp(format!("gateway stopped: {e}")))?;
     Ok(())
+}
+

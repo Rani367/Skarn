@@ -187,3 +187,5 @@ impl ServerHandler for GatewayServer {
         info.instructions = Some(self.instructions.clone());
         info
     }
+
+    async fn list_tools(

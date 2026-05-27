@@ -167,3 +167,5 @@ mod tests {
     fn desc(name: &str, description: &str) -> ToolDescriptor {
         ToolDescriptor {
             server: String::new(),
+            name: name.to_string(),
+            description: description.to_string(),

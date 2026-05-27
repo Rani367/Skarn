@@ -172,3 +172,7 @@ mod tests {
             transport = "stdio"
             command = "false"
         "#;
+        let cfg = GatewayConfig::from_toml(toml).unwrap();
+        assert!(cfg.gateway.passthrough);
+        assert_eq!(cfg.servers.len(), 2);
+        assert_eq!(cfg.enabled_servers().count(), 1);
