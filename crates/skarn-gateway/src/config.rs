@@ -169,3 +169,6 @@ mod tests {
 
             [servers.disabled]
             enabled = false
+            transport = "stdio"
+            command = "false"
+        "#;

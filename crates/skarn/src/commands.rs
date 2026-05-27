@@ -76,3 +76,7 @@ struct LimitArgs {
     /// QuickJS heap limit (MB) for `execute`.
     #[arg(long, default_value_t = 64)]
     mem_mb: usize,
+    /// Wall-clock timeout (seconds) for `execute`.
+    #[arg(long, default_value_t = 30)]
+    timeout_secs: u64,
+    /// Maximum downstream tool calls per `execute`.

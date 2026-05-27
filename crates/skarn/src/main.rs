@@ -13,3 +13,4 @@ mod scaffold;
 
 use clap::{Parser, Subcommand};
 
+/// Skarn: a fast, OS-sandboxed MCP gateway with Code Mode and token compression.

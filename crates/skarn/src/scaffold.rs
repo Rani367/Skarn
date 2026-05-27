@@ -18,3 +18,4 @@ passthrough = false
 # and aggregated. The alias becomes the namespace prefix (alias__tool).
 # ---------------------------------------------------------------------------
 
+# A local filesystem server (uncomment and adjust):

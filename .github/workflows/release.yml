@@ -81,3 +81,4 @@ jobs:
         with:
           files: |
             *.tar.gz
+            *.tar.gz.sha256

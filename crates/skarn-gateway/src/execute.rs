@@ -417,3 +417,7 @@ mod worker {
             Err(e) => {
                 return emit(&WorkerMsg::Failed {
                     error: format!("worker runtime: {e}"),
+                });
+            }
+        };
+

@@ -165,3 +165,5 @@ mod tests {
     use super::*;
 
     fn desc(name: &str, description: &str) -> ToolDescriptor {
+        ToolDescriptor {
+            server: String::new(),
