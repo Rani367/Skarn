@@ -28,3 +28,4 @@ Use **`rquickjs`** with the `futures` + `macro` features.
   interrupt handler (wall-clock deadline → uncatchable abort) cover the
   untrusted-execution requirements.
 - **Startup:** fresh contexts are cheap, which suits a per-execution isolate.
+

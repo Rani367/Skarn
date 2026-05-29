@@ -106,3 +106,5 @@ pub enum NetArg {
     /// Allow all network access.
     All,
 }
+
+impl From<NetArg> for NetPolicy {

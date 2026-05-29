@@ -176,3 +176,7 @@ mod tests {
     fn registry() -> Registry {
         Registry::build(
             "__",
+            vec![
+                (
+                    "github".to_string(),
+                    vec![

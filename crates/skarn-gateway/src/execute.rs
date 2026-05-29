@@ -448,3 +448,5 @@ mod worker {
         // Reader thread: forwards reply lines from the parent. Trusted code; on
         // Unix it inherits this thread's Landlock domain (and seccomp via TSYNC).
         std::thread::spawn(move || {
+            let stdin = std::io::stdin();
+            let mut handle = stdin.lock();

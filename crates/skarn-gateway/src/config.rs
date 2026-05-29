@@ -183,3 +183,4 @@ mod tests {
                 assert_eq!(command, "npx");
                 assert_eq!(args.len(), 3);
             }
+            other => panic!("expected a stdio transport, got {other:?}"),

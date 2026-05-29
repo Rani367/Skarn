@@ -267,3 +267,7 @@ fn parse_args(s: &str) -> Result<Option<JsonObject>> {
         ))),
     }
 }
+
+/// Turn a tool result into a single JSON value: prefer structured content, fall
+/// back to (JSON-parsed) text content.
+fn result_to_json(result: CallToolResult) -> serde_json::Value {

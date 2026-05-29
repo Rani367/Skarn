@@ -28,3 +28,4 @@ passthrough = false
 # [servers.github]
 # transport = "stdio"
 # command = "npx"
+# args = ["-y", "@modelcontextprotocol/server-github"]
