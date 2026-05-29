@@ -450,3 +450,9 @@ mod worker {
         std::thread::spawn(move || {
             let stdin = std::io::stdin();
             let mut handle = stdin.lock();
+            let mut line = String::new();
+            loop {
+                line.clear();
+                match handle.read_line(&mut line) {
+                    Ok(0) => break,
+                    Ok(_) => {

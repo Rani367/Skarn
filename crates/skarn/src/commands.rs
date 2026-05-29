@@ -108,3 +108,4 @@ pub enum NetArg {
 }
 
 impl From<NetArg> for NetPolicy {
+    fn from(n: NetArg) -> Self {

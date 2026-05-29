@@ -180,3 +180,4 @@ mod tests {
                 (
                     "github".to_string(),
                     vec![
+                        desc("search_issues", "Search GitHub issues and pull requests"),

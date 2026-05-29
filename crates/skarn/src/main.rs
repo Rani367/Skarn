@@ -24,3 +24,5 @@ struct Cli {
     #[arg(long, short, global = true)]
     verbose: bool,
 }
+
+#[derive(Subcommand, Debug)]

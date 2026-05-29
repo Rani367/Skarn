@@ -199,3 +199,5 @@ impl ServerHandler for GatewayServer {
                 let desc = if t.description.is_empty() {
                     format!("(via {})", t.server)
                 } else {
+                    format!("{} (via {})", t.description, t.server)
+                };

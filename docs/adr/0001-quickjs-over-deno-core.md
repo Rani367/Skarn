@@ -29,3 +29,4 @@ Use **`rquickjs`** with the `futures` + `macro` features.
   untrusted-execution requirements.
 - **Startup:** fresh contexts are cheap, which suits a per-execution isolate.
 
+`boa` (pure Rust) remains an attractive portability escape hatch but is slower
