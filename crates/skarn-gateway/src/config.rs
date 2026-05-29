@@ -188,3 +188,6 @@ mod tests {
     }
 
     #[test]
+    fn empty_config_is_valid() {
+        let cfg = GatewayConfig::from_toml("").unwrap();
+        assert!(cfg.servers.is_empty());

@@ -109,3 +109,9 @@ pub enum NetArg {
 
 impl From<NetArg> for NetPolicy {
     fn from(n: NetArg) -> Self {
+        match n {
+            NetArg::Deny => NetPolicy::DenyAll,
+            NetArg::Loopback => NetPolicy::AllowLoopback,
+            NetArg::Outbound => NetPolicy::AllowOutbound,
+            NetArg::All => NetPolicy::AllowAll,
+        }

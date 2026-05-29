@@ -456,3 +456,8 @@ mod worker {
                 match handle.read_line(&mut line) {
                     Ok(0) => break,
                     Ok(_) => {
+                        if let Ok(reply) = serde_json::from_str::<ReplyMsg>(line.trim_end())
+                            && reply_tx.send(reply).is_err()
+                        {
+                            break;
+                        }

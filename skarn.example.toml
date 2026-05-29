@@ -23,3 +23,5 @@ isolation = "auto"
 # ---------------------------------------------------------------------------
 # Downstream MCP servers. Each [servers.<alias>] becomes a namespace prefix.
 # ---------------------------------------------------------------------------
+
+[servers.fs]

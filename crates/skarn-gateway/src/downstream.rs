@@ -274,3 +274,6 @@ fn result_to_json(result: CallToolResult) -> serde_json::Value {
     if let Some(sc) = result.structured_content {
         return sc;
     }
+    let texts: Vec<String> = result
+        .content
+        .iter()

@@ -51,3 +51,4 @@ pub enum WorkerMsg {
     /// The worker failed before producing a result (validation, sandbox apply,
     /// panic, …); this is the final message.
     Failed { error: String },
+}
