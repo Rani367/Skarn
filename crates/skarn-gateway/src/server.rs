@@ -196,3 +196,5 @@ impl ServerHandler for GatewayServer {
         let mut tools = Self::meta_tools();
         if self.passthrough {
             for t in self.manager.registry().tools() {
+                let desc = if t.description.is_empty() {
+                    format!("(via {})", t.server)

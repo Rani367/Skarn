@@ -173,3 +173,4 @@ mod tests {
         }
     }
 
+    fn registry() -> Registry {

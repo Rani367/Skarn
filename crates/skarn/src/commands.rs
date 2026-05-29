@@ -96,3 +96,8 @@ impl LimitArgs {
 }
 
 #[derive(Clone, Copy, Debug, ValueEnum)]
+pub enum NetArg {
+    /// Deny all network access (default).
+    Deny,
+    /// Allow loopback only.
+    Loopback,

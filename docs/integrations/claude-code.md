@@ -23,3 +23,4 @@ Configure which downstream servers it aggregates in `skarn.toml` (run
 `execute` instead of every downstream schema, and orchestrates tools in a
 sandboxed isolate.
 
+## 2. Shell hook (sandbox + compression)

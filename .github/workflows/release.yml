@@ -83,3 +83,4 @@ jobs:
             *.tar.gz
             *.tar.gz.sha256
 
+  publish:

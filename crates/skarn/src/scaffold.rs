@@ -24,3 +24,6 @@ passthrough = false
 # command = "npx"
 # args = ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/project"]
 
+# A GitHub server:
+# [servers.github]
+# transport = "stdio"

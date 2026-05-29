@@ -438,3 +438,10 @@ mod worker {
             .lock()
             .read_line(&mut line)
             .map_err(|e| Error::CodeMode(format!("reading job: {e}")))?;
+        serde_json::from_str(line.trim_end())
+            .map_err(|e| Error::CodeMode(format!("parsing job: {e}")))
+    }
+
+    async fn run_isolate(limits: ExecLimits, code: &str) -> Result<Outcome> {
+        let (reply_tx, mut reply_rx) = mpsc::unbounded_channel::<ReplyMsg>();
+
