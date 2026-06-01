@@ -482,3 +482,6 @@ mod worker {
 
         let bridge: Arc<dyn ToolBridge> = Arc::new(PipeBridge {
             next_id: AtomicU64::new(0),
+            pending,
+        });
+        let outcome = Engine::new(limits).run(code, bridge).await;

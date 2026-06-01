@@ -186,3 +186,7 @@ mod tests {
                 ),
                 (
                     "db".to_string(),
+                    vec![desc("query", "Run a SQL query against the database")],
+                ),
+            ],
+        )

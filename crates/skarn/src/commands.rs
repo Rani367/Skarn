@@ -138,3 +138,7 @@ pub async fn serve(args: ServeArgs) -> anyhow::Result<()> {
         .await
         .map_err(|e| anyhow!("serving gateway: {e}"))?;
     Ok(())
+}
+
+// ---------------------------------------------------------------------------
+// exec

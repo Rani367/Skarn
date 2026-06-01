@@ -285,3 +285,9 @@ fn result_to_json(result: CallToolResult) -> serde_json::Value {
             .unwrap_or_else(|_| serde_json::Value::String(texts[0].clone())),
         _ => serde_json::Value::Array(texts.into_iter().map(serde_json::Value::String).collect()),
     }
+}
+
+fn extract_text(result: &CallToolResult) -> String {
+    result
+        .content
+        .iter()

@@ -35,3 +35,5 @@ passthrough = false
 # read from the environment at startup instead of being stored in this file:
 # [servers.remote]
 # transport = "http"
+# url = "https://api.example.com/mcp"
+# auth_bearer_env = "EXAMPLE_API_TOKEN"

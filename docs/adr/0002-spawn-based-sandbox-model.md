@@ -30,3 +30,4 @@ can deadlock on the allocator lock held by another thread at fork time.
 
 Modern macOS resolves loader paths (dyld shared cache, Cryptexes, firmlinks) in
 ways that make a precise read allow-list unreliable across OS versions — an
+allow-list reliably breaks `execve`. So on macOS we **allow broad reads and

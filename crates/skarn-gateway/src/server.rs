@@ -207,3 +207,5 @@ impl ServerHandler for GatewayServer {
                     schema(t.input_schema.clone()),
                 ));
             }
+        }
+        Ok(ListToolsResult::with_all_items(tools))

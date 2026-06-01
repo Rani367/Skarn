@@ -27,3 +27,4 @@ sandboxed isolate.
 
 Route the agent's shell commands through `skarn run` so they are confined to the
 project directory, denied network access, and have their output compressed
+70–90% — without changing how the agent prompts.
