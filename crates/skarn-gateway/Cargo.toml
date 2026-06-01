@@ -40,3 +40,4 @@ rmcp = { version = "1.8.0", features = [
 reqwest = { version = "0.13", default-features = false, features = [
     "rustls-no-provider",
     "http2",
+    "charset",

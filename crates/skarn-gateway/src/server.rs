@@ -205,3 +205,5 @@ impl ServerHandler for GatewayServer {
                     t.namespaced.clone(),
                     desc,
                     schema(t.input_schema.clone()),
+                ));
+            }

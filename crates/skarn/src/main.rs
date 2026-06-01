@@ -29,3 +29,5 @@ struct Cli {
 enum Command {
     /// Run the MCP gateway (stdio transport) for an AI client to connect to.
     Serve(commands::ServeArgs),
+    /// Run a shell command inside an OS-native sandbox and compress its output.
+    Run(commands::RunArgs),

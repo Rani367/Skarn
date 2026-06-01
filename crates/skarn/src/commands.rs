@@ -132,3 +132,9 @@ pub async fn serve(args: ServeArgs) -> anyhow::Result<()> {
         "starting Skarn gateway on stdio"
     );
     let server = skarn_gateway::build_server(&config, args.limits.to_limits())
+        .await
+        .map_err(|e| anyhow!("building gateway: {e}"))?;
+    skarn_gateway::serve_stdio(server)
+        .await
+        .map_err(|e| anyhow!("serving gateway: {e}"))?;
+    Ok(())

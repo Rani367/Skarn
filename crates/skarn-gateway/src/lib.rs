@@ -85,3 +85,4 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
         "(none connected)".to_string()
     } else {
         servers.join(", ")
+    };

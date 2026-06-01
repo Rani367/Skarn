@@ -477,3 +477,8 @@ mod worker {
                 if let Some(tx) = demux.lock().unwrap().remove(&reply.id) {
                     let _ = tx.send(reply);
                 }
+            }
+        });
+
+        let bridge: Arc<dyn ToolBridge> = Arc::new(PipeBridge {
+            next_id: AtomicU64::new(0),
