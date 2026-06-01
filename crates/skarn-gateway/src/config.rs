@@ -191,3 +191,5 @@ mod tests {
     fn empty_config_is_valid() {
         let cfg = GatewayConfig::from_toml("").unwrap();
         assert!(cfg.servers.is_empty());
+        assert_eq!(cfg.gateway.namespace_separator, "__");
+    }

@@ -182,3 +182,6 @@ mod tests {
                     vec![
                         desc("search_issues", "Search GitHub issues and pull requests"),
                         desc("create_issue", "Open a new issue"),
+                    ],
+                ),
+                (

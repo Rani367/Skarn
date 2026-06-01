@@ -277,3 +277,4 @@ fn result_to_json(result: CallToolResult) -> serde_json::Value {
     let texts: Vec<String> = result
         .content
         .iter()
+        .filter_map(|c| c.as_text().map(|t| t.text.clone()))

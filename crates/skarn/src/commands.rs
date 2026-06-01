@@ -115,3 +115,7 @@ impl From<NetArg> for NetPolicy {
             NetArg::Outbound => NetPolicy::AllowOutbound,
             NetArg::All => NetPolicy::AllowAll,
         }
+    }
+}
+
+// ---------------------------------------------------------------------------

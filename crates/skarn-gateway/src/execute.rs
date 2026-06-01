@@ -461,3 +461,14 @@ mod worker {
                         {
                             break;
                         }
+                    }
+                    Err(_) => break,
+                }
+            }
+        });
+
+        let pending: Arc<Mutex<HashMap<u64, oneshot::Sender<ReplyMsg>>>> =
+            Arc::new(Mutex::new(HashMap::new()));
+
+        // Demux replies to the waiting call by id.
+        let demux = pending.clone();
