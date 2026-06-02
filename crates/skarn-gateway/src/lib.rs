@@ -88,3 +88,4 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
     };
 
     format!(
+        "Skarn gateway. Connected servers: {server_list} ({} tools total).\n\n\

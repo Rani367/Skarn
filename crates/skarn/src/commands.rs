@@ -152,3 +152,7 @@ pub async fn exec(args: ExecArgs) -> anyhow::Result<()> {
         .await
         .map_err(|e| anyhow!("running script: {e}"))?;
 
+    for line in &outcome.logs {
+        eprintln!("[log] {line}");
+    }
+    eprintln!("[tool calls: {}]", outcome.tool_calls);

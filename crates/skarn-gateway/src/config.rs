@@ -203,3 +203,7 @@ mod tests {
             auth_bearer_env = "EXAMPLE_TOKEN"
             headers = { X-Org = "acme" }
         "#;
+        let cfg = GatewayConfig::from_toml(toml).unwrap();
+        let remote = &cfg.servers["remote"];
+        match &remote.transport {
+            TransportConfig::Http {

@@ -32,3 +32,4 @@ enum Command {
     /// Run a shell command inside an OS-native sandbox and compress its output.
     Run(commands::RunArgs),
     /// Execute a Code Mode script against the configured downstream servers.
+    Exec(commands::ExecArgs),

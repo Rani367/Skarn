@@ -219,3 +219,7 @@ impl ServerHandler for GatewayServer {
         let args = request
             .arguments
             .map(serde_json::Value::Object)
+            .unwrap_or(serde_json::Value::Null);
+        let name = request.name.as_ref();
+
+        let result = match name {

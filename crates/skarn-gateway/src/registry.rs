@@ -199,3 +199,4 @@ mod tests {
         assert_eq!(
             r.resolve("github__search_issues"),
             Some(("github", "search_issues"))
+        );

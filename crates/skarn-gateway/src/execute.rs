@@ -499,3 +499,6 @@ mod worker {
 
     impl PipeBridge {
         async fn request(&self, op: BridgeOpWire) -> std::result::Result<String, String> {
+            let id = self.next_id.fetch_add(1, Ordering::Relaxed);
+            let (tx, rx) = oneshot::channel();
+            self.pending.lock().unwrap().insert(id, tx);

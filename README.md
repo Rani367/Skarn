@@ -140,3 +140,4 @@ still lands in a kernel-confined process. Configure it with `isolation` in
 - **Cursor / Windsurf** — set Skarn as an MCP server in the IDE config to get Code Mode + aggregation. See [docs/integrations/cursor-windsurf.md](docs/integrations/cursor-windsurf.md).
 
 ## Architecture
+
