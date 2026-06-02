@@ -42,3 +42,5 @@ reqwest = { version = "0.13", default-features = false, features = [
     "http2",
     "charset",
     "json",
+    "stream",
+] }

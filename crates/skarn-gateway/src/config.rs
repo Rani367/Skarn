@@ -202,3 +202,4 @@ mod tests {
             url = "https://api.example.com/mcp"
             auth_bearer_env = "EXAMPLE_TOKEN"
             headers = { X-Org = "acme" }
+        "#;

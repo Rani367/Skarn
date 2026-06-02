@@ -294,3 +294,6 @@ fn extract_text(result: &CallToolResult) -> String {
         .filter_map(|c| c.as_text().map(|t| t.text.clone()))
         .collect::<Vec<_>>()
         .join("\n")
+}
+
+/// A [`ToolBridge`] backed by a [`DownstreamManager`]: this is what a Code Mode

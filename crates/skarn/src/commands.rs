@@ -149,3 +149,6 @@ pub async fn exec(args: ExecArgs) -> anyhow::Result<()> {
     let code = read_script(&args)?;
 
     let outcome = skarn_gateway::run_script(&config, args.limits.to_limits(), &code)
+        .await
+        .map_err(|e| anyhow!("running script: {e}"))?;
+

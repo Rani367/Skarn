@@ -215,3 +215,7 @@ impl ServerHandler for GatewayServer {
         &self,
         request: CallToolRequestParams,
         _context: RequestContext<RoleServer>,
+    ) -> Result<CallToolResult, McpError> {
+        let args = request
+            .arguments
+            .map(serde_json::Value::Object)

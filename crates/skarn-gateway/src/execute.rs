@@ -495,3 +495,7 @@ mod worker {
     struct PipeBridge {
         next_id: AtomicU64,
         pending: Arc<Mutex<HashMap<u64, oneshot::Sender<ReplyMsg>>>>,
+    }
+
+    impl PipeBridge {
+        async fn request(&self, op: BridgeOpWire) -> std::result::Result<String, String> {
