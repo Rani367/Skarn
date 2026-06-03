@@ -208,3 +208,7 @@ mod tests {
         match &remote.transport {
             TransportConfig::Http {
                 url,
+                auth_bearer_env,
+                headers,
+                auth_bearer,
+            } => {

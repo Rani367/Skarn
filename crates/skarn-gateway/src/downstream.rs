@@ -302,3 +302,4 @@ pub struct GatewayBridge {
     manager: Arc<DownstreamManager>,
 }
 
+impl GatewayBridge {

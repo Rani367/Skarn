@@ -202,3 +202,4 @@ mod tests {
         );
         assert_eq!(r.resolve("db__query"), Some(("db", "query")));
         assert_eq!(r.resolve("nope__nope"), None);
+        assert_eq!(r.server_names(), vec!["github", "db"]);

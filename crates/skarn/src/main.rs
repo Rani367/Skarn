@@ -34,3 +34,5 @@ enum Command {
     /// Execute a Code Mode script against the configured downstream servers.
     Exec(commands::ExecArgs),
     /// Report the active sandbox backend and subsystem status.
+    Doctor,
+    /// Scaffold an `skarn.toml` and print client integration snippets.

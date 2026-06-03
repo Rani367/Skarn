@@ -162,3 +162,7 @@ pub async fn exec(args: ExecArgs) -> anyhow::Result<()> {
         Ok(())
     } else {
         Err(anyhow!(
+            "script error: {}",
+            outcome.error.unwrap_or_else(|| "unknown".into())
+        ))
+    }

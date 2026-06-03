@@ -30,3 +30,4 @@ Use **`rquickjs`** with the `futures` + `macro` features.
 - **Startup:** fresh contexts are cheap, which suits a per-execution isolate.
 
 `boa` (pure Rust) remains an attractive portability escape hatch but is slower
+and has weaker untrusted-execution controls today; it can return behind a feature

@@ -506,3 +506,5 @@ mod worker {
             let reply = rx
                 .await
                 .map_err(|_| "worker bridge channel closed".to_string())?;
+            if reply.ok {
+                Ok(reply.payload)
