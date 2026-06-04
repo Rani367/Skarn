@@ -227,3 +227,4 @@ impl ServerHandler for GatewayServer {
             "read_tool_docs" => self.handle_read_tool_docs(&args),
             "execute" => self.handle_execute(&args).await,
             other if self.passthrough => self.handle_passthrough(other, &args.to_string()).await,
+            other => {

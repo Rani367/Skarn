@@ -170,3 +170,11 @@ pub async fn exec(args: ExecArgs) -> anyhow::Result<()> {
 
 fn read_script(args: &ExecArgs) -> anyhow::Result<String> {
     if let Some(code) = &args.code {
+        return Ok(code.clone());
+    }
+    match &args.file {
+        Some(p) if p.as_os_str() == "-" => {
+            use std::io::Read;
+            let mut s = String::new();
+            std::io::stdin().read_to_string(&mut s)?;
+            Ok(s)

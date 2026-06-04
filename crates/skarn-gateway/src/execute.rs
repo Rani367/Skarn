@@ -512,3 +512,7 @@ mod worker {
                 Err(reply.payload)
             }
         }
+    }
+
+    #[async_trait(?Send)]
+    impl ToolBridge for PipeBridge {
