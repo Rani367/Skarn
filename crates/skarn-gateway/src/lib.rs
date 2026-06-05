@@ -90,3 +90,5 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
     format!(
         "Skarn gateway. Connected servers: {server_list} ({} tools total).\n\n\
          Workflow:\n\
+         1. Call `search` to find relevant tools by intent.\n\
+         2. Optionally call `read_tool_docs` for a tool's exact JSON Schema.\n\

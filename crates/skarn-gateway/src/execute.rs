@@ -516,3 +516,7 @@ mod worker {
 
     #[async_trait(?Send)]
     impl ToolBridge for PipeBridge {
+        async fn call_tool(
+            &self,
+            server: &str,
+            tool: &str,

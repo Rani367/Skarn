@@ -228,3 +228,4 @@ impl ServerHandler for GatewayServer {
             "execute" => self.handle_execute(&args).await,
             other if self.passthrough => self.handle_passthrough(other, &args.to_string()).await,
             other => {
+                return Err(McpError::invalid_params(

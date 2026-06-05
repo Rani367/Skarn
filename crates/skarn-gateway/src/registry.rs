@@ -205,3 +205,4 @@ mod tests {
         assert_eq!(r.server_names(), vec!["github", "db"]);
     }
 
+    #[test]

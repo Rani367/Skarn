@@ -213,3 +213,4 @@ mod tests {
                 auth_bearer,
             } => {
                 assert_eq!(url, "https://api.example.com/mcp");
+                assert_eq!(auth_bearer_env.as_deref(), Some("EXAMPLE_TOKEN"));

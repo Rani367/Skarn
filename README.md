@@ -144,3 +144,5 @@ still lands in a kernel-confined process. Configure it with `isolation` in
 A Cargo workspace with strictly separated, independently usable crates:
 
 | Crate | Responsibility |
+|---|---|
+| [`skarn-sandbox`](crates/skarn-sandbox) | OS-native sandbox abstraction (Seatbelt / Landlock+seccomp / AppContainer) |

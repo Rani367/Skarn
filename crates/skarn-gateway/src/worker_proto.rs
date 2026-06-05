@@ -58,3 +58,4 @@ pub enum WorkerMsg {
 pub struct ReplyMsg {
     /// Matches the `id` of the request being answered.
     pub id: u64,
+    /// Whether the operation succeeded.
