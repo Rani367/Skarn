@@ -188,3 +188,4 @@ fn read_script(args: &ExecArgs) -> anyhow::Result<String> {
 // run (sandbox + compress a shell command)
 // ---------------------------------------------------------------------------
 
+pub fn run(args: RunArgs) -> anyhow::Result<()> {

@@ -528,3 +528,8 @@ mod worker {
                 args: args_json.to_string(),
             })
             .await
+        }
+
+        async fn read_resource(
+            &self,
+            server: &str,

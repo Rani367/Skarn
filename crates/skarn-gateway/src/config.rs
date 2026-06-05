@@ -214,3 +214,6 @@ mod tests {
             } => {
                 assert_eq!(url, "https://api.example.com/mcp");
                 assert_eq!(auth_bearer_env.as_deref(), Some("EXAMPLE_TOKEN"));
+                assert_eq!(auth_bearer.as_deref(), None);
+                assert_eq!(headers.get("X-Org").map(String::as_str), Some("acme"));
+            }

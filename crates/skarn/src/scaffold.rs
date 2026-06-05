@@ -47,3 +47,4 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
 1. Add your downstream MCP servers to skarn.toml (examples are commented out).
 
 2. Point your AI client at Skarn:
+

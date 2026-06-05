@@ -232,3 +232,5 @@ impl ServerHandler for GatewayServer {
                     format!("unknown tool `{other}`"),
                     None,
                 ));
+            }
+        };
