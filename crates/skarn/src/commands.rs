@@ -195,3 +195,7 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
         None
     } else {
         let workspace = match &args.workspace {
+            Some(w) => w.clone(),
+            None => std::env::current_dir()?,
+        };
+        Some(

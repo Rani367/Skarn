@@ -235,3 +235,5 @@ impl ServerHandler for GatewayServer {
             }
         };
         Ok(result)
+    }
+}

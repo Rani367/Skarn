@@ -146,3 +146,4 @@ A Cargo workspace with strictly separated, independently usable crates:
 | Crate | Responsibility |
 |---|---|
 | [`skarn-sandbox`](crates/skarn-sandbox) | OS-native sandbox abstraction (Seatbelt / Landlock+seccomp / AppContainer) |
+| [`skarn-compress`](crates/skarn-compress) | YAML-driven shell-output token compression |

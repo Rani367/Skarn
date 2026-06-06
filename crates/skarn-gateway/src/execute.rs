@@ -538,3 +538,5 @@ mod worker {
             self.request(BridgeOpWire::ReadResource {
                 server: server.to_string(),
                 uri: uri.to_string(),
+            })
+            .await

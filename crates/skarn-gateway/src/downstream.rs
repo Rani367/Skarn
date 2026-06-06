@@ -323,3 +323,8 @@ impl ToolBridge for GatewayBridge {
     }
 
     async fn read_resource(&self, server: &str, uri: &str) -> std::result::Result<String, String> {
+        self.manager
+            .read_resource(server, uri)
+            .await
+            .map_err(|e| e.to_string())
+    }
