@@ -328,3 +328,5 @@ impl ToolBridge for GatewayBridge {
             .await
             .map_err(|e| e.to_string())
     }
+
+    async fn list_tools(&self) -> std::result::Result<String, String> {

@@ -223,3 +223,4 @@ mod tests {
 
     #[test]
     fn rejects_bad_namespace_separator() {
+        let err = GatewayConfig::from_toml("[gateway]\nnamespace_separator = \"/\"\n").unwrap_err();

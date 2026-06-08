@@ -42,3 +42,4 @@ enum Command {
     /// Internal: the OS-sandboxed Code Mode worker (driven by `skarn serve`).
     /// Reads its job from stdin; not intended for direct use.
     #[command(name = "__worker", hide = true)]
+    Worker,

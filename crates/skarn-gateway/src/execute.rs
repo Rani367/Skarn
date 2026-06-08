@@ -543,3 +543,5 @@ mod worker {
         }
 
         async fn list_tools(&self) -> std::result::Result<String, String> {
+            self.request(BridgeOpWire::ListTools).await
+        }

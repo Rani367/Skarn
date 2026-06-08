@@ -238,3 +238,4 @@ impl ServerHandler for GatewayServer {
     }
 }
 
+/// Coerce a JSON value into an object map (for tool input schemas).

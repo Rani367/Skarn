@@ -204,3 +204,6 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
                 .net(args.net.into())
                 .build(),
         )
+    };
+
+    let (output, sandboxed) = run_capture(policy.as_ref(), &spec)

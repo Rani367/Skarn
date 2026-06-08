@@ -19,3 +19,5 @@ fn config() -> GatewayConfig {
     servers.insert(
         "echo".to_string(),
         ServerConfig {
+            enabled: true,
+            transport: TransportConfig::Stdio {
