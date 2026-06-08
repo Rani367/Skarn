@@ -43,3 +43,6 @@ enum Command {
     /// Reads its job from stdin; not intended for direct use.
     #[command(name = "__worker", hide = true)]
     Worker,
+}
+
+fn main() -> anyhow::Result<()> {

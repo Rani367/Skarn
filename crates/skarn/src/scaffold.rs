@@ -53,3 +53,4 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
 
      {
        "mcpServers": {
+         "skarn": {

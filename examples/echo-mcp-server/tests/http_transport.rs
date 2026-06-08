@@ -5,3 +5,4 @@
 //! transport and exercises tool listing + a tool call — the same downstream
 //! surface the stdio transport provides, proving the manager is transport-
 //! agnostic.
+

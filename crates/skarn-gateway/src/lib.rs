@@ -98,3 +98,4 @@ fn build_instructions(dts: &str, manager: &DownstreamManager) -> String {
          Fetch, filter, and aggregate data locally; `return` only a small summary. \
          Large intermediate payloads never enter your context window.\n\n\
          The available tools have these TypeScript types:\n\n```typescript\n{dts}\n```\n",
+        registry.len(),

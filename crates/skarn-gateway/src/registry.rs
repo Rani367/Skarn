@@ -214,3 +214,5 @@ mod tests {
         assert!(hits.iter().any(|h| h.tool == "search_issues"));
         // A SQL tool should not match "issue".
         assert!(!hits.iter().any(|h| h.tool == "query"));
+    }
+

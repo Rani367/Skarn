@@ -545,3 +545,7 @@ mod worker {
         async fn list_tools(&self) -> std::result::Result<String, String> {
             self.request(BridgeOpWire::ListTools).await
         }
+    }
+
+    fn write_line(msg: &WorkerMsg) -> Result<()> {
+        let mut line = serde_json::to_string(msg).map_err(|e| Error::CodeMode(e.to_string()))?;

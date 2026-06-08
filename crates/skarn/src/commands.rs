@@ -207,3 +207,8 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
     };
 
     let (output, sandboxed) = run_capture(policy.as_ref(), &spec)
+        .with_context(|| format!("running `{}`", spec.display()))?;
+
+    if args.no_compress {
+        use std::io::Write;
+        std::io::stdout().write_all(&output.stdout)?;
