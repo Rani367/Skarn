@@ -219,3 +219,11 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
         print!("{}", compressed.text);
         if !compressed.text.is_empty() && !compressed.text.ends_with('\n') {
             println!();
+        }
+        if args.stats {
+            eprintln!(
+                "skarn: {} → {} tokens ({}% saved) · profile={} · {}",
+                compressed.savings.before,
+                compressed.savings.after,
+                compressed.savings.percent(),
+                compressed.profile,

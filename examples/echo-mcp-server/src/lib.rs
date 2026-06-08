@@ -10,3 +10,5 @@ use rmcp::model::{
 };
 use rmcp::service::RequestContext;
 use rmcp::{ErrorData as McpError, RoleServer, ServerHandler};
+
+/// A tiny echo/add MCP server.

@@ -41,3 +41,4 @@ jobs:
 
   package:
     name: cargo package (publish readiness)
+    runs-on: ubuntu-latest

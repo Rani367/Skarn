@@ -56,3 +56,5 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
          "skarn": {
            "command": "skarn",
            "args": ["serve"]
+         }
+       }

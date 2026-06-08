@@ -27,3 +27,4 @@ fn config() -> GatewayConfig {
                 cwd: None,
             },
         },
+    );

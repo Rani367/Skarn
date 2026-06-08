@@ -217,3 +217,5 @@ mod tests {
     }
 
     #[test]
+    fn search_query_matches_sql() {
+        let r = registry();

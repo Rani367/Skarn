@@ -552,3 +552,6 @@ mod worker {
         line.push('\n');
         let mut out = std::io::stdout().lock();
         out.write_all(line.as_bytes())
+            .map_err(|e| Error::CodeMode(e.to_string()))?;
+        out.flush().map_err(|e| Error::CodeMode(e.to_string()))?;
+        Ok(())
