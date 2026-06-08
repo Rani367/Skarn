@@ -6,3 +6,6 @@
 
 use rmcp::model::{
     CallToolRequestParams, CallToolResult, Content, ListToolsResult, PaginatedRequestParams,
+    ServerCapabilities, ServerInfo, Tool,
+};
+use rmcp::service::RequestContext;

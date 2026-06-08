@@ -24,3 +24,4 @@ fn config() -> GatewayConfig {
                 command: ECHO_BIN.to_string(),
                 args: vec![],
                 env: BTreeMap::new(),
+                cwd: None,

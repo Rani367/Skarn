@@ -34,3 +34,4 @@ In Windsurf's MCP settings (`~/.codeium/windsurf/mcp_config.json`):
 ```
 
 ## Configure downstream servers
+

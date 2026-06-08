@@ -46,3 +46,6 @@ enum Command {
 }
 
 fn main() -> anyhow::Result<()> {
+    let cli = Cli::parse();
+    init_tracing(cli.verbose);
+

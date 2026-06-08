@@ -212,3 +212,7 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
     if args.no_compress {
         use std::io::Write;
         std::io::stdout().write_all(&output.stdout)?;
+        std::io::stderr().write_all(&output.stderr)?;
+    } else {
+        let compressor = Compressor::builtin();
+        let compressed = compressor.compress(&spec, &output.stdout, &output.stderr);
