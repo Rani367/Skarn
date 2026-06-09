@@ -227,3 +227,7 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
                 compressed.savings.after,
                 compressed.savings.percent(),
                 compressed.profile,
+                if sandboxed {
+                    "sandboxed"
+                } else {
+                    "UNSANDBOXED"

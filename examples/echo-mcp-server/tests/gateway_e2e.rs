@@ -28,3 +28,6 @@ fn config() -> GatewayConfig {
             },
         },
     );
+    GatewayConfig {
+        // These tests exercise the gateway + in-process isolate directly; the
+        // cross-process worker (which needs the `skarn` binary) is covered by the

@@ -331,3 +331,6 @@ impl ToolBridge for GatewayBridge {
 
     async fn list_tools(&self) -> std::result::Result<String, String> {
         let registry = self.manager.registry();
+        serde_json::to_string(&registry.descriptors()).map_err(|e| e.to_string())
+    }
+}

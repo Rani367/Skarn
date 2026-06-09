@@ -9,3 +9,4 @@ threat model must be explicit. Please read this before relying on it.
 - **Destructive filesystem writes.** A sandboxed command or Code Mode script can
   only write inside the workspace you grant it. `rm -rf ~`, overwriting dotfiles,
   or scribbling on system directories are blocked at the kernel level.
+- **Unauthorized network egress.** Network access is denied by default, which is

@@ -1,2 +1,3 @@
 // A self-contained demo that works against the bundled `echo-mcp-server`.
 //
+//   # from a directory whose skarn.toml has a [servers.echo] entry pointing at
