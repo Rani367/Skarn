@@ -16,3 +16,5 @@ use rmcp::{ErrorData as McpError, RoleServer, ServerHandler};
 pub struct EchoServer;
 
 impl EchoServer {
+    /// The tool manifest this server exposes.
+    pub fn tools() -> Vec<Tool> {

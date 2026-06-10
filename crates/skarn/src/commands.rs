@@ -248,3 +248,9 @@ fn run_capture(
     use std::process::Stdio;
 
     let mut cmd = std::process::Command::new(&spec.program);
+    cmd.args(&spec.args);
+    if let Some(cwd) = &spec.cwd {
+        cmd.current_dir(cwd);
+    }
+    cmd.stdin(Stdio::null())
+        .stdout(Stdio::piped())

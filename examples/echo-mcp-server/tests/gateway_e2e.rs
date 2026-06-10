@@ -39,3 +39,8 @@ fn config() -> GatewayConfig {
         servers,
     }
 }
+
+/// Run a future on a multi-threaded runtime (the gateway confines `!Send` work
+/// to its own thread internally).
+fn run_local<F: std::future::Future<Output = ()>>(fut: F) {
+    let rt = tokio::runtime::Builder::new_multi_thread()

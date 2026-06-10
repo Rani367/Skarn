@@ -149,3 +149,4 @@ A Cargo workspace with strictly separated, independently usable crates:
 | [`skarn-compress`](crates/skarn-compress) | YAML-driven shell-output token compression |
 | [`skarn-codemode`](crates/skarn-codemode) | Hermetic QuickJS isolate + `oxc` TS-strip & AST validation + tool bridge |
 | [`skarn-gateway`](crates/skarn-gateway) | MCP server/client aggregation on the official `rmcp` SDK |
+| [`skarn`](crates/skarn) | The `skarn` CLI tying it all together |

@@ -61,3 +61,6 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
      }
 
 3. (Optional) Route the agent's shell commands through Skarn for token
+   compression and OS sandboxing — run `skarn hook` to print a Claude Code
+   PreToolUse hook.
+

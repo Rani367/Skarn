@@ -53,3 +53,4 @@ fn main() -> anyhow::Result<()> {
         // Synchronous commands. `run` and `__worker` must stay single-threaded
         // until they apply the sandbox so the self-/post-fork application is safe.
         Command::Run(args) => commands::run(args),
+        Command::Doctor => commands::doctor(),

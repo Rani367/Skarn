@@ -14,3 +14,5 @@ threat model must be explicit. Please read this before relying on it.
   something sensitive, it cannot send it anywhere.
 - **Secret disclosure of well-known credential stores.** On macOS, where reads
   are otherwise broad (see below), `~/.ssh`, `~/.aws`, `~/.gnupg`, cloud CLI
+  configs, and similar locations are explicitly denied. On Linux the allow-list
+  model means only granted paths are readable at all.
