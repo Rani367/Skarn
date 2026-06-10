@@ -49,3 +49,4 @@ fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
     init_tracing(cli.verbose);
 
+    match cli.command {

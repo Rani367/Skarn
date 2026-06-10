@@ -60,3 +60,4 @@ pub const INTEGRATION_SNIPPETS: &str = r#"Next steps
        }
      }
 
+3. (Optional) Route the agent's shell commands through Skarn for token

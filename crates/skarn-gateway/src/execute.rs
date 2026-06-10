@@ -557,3 +557,6 @@ mod worker {
         Ok(())
     }
 
+    fn emit(msg: &WorkerMsg) -> Result<()> {
+        write_line(msg)
+    }

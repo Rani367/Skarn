@@ -237,3 +237,10 @@ pub fn run(args: RunArgs) -> anyhow::Result<()> {
     }
 
     std::process::exit(output.status.code().unwrap_or(1));
+}
+
+#[cfg(unix)]
+fn run_capture(
+    policy: Option<&Policy>,
+    spec: &CommandSpec,
+) -> std::io::Result<(std::process::Output, bool)> {

@@ -243,3 +243,4 @@ fn schema(v: serde_json::Value) -> serde_json::Map<String, serde_json::Value> {
     match v {
         serde_json::Value::Object(m) => m,
         _ => serde_json::Map::new(),
+    }

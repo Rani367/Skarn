@@ -228,3 +228,5 @@ mod tests {
         // Empty is rejected too.
         assert!(GatewayConfig::from_toml("[gateway]\nnamespace_separator = \"\"\n").is_err());
         // A dotted separator is allowed (within the charset).
+        assert!(GatewayConfig::from_toml("[gateway]\nnamespace_separator = \".\"\n").is_ok());
+    }

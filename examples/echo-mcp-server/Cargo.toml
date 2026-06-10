@@ -4,3 +4,4 @@ description = "A tiny downstream MCP server used by Skarn's examples and integra
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+license.workspace = true

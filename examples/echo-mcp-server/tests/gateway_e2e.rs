@@ -34,3 +34,6 @@ fn config() -> GatewayConfig {
         // CLI integration tests.
         gateway: GatewaySettings {
             isolation: Isolation::InProcess,
+            ..GatewaySettings::default()
+        },
+        servers,
