@@ -23,3 +23,4 @@ threat model must be explicit. Please read this before relying on it.
   access, e.g. `x["constructor"]`). Because we ban the *identifiers*, alias hops
   (`const e = eval; e(...)`) are caught too. This static pass exists to reject
   obviously hostile scripts early; the *actual* guarantees are the hermetic
+  context and the OS sandbox below — neither relies on the validator being

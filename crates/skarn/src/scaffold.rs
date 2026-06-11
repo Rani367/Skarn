@@ -68,3 +68,4 @@ Verify your setup with:  skarn doctor
 "#;
 
 /// Printed by `skarn hook`.
+pub const CLAUDE_HOOK_SNIPPET: &str = r#"# Claude Code PreToolUse hook

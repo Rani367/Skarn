@@ -61,3 +61,6 @@ fn diag_connect_call_drop() {
             .unwrap();
         println!("DIAG call result: {r}");
         assert!(r.contains("\"sum\":5"));
+        drop(manager);
+        tokio::task::yield_now().await;
+    });

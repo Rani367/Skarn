@@ -278,3 +278,11 @@ fn run_capture(
 #[cfg(windows)]
 fn run_capture(
     policy: Option<&Policy>,
+    spec: &CommandSpec,
+) -> std::io::Result<(std::process::Output, bool)> {
+    use std::os::windows::process::ExitStatusExt;
+
+    match policy {
+        // A sandbox was requested: launch into an AppContainer with captured
+        // stdio. Any failure propagates (fail closed) rather than running
+        // unconfined.

@@ -3,3 +3,4 @@
 //   # from a directory whose skarn.toml has a [servers.echo] entry pointing at
 //   # the echo-mcp-server binary:
 //   skarn exec --file examples/scripts/echo-demo.js
+//

@@ -18,3 +18,5 @@ use skarn_gateway::{
 };
 
 #[tokio::test(flavor = "multi_thread")]
+async fn http_transport_lists_and_calls_tools() {
+    // Host EchoServer over Streamable HTTP on an ephemeral loopback port.

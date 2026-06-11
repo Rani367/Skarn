@@ -59,3 +59,5 @@ fn main() -> anyhow::Result<()> {
         Command::Worker => commands::worker(),
         // Async commands run on a normal multi-threaded runtime; the gateway
         // confines the `!Send` Code Mode isolate to its own thread internally.
+        Command::Serve(args) => block_on(commands::serve(args)),
+        Command::Exec(args) => block_on(commands::exec(args)),
