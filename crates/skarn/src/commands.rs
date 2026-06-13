@@ -289,3 +289,9 @@ fn run_capture(
         Some(policy) => {
             let child = skarn_sandbox::spawn_appcontainer(policy, spec)
                 .map_err(|e| std::io::Error::other(format!("AppContainer sandbox: {e}")))?;
+            let captured = child
+                .wait_with_output()
+                .map_err(|e| std::io::Error::other(e.to_string()))?;
+            let output = std::process::Output {
+                status: std::process::ExitStatus::from_raw(captured.code as u32),
+                stdout: captured.stdout,

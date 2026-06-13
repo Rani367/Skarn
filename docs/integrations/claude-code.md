@@ -39,3 +39,4 @@ command invocation with `skarn run --`:
     "PreToolUse": [
       {
         "matcher": "Bash",
+        "hooks": [{ "type": "command", "command": "skarn run --net deny --stats --" }]

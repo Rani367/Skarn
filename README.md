@@ -152,3 +152,4 @@ A Cargo workspace with strictly separated, independently usable crates:
 | [`skarn`](crates/skarn) | The `skarn` CLI tying it all together |
 
 See the [Architecture Decision Records](docs/adr/) for the engineering rationale.
+

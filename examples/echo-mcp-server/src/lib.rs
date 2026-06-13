@@ -28,3 +28,6 @@ impl EchoServer {
                     "required": ["text"]
                 })),
             ),
+            Tool::new(
+                "add",
+                "Add two integers and return the sum.",

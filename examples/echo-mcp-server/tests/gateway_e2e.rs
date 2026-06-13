@@ -68,3 +68,5 @@ fn diag_connect_call_drop() {
 
 #[test]
 fn code_mode_calls_downstream_tools_through_the_gateway() {
+    run_local(async {
+        let script = r#"
