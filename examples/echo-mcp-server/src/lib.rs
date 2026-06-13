@@ -35,3 +35,4 @@ impl EchoServer {
                     "type": "object",
                     "properties": { "a": { "type": "number" }, "b": { "type": "number" } },
                     "required": ["a", "b"]
+                })),

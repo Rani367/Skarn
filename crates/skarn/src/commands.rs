@@ -317,3 +317,7 @@ fn run_capture(
         None => Ok((unconfined_output(spec)?, false)),
     }
 }
+
+#[cfg(not(unix))]
+fn unconfined_output(spec: &CommandSpec) -> std::io::Result<std::process::Output> {
+    let mut cmd = std::process::Command::new(&spec.program);

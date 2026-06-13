@@ -11,3 +11,4 @@ publish = false
 name = "echo-mcp-server"
 path = "src/main.rs"
 
+[dependencies]

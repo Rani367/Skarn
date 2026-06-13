@@ -153,3 +153,5 @@ A Cargo workspace with strictly separated, independently usable crates:
 
 See the [Architecture Decision Records](docs/adr/) for the engineering rationale.
 
+## Security
+
