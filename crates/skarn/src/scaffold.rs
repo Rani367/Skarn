@@ -81,3 +81,5 @@ pub const CLAUDE_HOOK_SNIPPET: &str = r#"# Claude Code PreToolUse hook
       {
         "matcher": "Bash",
         "hooks": [
+          {
+            "type": "command",

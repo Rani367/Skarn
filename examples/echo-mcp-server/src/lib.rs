@@ -37,3 +37,6 @@ impl EchoServer {
                     "required": ["a", "b"]
                 })),
             ),
+        ]
+    }
+}

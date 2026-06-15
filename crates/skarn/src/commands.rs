@@ -327,3 +327,5 @@ fn unconfined_output(spec: &CommandSpec) -> std::io::Result<std::process::Output
     }
     cmd.output()
 }
+
+// ---------------------------------------------------------------------------
