@@ -12,3 +12,4 @@ const issues = await skarn.server("github").search_issues({
   per_page: 100,
 });
 
+const now = Date.now();

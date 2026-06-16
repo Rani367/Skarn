@@ -43,3 +43,4 @@ impl EchoServer {
 
 impl ServerHandler for EchoServer {
     fn get_info(&self) -> ServerInfo {
+        let mut info = ServerInfo::default();

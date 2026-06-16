@@ -46,3 +46,5 @@ args = ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/project"]
 
 [servers.postgres]
 transport = "stdio"
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-postgres", "postgres://localhost/mydb"]

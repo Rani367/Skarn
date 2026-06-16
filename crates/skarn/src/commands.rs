@@ -345,3 +345,9 @@ pub fn doctor() -> anyhow::Result<()> {
     println!(
         "Compression     : ready ({} tool profiles)",
         compressor.ruleset().profiles.len()
+    );
+    println!("Code Mode       : ready (QuickJS isolate + oxc validation)");
+    println!("Gateway         : ready (rmcp 1.8; stdio + http transports)");
+    Ok(())
+}
+

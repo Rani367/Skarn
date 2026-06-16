@@ -30,3 +30,5 @@ async fn http_transport_lists_and_calls_tools() {
     let addr = listener.local_addr().unwrap();
     tokio::spawn(async move {
         let _ = axum::serve(listener, app).await;
+    });
+    // Give the accept loop a moment to start.

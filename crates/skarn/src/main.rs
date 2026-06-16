@@ -74,3 +74,5 @@ where
         .build()?;
     runtime.block_on(fut)
 }
+
+/// Initialize tracing. Logs always go to **stderr** so they never corrupt the
