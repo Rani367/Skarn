@@ -116,3 +116,5 @@ fn code_mode_runs_in_the_sandboxed_worker() {
 
     let mut cfg = config();
     cfg.gateway.isolation = Isolation::Worker;
+
+    run_local(async move {

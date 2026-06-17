@@ -41,3 +41,4 @@ Two independent layers protect Code Mode execution:
    commands. On macOS and Linux, `skarn serve` runs `execute` in a dedicated
    **worker subprocess** that applies this sandbox to itself (deny network, no
    workspace writes) before touching the script, so even a hypothetical isolate
+   escape lands in a kernel-confined process (see the `isolation` setting and

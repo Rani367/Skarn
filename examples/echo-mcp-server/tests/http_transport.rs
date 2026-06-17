@@ -34,3 +34,4 @@ async fn http_transport_lists_and_calls_tools() {
     // Give the accept loop a moment to start.
     tokio::time::sleep(Duration::from_millis(100)).await;
 
+    // Point the gateway's `http` transport at it.

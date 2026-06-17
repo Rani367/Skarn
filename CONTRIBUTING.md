@@ -42,3 +42,4 @@ cargo clippy -p skarn-sandbox --target x86_64-pc-windows-gnu  --all-targets -- -
   (via the `skarn-sandbox-probe` helper); the Code Mode validator has a bypass
   suite — add to them.
 - **Security changes need a threat-model note.** If you change what the sandbox
+  allows or how Code Mode is validated, update `SECURITY.md` and, if it's an

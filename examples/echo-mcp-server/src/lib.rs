@@ -49,3 +49,4 @@ impl ServerHandler for EchoServer {
         info
     }
 
+    async fn list_tools(

@@ -357,3 +357,13 @@ pub fn init(args: InitArgs) -> anyhow::Result<()> {
         println!("skarn.toml already exists (use --force to overwrite).");
     } else {
         std::fs::write(&path, crate::scaffold::SKARN_TOML_TEMPLATE)?;
+        println!("Wrote {}.", path.display());
+    }
+    println!();
+    println!("{}", crate::scaffold::INTEGRATION_SNIPPETS);
+    Ok(())
+}
+
+pub fn hook() -> anyhow::Result<()> {
+    println!("{}", crate::scaffold::CLAUDE_HOOK_SNIPPET);
+    Ok(())

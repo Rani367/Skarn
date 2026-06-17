@@ -77,3 +77,4 @@ where
 
 /// Initialize tracing. Logs always go to **stderr** so they never corrupt the
 /// stdio MCP channel used by `skarn serve`.
+fn init_tracing(verbose: bool) {
