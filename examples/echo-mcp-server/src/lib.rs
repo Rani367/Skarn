@@ -45,3 +45,7 @@ impl ServerHandler for EchoServer {
     fn get_info(&self) -> ServerInfo {
         let mut info = ServerInfo::default();
         info.capabilities = ServerCapabilities::builder().enable_tools().build();
+        info.instructions = Some("A tiny echo/add server for Skarn demos.".to_string());
+        info
+    }
+

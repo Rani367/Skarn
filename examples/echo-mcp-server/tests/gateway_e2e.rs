@@ -107,3 +107,12 @@ fn code_mode_runs_in_the_sandboxed_worker() {
     assert!(
         skarn.exists(),
         "skarn binary missing at {}",
+        skarn.display()
+    );
+
+    // SAFETY: this is the only test that touches SKARN_WORKER_BIN, and it runs
+    // its worker calls before removing it.
+    unsafe { std::env::set_var("SKARN_WORKER_BIN", &skarn) };
+
+    let mut cfg = config();
+    cfg.gateway.isolation = Isolation::Worker;

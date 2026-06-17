@@ -41,3 +41,4 @@ cargo clippy -p skarn-sandbox --target x86_64-pc-windows-gnu  --all-targets -- -
 - **Tests are not optional** for behavior changes. The sandbox has runtime tests
   (via the `skarn-sandbox-probe` helper); the Code Mode validator has a bypass
   suite — add to them.
+- **Security changes need a threat-model note.** If you change what the sandbox

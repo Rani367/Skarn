@@ -32,3 +32,5 @@ async fn http_transport_lists_and_calls_tools() {
         let _ = axum::serve(listener, app).await;
     });
     // Give the accept loop a moment to start.
+    tokio::time::sleep(Duration::from_millis(100)).await;
+

@@ -356,3 +356,4 @@ pub fn init(args: InitArgs) -> anyhow::Result<()> {
     if path.exists() && !args.force {
         println!("skarn.toml already exists (use --force to overwrite).");
     } else {
+        std::fs::write(&path, crate::scaffold::SKARN_TOML_TEMPLATE)?;
