@@ -49,3 +49,6 @@ async fn http_transport_lists_and_calls_tools() {
         },
     );
     let config = GatewayConfig {
+        gateway: GatewaySettings::default(),
+        servers,
+    };

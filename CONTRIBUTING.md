@@ -48,3 +48,4 @@ cargo clippy -p skarn-sandbox --target x86_64-pc-windows-gnu  --all-targets -- -
   binary, zero runtime deps" property is a feature. We deliberately avoid GPL
   dependencies (enforced by `deny.toml`).
 
+## Architecture Decision Records

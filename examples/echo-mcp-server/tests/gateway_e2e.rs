@@ -151,3 +151,11 @@ fn code_mode_runs_in_the_sandboxed_worker() {
 
     // SAFETY: paired with the set_var above.
     unsafe { std::env::remove_var("SKARN_WORKER_BIN") };
+}
+
+#[test]
+fn gateway_upstream_surface_search_and_execute() {
+    use rmcp::ServiceExt;
+    use rmcp::model::CallToolRequestParams;
+
+    run_local(async {

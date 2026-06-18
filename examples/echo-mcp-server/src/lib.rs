@@ -61,3 +61,6 @@ impl ServerHandler for EchoServer {
         &self,
         request: CallToolRequestParams,
         _context: RequestContext<RoleServer>,
+    ) -> Result<CallToolResult, McpError> {
+        let args = request
+            .arguments

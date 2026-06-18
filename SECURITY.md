@@ -56,3 +56,5 @@ A bug in one layer does not by itself grant access.
   not "no reads outside the workspace". The named-secret deny-list reduces, but
   does not eliminate, read exposure. If you need strict read confinement, run on
   Linux (Landlock allow-list) or add a microVM layer.
+- **`NetPolicy::AllowLoopback` degrades to "outbound allowed" on Linux**, because
+  Landlock filters network by *port*, not host. This is reported in the

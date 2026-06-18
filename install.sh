@@ -20,3 +20,5 @@ detect_target() {
   os="$(uname -s)"
   arch="$(uname -m)"
   case "$os" in
+    Linux)  os_part="unknown-linux-gnu" ;;
+    Darwin) os_part="apple-darwin" ;;
