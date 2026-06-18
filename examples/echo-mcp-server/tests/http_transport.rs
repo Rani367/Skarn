@@ -43,3 +43,6 @@ async fn http_transport_lists_and_calls_tools() {
             transport: TransportConfig::Http {
                 url: format!("http://{addr}/mcp"),
                 auth_bearer: None,
+                auth_bearer_env: None,
+                headers: BTreeMap::new(),
+            },

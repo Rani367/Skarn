@@ -97,3 +97,5 @@ pub const CLAUDE_HOOK_SNIPPET: &str = r#"# Claude Code PreToolUse hook
 #     skarn run --net deny -- cargo test
 #
 # which sandboxes `cargo test`, captures its output, and returns only the
+# compressed signal (errors/warnings) to the model.
+"#;

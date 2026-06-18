@@ -18,3 +18,6 @@ anyhow = { workspace = true }
 tokio = { workspace = true }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
+rmcp = { version = "1.8.0", features = ["server", "transport-io"] }
+
+[dev-dependencies]

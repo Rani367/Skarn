@@ -55,3 +55,8 @@ impl ServerHandler for EchoServer {
         _context: RequestContext<RoleServer>,
     ) -> Result<ListToolsResult, McpError> {
         Ok(ListToolsResult::with_all_items(Self::tools()))
+    }
+
+    async fn call_tool(
+        &self,
+        request: CallToolRequestParams,

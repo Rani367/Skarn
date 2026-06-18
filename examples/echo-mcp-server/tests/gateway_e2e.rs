@@ -134,3 +134,8 @@ fn code_mode_runs_in_the_sandboxed_worker() {
             outcome
                 .logs
                 .iter()
+                .any(|l| l.contains("worker computed 42"))
+        );
+
+        // Timeout path: an infinite loop is interrupted and surfaces an error.
+        let limits = ExecLimits {
