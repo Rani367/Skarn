@@ -367,3 +367,6 @@ pub fn init(args: InitArgs) -> anyhow::Result<()> {
 pub fn hook() -> anyhow::Result<()> {
     println!("{}", crate::scaffold::CLAUDE_HOOK_SNIPPET);
     Ok(())
+}
+
+/// The hidden `__worker` subcommand: run one Code Mode job inside an OS sandbox,

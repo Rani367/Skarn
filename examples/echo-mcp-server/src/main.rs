@@ -8,3 +8,4 @@ use rmcp::ServiceExt;
 use rmcp::transport::stdio;
 
 #[tokio::main]
+async fn main() -> anyhow::Result<()> {

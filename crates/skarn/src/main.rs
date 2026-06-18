@@ -78,3 +78,6 @@ where
 /// Initialize tracing. Logs always go to **stderr** so they never corrupt the
 /// stdio MCP channel used by `skarn serve`.
 fn init_tracing(verbose: bool) {
+    use tracing_subscriber::{EnvFilter, fmt};
+    let default = if verbose { "skarn=debug,info" } else { "warn" };
+    let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new(default));

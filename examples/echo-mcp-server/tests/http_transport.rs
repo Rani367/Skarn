@@ -35,3 +35,5 @@ async fn http_transport_lists_and_calls_tools() {
     tokio::time::sleep(Duration::from_millis(100)).await;
 
     // Point the gateway's `http` transport at it.
+    let mut servers = BTreeMap::new();
+    servers.insert(

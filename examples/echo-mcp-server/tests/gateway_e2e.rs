@@ -118,3 +118,5 @@ fn code_mode_runs_in_the_sandboxed_worker() {
     cfg.gateway.isolation = Isolation::Worker;
 
     run_local(async move {
+        // Happy path: a downstream tool call routed through the sandboxed worker.
+        let script = r#"

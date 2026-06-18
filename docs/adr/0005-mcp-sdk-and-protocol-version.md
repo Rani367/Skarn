@@ -27,3 +27,4 @@ while the published spec has advanced to `2025-11-25`.
 ## Consequences
 
 - We inherit `rmcp`'s transport support and protocol upgrades.
+- Skarn's advertised protocol version lags the very newest spec until the SDK

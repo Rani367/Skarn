@@ -6,3 +6,4 @@
 //
 // It chains two tool calls and aggregates locally.
 
+const a = await skarn.callTool("echo", "add", { a: 2, b: 3 });   // { sum: 5 }
