@@ -44,3 +44,4 @@ cargo clippy -p skarn-sandbox --target x86_64-pc-windows-gnu  --all-targets -- -
 - **Security changes need a threat-model note.** If you change what the sandbox
   allows or how Code Mode is validated, update `SECURITY.md` and, if it's an
   architectural decision, add an ADR under `docs/adr/`.
+- **No new heavyweight dependencies** without discussion — the "single small

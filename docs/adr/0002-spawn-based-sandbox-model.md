@@ -38,3 +38,4 @@ Linux (Landlock allow-list) property. See `SECURITY.md`.
 
 ## Consequences
 
+- Real kernel enforcement with zero external dependencies (no Docker/WSL/VM).

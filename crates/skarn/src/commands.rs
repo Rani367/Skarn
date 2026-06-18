@@ -388,3 +388,8 @@ fn load_config(path: Option<&PathBuf>) -> anyhow::Result<GatewayConfig> {
                 GatewayConfig::load(&default).map_err(|e| anyhow!("{e}"))
             } else {
                 tracing::warn!("no skarn.toml found; starting with no downstream servers");
+                Ok(GatewayConfig::default())
+            }
+        }
+    }
+}

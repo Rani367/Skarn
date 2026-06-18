@@ -128,3 +128,9 @@ fn code_mode_runs_in_the_sandboxed_worker() {
             .await
             .expect("run_script via worker");
         assert!(outcome.ok, "worker script error: {:?}", outcome.error);
+        assert_eq!(outcome.value["answer"], serde_json::json!(42));
+        assert_eq!(outcome.tool_calls, 1);
+        assert!(
+            outcome
+                .logs
+                .iter()
