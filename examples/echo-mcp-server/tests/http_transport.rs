@@ -46,3 +46,4 @@ async fn http_transport_lists_and_calls_tools() {
                 auth_bearer_env: None,
                 headers: BTreeMap::new(),
             },
+        },

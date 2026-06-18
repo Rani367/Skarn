@@ -139,3 +139,8 @@ fn code_mode_runs_in_the_sandboxed_worker() {
 
         // Timeout path: an infinite loop is interrupted and surfaces an error.
         let limits = ExecLimits {
+            wall_clock: std::time::Duration::from_millis(300),
+            ..ExecLimits::default()
+        };
+        let timed_out = skarn_gateway::run_script(&cfg, limits, "while (true) {}").await;
+        assert!(

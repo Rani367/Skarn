@@ -60,3 +60,4 @@ impl ServerHandler for EchoServer {
     async fn call_tool(
         &self,
         request: CallToolRequestParams,
+        _context: RequestContext<RoleServer>,

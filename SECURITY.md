@@ -49,3 +49,6 @@ A bug in one layer does not by itself grant access.
 ## Platform notes & known limitations
 
 - **macOS read confidentiality is coarse.** Modern macOS resolves loader paths
+  (the dyld shared cache, Cryptexes, firmlinks) in ways that make a precise
+  read allow-list unreliable across OS versions — so Skarn allows broad reads
+  and *subtracts* known-secret locations. The robust confidentiality guarantee on

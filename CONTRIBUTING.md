@@ -45,3 +45,5 @@ cargo clippy -p skarn-sandbox --target x86_64-pc-windows-gnu  --all-targets -- -
   allows or how Code Mode is validated, update `SECURITY.md` and, if it's an
   architectural decision, add an ADR under `docs/adr/`.
 - **No new heavyweight dependencies** without discussion — the "single small
+  binary, zero runtime deps" property is a feature. We deliberately avoid GPL
+  dependencies (enforced by `deny.toml`).

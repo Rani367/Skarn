@@ -34,3 +34,4 @@ wildcards = "deny"
 # We deliberately do not depend on GPL-licensed sandboxing crates (e.g. birdcage);
 # this makes that explicit.
 deny = [
+    { name = "birdcage" },

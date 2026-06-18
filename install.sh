@@ -16,3 +16,7 @@ INSTALL_DIR="${SKARN_INSTALL_DIR:-$HOME/.local/bin}"
 say() { printf '\033[1;34mskarn\033[0m %s\n' "$1"; }
 err() { printf '\033[1;31merror\033[0m %s\n' "$1" >&2; exit 1; }
 
+detect_target() {
+  os="$(uname -s)"
+  arch="$(uname -m)"
+  case "$os" in

@@ -51,3 +51,4 @@ args = ["-y", "@modelcontextprotocol/server-postgres", "postgres://localhost/myd
 ```
 
 The IDE's agent will see the compact `search` / `read_tool_docs` / `execute`
+surface. To additionally expose the raw namespaced tools (e.g. `fs__read_file`),
