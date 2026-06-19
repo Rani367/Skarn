@@ -37,3 +37,4 @@ its docs anticipated bridge calls being "forwarded over a pipe to the parent."
   sandbox backend exists), so behaviour degrades gracefully.
 - The worker is covered by an end-to-end test (a downstream call routed through
   the sandboxed worker, plus a timeout). The Windows-parity worker is left as a
+  documented future step.

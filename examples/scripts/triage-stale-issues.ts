@@ -22,3 +22,4 @@ const stale = (issues.items ?? issues).filter((i: any) => {
 
 skarn.log(`scanned ${(issues.items ?? issues).length} issues, ${stale.length} stale`);
 
+if (stale.length > 0) {

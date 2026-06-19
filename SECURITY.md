@@ -58,3 +58,4 @@ A bug in one layer does not by itself grant access.
   Linux (Landlock allow-list) or add a microVM layer.
 - **`NetPolicy::AllowLoopback` degrades to "outbound allowed" on Linux**, because
   Landlock filters network by *port*, not host. This is reported in the
+  `RestrictionReport` notes and by `skarn doctor`.

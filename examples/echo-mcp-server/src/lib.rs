@@ -64,3 +64,6 @@ impl ServerHandler for EchoServer {
     ) -> Result<CallToolResult, McpError> {
         let args = request
             .arguments
+            .map(serde_json::Value::Object)
+            .unwrap_or(serde_json::Value::Null);
+        match request.name.as_ref() {

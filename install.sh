@@ -22,3 +22,7 @@ detect_target() {
   case "$os" in
     Linux)  os_part="unknown-linux-gnu" ;;
     Darwin) os_part="apple-darwin" ;;
+    *) err "unsupported OS: $os (try: cargo install skarn)" ;;
+  esac
+  case "$arch" in
+    x86_64|amd64)  arch_part="x86_64" ;;

@@ -52,3 +52,4 @@ async fn http_transport_lists_and_calls_tools() {
         gateway: GatewaySettings::default(),
         servers,
     };
+

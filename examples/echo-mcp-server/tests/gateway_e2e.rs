@@ -159,3 +159,7 @@ fn gateway_upstream_surface_search_and_execute() {
     use rmcp::model::CallToolRequestParams;
 
     run_local(async {
+        let server = skarn_gateway::build_server(&config(), ExecLimits::default())
+            .await
+            .expect("build_server");
+

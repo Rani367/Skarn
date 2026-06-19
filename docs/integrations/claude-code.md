@@ -52,3 +52,4 @@ So a model-issued `cargo test` effectively becomes:
 skarn run --net deny -- cargo test
 ```
 
+> Hook payload formats differ between agent versions. The portable idea is the
