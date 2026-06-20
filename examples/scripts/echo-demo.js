@@ -11,3 +11,4 @@ const b = await skarn.server("echo").add({ a: a.sum, b: 10 });   // { sum: 15 }
 const greeting = await skarn.server("echo").echo({ text: "hello from Code Mode" });
 
 skarn.log("first sum:", a.sum, "second sum:", b.sum);
+

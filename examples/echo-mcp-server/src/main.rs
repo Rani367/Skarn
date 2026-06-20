@@ -12,3 +12,4 @@ async fn main() -> anyhow::Result<()> {
     // Logs to stderr so they never corrupt the stdio MCP channel.
     let _ = tracing_subscriber::fmt()
         .with_writer(std::io::stderr)
+        .try_init();

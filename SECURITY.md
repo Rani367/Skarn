@@ -59,3 +59,6 @@ A bug in one layer does not by itself grant access.
 - **`NetPolicy::AllowLoopback` degrades to "outbound allowed" on Linux**, because
   Landlock filters network by *port*, not host. This is reported in the
   `RestrictionReport` notes and by `skarn doctor`.
+- **`skarn run` confines via AppContainer on Windows**, capturing the command's
+  output through pipes. Network is governed by capability SIDs; AppContainer
+  cannot express "loopback only", so `--net loopback` is treated as deny-all on

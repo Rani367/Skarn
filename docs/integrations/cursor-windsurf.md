@@ -55,3 +55,4 @@ surface. To additionally expose the raw namespaced tools (e.g. `fs__read_file`),
 set `passthrough = true` under `[gateway]` or pass `--passthrough` to
 `skarn serve`.
 
+## Tip: enable verbose logs

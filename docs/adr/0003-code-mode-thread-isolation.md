@@ -44,3 +44,4 @@ and runtime-agnostic.
 - Defense in depth still holds: the isolate is hermetic (no fs/net bindings), and
   its only egress is the channel bridge.
 - A future hardening is to run the isolate thread inside an OS-native sandbox
+  (the same `skarn-sandbox` primitives) for belt-and-suspenders on `execute`.

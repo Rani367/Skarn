@@ -30,3 +30,4 @@ upstream also reintroduces exactly the context bloat we set out to remove.
 
 - Context cost is decoupled from the number of connected tools.
 - The gateway, not the spec, owns namespacing — so we must keep the reverse map
+  consistent and re-emit `*/list_changed` notifications on refresh (roadmap).

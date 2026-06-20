@@ -67,3 +67,6 @@ impl ServerHandler for EchoServer {
             .map(serde_json::Value::Object)
             .unwrap_or(serde_json::Value::Null);
         match request.name.as_ref() {
+            "echo" => {
+                let text = args.get("text").and_then(|v| v.as_str()).unwrap_or("");
+                Ok(CallToolResult::success(vec![Content::text(

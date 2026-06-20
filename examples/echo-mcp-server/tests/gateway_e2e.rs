@@ -163,3 +163,9 @@ fn gateway_upstream_surface_search_and_execute() {
             .await
             .expect("build_server");
 
+        // Wire an in-memory client <-> the gateway server. Both `serve` calls
+        // block until the initialize handshake completes, so they must be driven
+        // concurrently.
+        let (server_io, client_io) = tokio::io::duplex(64 * 1024);
+        let (sr, sw) = tokio::io::split(server_io);
+        let (cr, cw) = tokio::io::split(client_io);
