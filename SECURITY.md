@@ -68,3 +68,5 @@ A bug in one layer does not by itself grant access.
   On Windows, in-gateway `execute` uses the hermetic isolate only (a process
   cannot move itself into an AppContainer); the Windows-parity worker is a
   documented future step. Select the strategy with the `isolation` setting
+  (`auto`/`worker`/`in_process`).
+

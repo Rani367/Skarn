@@ -59,3 +59,6 @@ async fn http_transport_lists_and_calls_tools() {
     let tools: Vec<String> = manager
         .registry()
         .tools()
+        .iter()
+        .map(|t| t.tool.clone())
+        .collect();

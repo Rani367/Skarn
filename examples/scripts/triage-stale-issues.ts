@@ -24,3 +24,5 @@ skarn.log(`scanned ${(issues.items ?? issues).length} issues, ${stale.length} st
 
 if (stale.length > 0) {
   const lines = stale.slice(0, 10).map((i: any) => `#${i.number} ${i.title}`);
+  await skarn.server("slack").post_message({
+    channel: "#triage",

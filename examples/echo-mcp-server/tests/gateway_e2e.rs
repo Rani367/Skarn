@@ -180,3 +180,11 @@ fn gateway_upstream_surface_search_and_execute() {
         assert!(names.contains(&"search".to_string()));
         assert!(names.contains(&"execute".to_string()));
         assert!(names.contains(&"read_tool_docs".to_string()));
+
+        // search() should surface the downstream `add` tool.
+        let search = client
+            .call_tool(
+                CallToolRequestParams::new("search")
+                    .with_arguments(json_obj(serde_json::json!({ "query": "add numbers" }))),
+            )
+            .await

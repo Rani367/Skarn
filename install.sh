@@ -31,3 +31,5 @@ detect_target() {
   esac
   echo "${arch_part}-${os_part}"
 }
+
+main() {

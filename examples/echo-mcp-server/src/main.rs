@@ -14,3 +14,5 @@ async fn main() -> anyhow::Result<()> {
         .with_writer(std::io::stderr)
         .try_init();
 
+    let service = EchoServer.serve(stdio()).await?;
+    service.waiting().await?;
