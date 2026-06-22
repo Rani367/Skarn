@@ -27,3 +27,6 @@ detect_target() {
   case "$arch" in
     x86_64|amd64)  arch_part="x86_64" ;;
     arm64|aarch64) arch_part="aarch64" ;;
+    *) err "unsupported architecture: $arch" ;;
+  esac
+  echo "${arch_part}-${os_part}"

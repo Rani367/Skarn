@@ -13,3 +13,4 @@ reasoning (including the trade-offs we accepted).
 | [0006](0006-http-downstream-transport.md) | Add a Streamable HTTP downstream transport |
 | [0007](0007-cross-process-sandboxed-worker.md) | Run Code Mode in a cross-process OS-sandboxed worker |
 
+New structural changes should add an ADR here following the same format.

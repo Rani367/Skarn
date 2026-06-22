@@ -70,3 +70,7 @@ impl ServerHandler for EchoServer {
             "echo" => {
                 let text = args.get("text").and_then(|v| v.as_str()).unwrap_or("");
                 Ok(CallToolResult::success(vec![Content::text(
+                    serde_json::json!({ "echoed": text }).to_string(),
+                )]))
+            }
+            "add" => {

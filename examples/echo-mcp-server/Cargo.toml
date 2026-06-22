@@ -23,3 +23,4 @@ rmcp = { version = "1.8.0", features = ["server", "transport-io"] }
 [dev-dependencies]
 skarn-gateway = { workspace = true }
 skarn-codemode = { workspace = true }
+skarn-common = { workspace = true }

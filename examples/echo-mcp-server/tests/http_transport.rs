@@ -54,3 +54,5 @@ async fn http_transport_lists_and_calls_tools() {
     };
 
     let manager = DownstreamManager::connect(&config).await.unwrap();
+
+    // The downstream tools are aggregated just like over stdio.

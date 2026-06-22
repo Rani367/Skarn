@@ -169,3 +169,8 @@ fn gateway_upstream_surface_search_and_execute() {
         let (server_io, client_io) = tokio::io::duplex(64 * 1024);
         let (sr, sw) = tokio::io::split(server_io);
         let (cr, cw) = tokio::io::split(client_io);
+
+        let (server_res, client_res) = tokio::join!(server.serve((sr, sw)), ().serve((cr, cw)));
+        let _running = server_res.expect("serve gateway");
+        let client = client_res.expect("connect client");
+

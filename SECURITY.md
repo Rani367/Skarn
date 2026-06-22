@@ -62,3 +62,6 @@ A bug in one layer does not by itself grant access.
 - **`skarn run` confines via AppContainer on Windows**, capturing the command's
   output through pipes. Network is governed by capability SIDs; AppContainer
   cannot express "loopback only", so `--net loopback` is treated as deny-all on
+  Windows (reported in the `RestrictionReport` notes). The Windows backend is
+  exercised on Windows CI runners.
+- **The cross-process OS-sandboxed worker runs `execute` on macOS and Linux.**

@@ -35,3 +35,4 @@ wildcards = "deny"
 # this makes that explicit.
 deny = [
     { name = "birdcage" },
+]
