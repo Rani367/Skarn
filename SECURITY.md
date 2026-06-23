@@ -74,3 +74,5 @@ A bug in one layer does not by itself grant access.
 
 Skarn does **not** defend against:
 
+- CPU side-channel / speculative-execution attacks.
+- Kernel 0-days or vulnerabilities in the OS sandbox primitives themselves.

@@ -29,3 +29,4 @@ axum = "0.8"
 # Host EchoServer over Streamable HTTP in the transport integration test.
 rmcp = { version = "1.8.0", features = [
     "server",
+    "transport-io",

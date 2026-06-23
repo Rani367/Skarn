@@ -48,3 +48,4 @@ headers = { X-Org = "acme" }
 enabled = false
 transport = "stdio"
 command = "my-mcp-server"
+args = []

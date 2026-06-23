@@ -167,3 +167,5 @@ cargo test --workspace           # macOS sandbox is runtime-verified here
 ```
 
 Requires Rust 1.95+.
+
+## Contributing

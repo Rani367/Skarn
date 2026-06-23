@@ -84,3 +84,7 @@ impl ServerHandler for EchoServer {
                 format!("unknown tool `{other}`"),
                 None,
             )),
+        }
+    }
+}
+

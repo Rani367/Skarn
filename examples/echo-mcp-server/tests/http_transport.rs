@@ -65,3 +65,6 @@ async fn http_transport_lists_and_calls_tools() {
     assert!(tools.contains(&"add".to_string()), "tools: {tools:?}");
     assert!(tools.contains(&"echo".to_string()), "tools: {tools:?}");
 
+    // And a tool call round-trips over HTTP.
+    let result = manager
+        .call("echo", "add", r#"{"a":40,"b":2}"#)

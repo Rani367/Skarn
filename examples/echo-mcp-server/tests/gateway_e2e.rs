@@ -198,3 +198,9 @@ fn gateway_upstream_surface_search_and_execute() {
                 CallToolRequestParams::new("execute").with_arguments(json_obj(serde_json::json!({
                     "code": "const r = await skarn.server(\"echo\").add({ a: 40, b: 2 }); return r.sum;"
                 }))),
+            )
+            .await
+            .expect("call execute");
+        let exec_text = first_text(&execute);
+        assert!(exec_text.contains("42"), "execute result: {exec_text}");
+

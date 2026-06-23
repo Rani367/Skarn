@@ -36,3 +36,6 @@ main() {
   if ! command -v curl >/dev/null 2>&1; then
     err "curl is required"
   fi
+
+  target="$(detect_target)"
+  say "detected target: $target"
