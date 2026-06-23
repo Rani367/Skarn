@@ -30,3 +30,5 @@ if (stale.length > 0) {
   });
 }
 
+// Only this small object returns to the model.
+return { scanned: (issues.items ?? issues).length, stale: stale.length };

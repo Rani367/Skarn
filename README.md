@@ -171,3 +171,4 @@ Requires Rust 1.95+.
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Issues and PRs welcome.
+

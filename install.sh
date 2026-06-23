@@ -41,3 +41,7 @@ main() {
   say "detected target: $target"
 
   latest="$(curl -fsSL "https://api.github.com/repos/${REPO}/releases/latest" \
+    | grep -o '"tag_name": *"[^"]*"' | head -1 | sed 's/.*"\([^"]*\)"$/\1/')"
+  if [ -z "${latest:-}" ]; then
+    say "no published release found; falling back to cargo"
+    command -v cargo >/dev/null 2>&1 || err "cargo not found either"

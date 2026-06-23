@@ -212,3 +212,10 @@ fn json_obj(v: serde_json::Value) -> serde_json::Map<String, serde_json::Value> 
     match v {
         serde_json::Value::Object(m) => m,
         _ => serde_json::Map::new(),
+    }
+}
+
+fn first_text(result: &rmcp::model::CallToolResult) -> String {
+    result
+        .content
+        .iter()

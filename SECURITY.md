@@ -78,3 +78,7 @@ Skarn does **not** defend against:
 - Kernel 0-days or vulnerabilities in the OS sandbox primitives themselves.
 - Multi-tenant isolation for hostile co-tenants (use microVMs/Firecracker).
 - Supply-chain compromise of the tools you connect downstream.
+- Reading non-secret data on macOS (see above).
+
+## Reporting a vulnerability
+

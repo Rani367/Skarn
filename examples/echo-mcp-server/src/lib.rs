@@ -90,3 +90,4 @@ impl ServerHandler for EchoServer {
 
 fn obj(v: serde_json::Value) -> serde_json::Map<String, serde_json::Value> {
     match v {
+        serde_json::Value::Object(m) => m,

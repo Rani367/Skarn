@@ -58,3 +58,4 @@ skarn run --net deny -- cargo test
 ## Verifying
 
 ```bash
+skarn doctor                       # shows the active kernel sandbox

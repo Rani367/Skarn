@@ -69,3 +69,5 @@ async fn http_transport_lists_and_calls_tools() {
     let result = manager
         .call("echo", "add", r#"{"a":40,"b":2}"#)
         .await
+        .unwrap();
+    assert!(result.contains("\"sum\":42"), "result: {result}");
