@@ -80,3 +80,7 @@ impl ServerHandler for EchoServer {
                     serde_json::json!({ "sum": a + b }).to_string(),
                 )]))
             }
+            other => Err(McpError::invalid_params(
+                format!("unknown tool `{other}`"),
+                None,
+            )),

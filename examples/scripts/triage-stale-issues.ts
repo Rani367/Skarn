@@ -28,3 +28,4 @@ if (stale.length > 0) {
     channel: "#triage",
     text: `${stale.length} stale bugs:\n${lines.join("\n")}`,
   });
+}

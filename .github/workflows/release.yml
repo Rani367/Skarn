@@ -107,3 +107,4 @@ jobs:
           for crate in skarn-common skarn-sandbox skarn-compress skarn-codemode skarn-gateway skarn; do
             echo "::group::publish $crate"
             cargo publish -p "$crate"
+            echo "::endgroup::"

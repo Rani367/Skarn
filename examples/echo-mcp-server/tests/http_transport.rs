@@ -64,3 +64,4 @@ async fn http_transport_lists_and_calls_tools() {
         .collect();
     assert!(tools.contains(&"add".to_string()), "tools: {tools:?}");
     assert!(tools.contains(&"echo".to_string()), "tools: {tools:?}");
+

@@ -72,3 +72,5 @@ A bug in one layer does not by itself grant access.
 
 ## Explicitly out of scope
 
+Skarn does **not** defend against:
+

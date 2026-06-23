@@ -37,3 +37,4 @@ flag if a no-C-compiler target ever requires it.
 
 - We get a tiny, statically-linkable, cross-compilable engine.
 - We forgo V8's throughput, which is irrelevant for orchestration scripts whose
+  latency is dominated by downstream tool calls, not JS execution.

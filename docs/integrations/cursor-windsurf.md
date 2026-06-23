@@ -61,3 +61,4 @@ set `passthrough = true` under `[gateway]` or pass `--passthrough` to
 { "mcpServers": { "skarn": { "command": "skarn", "args": ["serve", "--verbose"] } } }
 ```
 
+Logs go to stderr (never the MCP stdio channel). You can also set

@@ -25,3 +25,7 @@ skarn-gateway = { workspace = true }
 skarn-codemode = { workspace = true }
 skarn-common = { workspace = true }
 tokio = { workspace = true, features = ["net"] }
+axum = "0.8"
+# Host EchoServer over Streamable HTTP in the transport integration test.
+rmcp = { version = "1.8.0", features = [
+    "server",

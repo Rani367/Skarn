@@ -194,3 +194,7 @@ fn gateway_upstream_surface_search_and_execute() {
 
         // execute() should run a script that calls the downstream tool.
         let execute = client
+            .call_tool(
+                CallToolRequestParams::new("execute").with_arguments(json_obj(serde_json::json!({
+                    "code": "const r = await skarn.server(\"echo\").add({ a: 40, b: 2 }); return r.sum;"
+                }))),
