@@ -106,7 +106,21 @@ jobs:
           fi
           for crate in skarn-common skarn-sandbox skarn-compress skarn-codemode skarn-gateway skarn; do
             echo "::group::publish $crate"
-            cargo publish -p "$crate"
+            # Tolerate re-runs and partial publishes: a version already on
+            # crates.io is success, not failure. Any other error still fails.
+            set +e
+            out="$(cargo publish -p "$crate" 2>&1)"
+            code=$?
+            set -e
+            echo "$out"
+            if [ "$code" -ne 0 ]; then
+              if echo "$out" | grep -qiE 'already (exists|uploaded)|is already (uploaded|published)|already published'; then
+                echo "::notice::$crate is already on crates.io, skipping"
+              else
+                echo "::error::publish failed for $crate"
+                exit "$code"
+              fi
+            fi
             echo "::endgroup::"
             sleep 25
           done

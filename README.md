@@ -11,6 +11,8 @@
 
 *Cut your agent's API bill while physically stopping it from wiping your disk or exfiltrating your secrets.*
 
+<img src="https://raw.githubusercontent.com/Rani367/Skarn/main/docs/demo.gif" alt="skarn doctor reports the active kernel sandbox, then skarn run compresses 14k tokens of shell output down to about 700 while sandboxed" width="820">
+
 </div>
 
 ---
@@ -41,6 +43,10 @@ Autonomous AI coding agents have three expensive, dangerous habits:
             │   log dump                inside the box)          ▼                ▼          │
             └────────────────────────────────────────────── Postgres MCP    GitHub MCP ──────┘
 ```
+
+## Status
+
+Skarn is young. The macOS (Seatbelt) and Linux (Landlock + seccomp) sandboxes are runtime-verified in CI on every push; Windows AppContainer is the least exercised backend so far. By design it runs untrusted, model-generated code, so please read [SECURITY.md](SECURITY.md) for the threat model and what is explicitly out of scope before you point a real agent at it. The most useful thing you can send right now is a bug report or an attempt to break the sandbox.
 
 ## Install
 
@@ -161,7 +167,7 @@ Skarn runs untrusted, model-generated code by design. Read [SECURITY.md](SECURIT
 
 ```bash
 git clone https://github.com/Rani367/Skarn
-cd skarnmcp
+cd Skarn
 cargo build --release            # binary at target/release/skarn
 cargo test --workspace           # macOS sandbox is runtime-verified here
 ```
