@@ -546,7 +546,7 @@ checksum = "d0881ea181b1df73ff77ffaaf9c7544ecc11e82fba9b5f27b262a3c73a332555"
 
 [[package]]
 name = "echo-mcp-server"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "axum",
@@ -2493,7 +2493,7 @@ checksum = "8ee5873ec9cce0195efcb7a4e9507a04cd49aec9c83d0389df45b1ef7ba2e649"
 
 [[package]]
 name = "skarn"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "clap",
@@ -2511,7 +2511,7 @@ dependencies = [
 
 [[package]]
 name = "skarn-codemode"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "async-trait",
  "futures",
@@ -2534,7 +2534,7 @@ dependencies = [
 
 [[package]]
 name = "skarn-common"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "serde",
  "serde_json",
@@ -2544,7 +2544,7 @@ dependencies = [
 
 [[package]]
 name = "skarn-compress"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "regex",
  "serde",
@@ -2558,7 +2558,7 @@ dependencies = [
 
 [[package]]
 name = "skarn-gateway"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "arc-swap",
  "async-trait",
@@ -2580,7 +2580,7 @@ dependencies = [
 
 [[package]]
 name = "skarn-sandbox"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "landlock",
  "libc",
