@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { CRATE, INSTALL_ONELINER, PUNCHLINE, REPO, TAGLINE } from '../data/content'
 import { TurbulentFlow } from './ui/turbulent-flow'
 import { CopyButton } from './ui/CopyButton'
-import { ArrowIcon, GitHubIcon, RustIcon, ShieldIcon } from './ui/Icons'
+import { ArrowIcon, GitHubIcon, RustIcon } from './ui/Icons'
 import './hero.css'
 
 export function Hero() {
@@ -24,11 +24,6 @@ export function Hero() {
       <div className="hero-grain" aria-hidden="true" />
 
       <motion.div className="hero-content container" variants={container} initial="hidden" animate="show">
-        <motion.span className="hero-badge" variants={item}>
-          <ShieldIcon width={14} height={14} />
-          one Rust binary · macOS · Linux · Windows
-        </motion.span>
-
         <motion.h1 className="hero-title" variants={item}>
           Sandbox your agent.
           <br />

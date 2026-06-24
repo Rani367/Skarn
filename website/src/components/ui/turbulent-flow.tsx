@@ -20,15 +20,34 @@ export function TurbulentFlow({ className, interactive = true }: { className?: s
     const prefersReduced =
       typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
+    // Resources are declared up here so a single cleanup() can tear everything
+    // down — including from the catch block if WebGL ever fails.
+    let renderer: THREE.WebGLRenderer | undefined
+    let geometry: THREE.PlaneGeometry | undefined
+    let material: THREE.ShaderMaterial | undefined
+    let ro: ResizeObserver | undefined
+    let tl: gsap.core.Timeline | null = null
+    let mouseHandler: ((e: MouseEvent) => void) | null = null
+    let raf = 0
+
+    const cleanup = () => {
+      ro?.disconnect()
+      if (mouseHandler) window.removeEventListener('mousemove', mouseHandler)
+      cancelAnimationFrame(raf)
+      tl?.kill()
+      try {
+        renderer?.forceContextLoss()
+      } catch {
+        /* context already gone */
+      }
+      if (renderer && renderer.domElement.parentNode === mount) mount.removeChild(renderer.domElement)
+      renderer?.dispose()
+      geometry?.dispose()
+      material?.dispose()
+    }
+
     const scene = new THREE.Scene()
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1)
-
-    let renderer: THREE.WebGLRenderer
-    try {
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' })
-    } catch {
-      return
-    }
 
     const sizeOf = () => ({
       w: mount.clientWidth || window.innerWidth,
@@ -36,12 +55,6 @@ export function TurbulentFlow({ className, interactive = true }: { className?: s
     })
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2)
-    renderer.setPixelRatio(dpr)
-    {
-      const { w, h } = sizeOf()
-      renderer.setSize(w, h)
-    }
-    mount.appendChild(renderer.domElement)
 
     const vertexShader = `
       varying vec2 vUv;
@@ -203,80 +216,88 @@ export function TurbulentFlow({ className, interactive = true }: { className?: s
       }
     `
 
-    const material = new THREE.ShaderMaterial({
-      vertexShader,
-      fragmentShader,
-      uniforms: {
-        u_time: { value: 0 },
-        u_resolution: { value: new THREE.Vector2(sizeOf().w * dpr, sizeOf().h * dpr) },
-        u_noise_scale: { value: 4.0 },
-        u_distortion: { value: 0.15 },
-        u_turbulence: { value: 0.8 },
-        u_sharpness: { value: 1.4 },
-      },
-    })
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' })
+      renderer.setPixelRatio(dpr)
+      const init = sizeOf()
+      renderer.setSize(init.w, init.h)
+      mount.appendChild(renderer.domElement)
 
-    const geometry = new THREE.PlaneGeometry(2, 2)
-    const mesh = new THREE.Mesh(geometry, material)
-    scene.add(mesh)
+      material = new THREE.ShaderMaterial({
+        vertexShader,
+        fragmentShader,
+        uniforms: {
+          u_time: { value: 0 },
+          u_resolution: { value: new THREE.Vector2(init.w * dpr, init.h * dpr) },
+          u_noise_scale: { value: 4.0 },
+          u_distortion: { value: 0.15 },
+          u_turbulence: { value: 0.8 },
+          u_sharpness: { value: 1.4 },
+        },
+      })
 
-    let time = 0
-    let raf = 0
-    let tl: gsap.core.Timeline | null = null
+      geometry = new THREE.PlaneGeometry(2, 2)
+      scene.add(new THREE.Mesh(geometry, material))
 
-    const renderFrame = () => renderer.render(scene, camera)
+      const mat = material
+      const r = renderer
+      const renderFrame = () => r.render(scene, camera)
 
-    const handleMouseMove = (event: MouseEvent) => {
-      const mx = (event.clientX / window.innerWidth) * 2 - 1
-      const my = -(event.clientY / window.innerHeight) * 2 + 1
-      const influence = Math.sqrt(mx * mx + my * my) * 0.3
-      material.uniforms.u_turbulence.value += influence * 0.03
-    }
-
-    if (prefersReduced) {
-      // single static frame; no animation, no listeners
-      material.uniforms.u_time.value = 6.0
-      renderFrame()
-    } else {
-      tl = gsap.timeline({ repeat: -1 })
-      tl.to(material.uniforms.u_turbulence, { value: 1.2, duration: 6, ease: 'sine.inOut' })
-        .to(material.uniforms.u_noise_scale, { value: 6.0, duration: 8, ease: 'power2.inOut' }, 0)
-        .to(material.uniforms.u_distortion, { value: 0.25, duration: 7, ease: 'power1.inOut' }, 1)
-        .to(material.uniforms.u_sharpness, { value: 1.8, duration: 5, ease: 'power2.inOut' }, 2)
-        .to(material.uniforms.u_turbulence, { value: 0.4, duration: 9, ease: 'sine.inOut' })
-        .to(material.uniforms.u_noise_scale, { value: 2.5, duration: 10, ease: 'power2.inOut' }, '-=4')
-        .to(material.uniforms.u_distortion, { value: 0.08, duration: 8, ease: 'power1.inOut' }, '-=6')
-        .to(material.uniforms.u_sharpness, { value: 1.0, duration: 7, ease: 'power2.inOut' }, '-=5')
-
-      if (interactive) window.addEventListener('mousemove', handleMouseMove)
-
-      const animate = () => {
-        time += 0.008
-        material.uniforms.u_time.value = time
+      // throws here (bad shader / lost context) are caught below and degrade to
+      // the CSS fallback rather than crashing the hero.
+      if (prefersReduced) {
+        mat.uniforms.u_time.value = 6.0
         renderFrame()
-        raf = requestAnimationFrame(animate)
+      } else {
+        renderFrame() // probe the program once before committing to a loop
+        tl = gsap.timeline({ repeat: -1 })
+        tl.to(mat.uniforms.u_turbulence, { value: 1.2, duration: 6, ease: 'sine.inOut' })
+          .to(mat.uniforms.u_noise_scale, { value: 6.0, duration: 8, ease: 'power2.inOut' }, 0)
+          .to(mat.uniforms.u_distortion, { value: 0.25, duration: 7, ease: 'power1.inOut' }, 1)
+          .to(mat.uniforms.u_sharpness, { value: 1.8, duration: 5, ease: 'power2.inOut' }, 2)
+          .to(mat.uniforms.u_turbulence, { value: 0.4, duration: 9, ease: 'sine.inOut' })
+          .to(mat.uniforms.u_noise_scale, { value: 2.5, duration: 10, ease: 'power2.inOut' }, '-=4')
+          .to(mat.uniforms.u_distortion, { value: 0.08, duration: 8, ease: 'power1.inOut' }, '-=6')
+          .to(mat.uniforms.u_sharpness, { value: 1.0, duration: 7, ease: 'power2.inOut' }, '-=5')
+
+        if (interactive) {
+          mouseHandler = (event: MouseEvent) => {
+            const mx = (event.clientX / window.innerWidth) * 2 - 1
+            const my = -(event.clientY / window.innerHeight) * 2 + 1
+            const influence = Math.sqrt(mx * mx + my * my) * 0.3
+            mat.uniforms.u_turbulence.value += influence * 0.03
+          }
+          window.addEventListener('mousemove', mouseHandler)
+        }
+
+        let time = 0
+        const animate = () => {
+          time += 0.008
+          mat.uniforms.u_time.value = time
+          try {
+            renderFrame()
+          } catch {
+            return // context lost mid-run — stop quietly
+          }
+          raf = requestAnimationFrame(animate)
+        }
+        animate()
       }
-      animate()
+
+      ro = new ResizeObserver(() => {
+        const { w, h } = sizeOf()
+        r.setSize(w, h)
+        mat.uniforms.u_resolution.value.set(w * dpr, h * dpr)
+        if (prefersReduced) renderFrame()
+      })
+      ro.observe(mount)
+    } catch {
+      // WebGL unsupported or shader failed — the CSS fallback on .hero-flow shows
+      cleanup()
+      return
     }
 
-    const ro = new ResizeObserver(() => {
-      const { w, h } = sizeOf()
-      renderer.setSize(w, h)
-      material.uniforms.u_resolution.value.set(w * dpr, h * dpr)
-      if (prefersReduced) renderFrame()
-    })
-    ro.observe(mount)
-
-    return () => {
-      ro.disconnect()
-      if (interactive) window.removeEventListener('mousemove', handleMouseMove)
-      cancelAnimationFrame(raf)
-      tl?.kill()
-      if (renderer.domElement.parentNode === mount) mount.removeChild(renderer.domElement)
-      renderer.dispose()
-      geometry.dispose()
-      material.dispose()
-    }
+    return cleanup
   }, [interactive])
 
   return <div ref={mountRef} className={className} aria-hidden="true" style={{ position: 'absolute', inset: 0 }} />

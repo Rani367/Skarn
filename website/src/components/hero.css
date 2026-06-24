@@ -10,6 +10,14 @@
 
 .hero-flow {
   z-index: -3;
+  /* fallback shown if WebGL is unavailable or the shader fails — the canvas,
+     when it renders, paints over this */
+  background:
+    radial-gradient(40% 50% at 30% 30%, rgba(255, 77, 26, 0.5), transparent 70%),
+    radial-gradient(45% 55% at 72% 38%, rgba(180, 60, 224, 0.42), transparent 72%),
+    radial-gradient(40% 45% at 55% 70%, rgba(20, 211, 232, 0.32), transparent 70%),
+    radial-gradient(35% 40% at 20% 75%, rgba(54, 230, 90, 0.26), transparent 72%),
+    var(--obsidian);
 }
 
 .hero-flow canvas {
@@ -64,32 +72,12 @@
   max-width: 64rem;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.42rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(8, 8, 12, 0.4);
-  backdrop-filter: blur(8px);
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.04em;
-  color: #e7e9ee;
-}
-
-.hero-badge svg {
-  color: var(--ember-bright);
-}
-
 .hero-title {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(2.9rem, 8vw, 6rem);
   line-height: 0.98;
   letter-spacing: -0.035em;
-  margin-top: 1.6rem;
   color: #fff;
   text-shadow: 0 2px 40px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.5);
 }
