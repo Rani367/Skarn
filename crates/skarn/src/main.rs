@@ -11,12 +11,12 @@
 mod commands;
 mod scaffold;
 
-use clap::{Parser, Subcommand};
+use clap::{CommandFactory, Parser, Subcommand};
 
 /// Skarn: a fast, OS-sandboxed MCP gateway with Code Mode and token compression.
 #[derive(Parser, Debug)]
 #[command(name = "skarn", version, about, long_about = None)]
-struct Cli {
+pub struct Cli {
     #[command(subcommand)]
     command: Command,
 
@@ -39,6 +39,8 @@ enum Command {
     Init(commands::InitArgs),
     /// Print a Claude Code PreToolUse hook that routes shell commands through skarn.
     Hook,
+    /// Print a shell completion script for the given shell.
+    Completions(commands::CompletionsArgs),
     /// Internal: the OS-sandboxed Code Mode worker (driven by `skarn serve`).
     /// Reads its job from stdin; not intended for direct use.
     #[command(name = "__worker", hide = true)]
@@ -57,6 +59,7 @@ fn main() -> anyhow::Result<()> {
         Command::Init(args) => commands::init(args),
         Command::Hook => commands::hook(),
         Command::Worker => commands::worker(),
+        Command::Completions(args) => commands::completions(args),
         // Async commands run on a normal multi-threaded runtime; the gateway
         // confines the `!Send` Code Mode isolate to its own thread internally.
         Command::Serve(args) => block_on(commands::serve(args)),
