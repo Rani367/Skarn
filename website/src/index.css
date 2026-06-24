@@ -1,0 +1,309 @@
+/* ============================================================================
+   Skarn — "contact metamorphism" design tokens
+   Obsidian rock, garnet-ember heat, malachite crystallization, pyrite ore.
+   ========================================================================== */
+
+:root {
+  /* surfaces — deep ink that lets the shader colours sing */
+  --obsidian: #07080b;
+  --basalt: #0a0c10;
+  --surface: #111319;
+  --surface-2: #161922;
+  --hairline: #20242e;
+  --hairline-strong: #2c313d;
+
+  /* ink */
+  --ink: #eef0f4;
+  --slate: #aab2bf;
+  --muted: #6f7785;
+  --faint: #474e5b;
+
+  /* accents sampled from the turbulent-flow palette ----------------------- */
+  --ember: #ff4d1a;        /* intense orange/red */
+  --ember-bright: #ff6a3d;
+  --malachite: #14d3e8;    /* bright cyan */
+  --malachite-deep: #0fa6b8;
+  --pyrite: #ffb400;       /* golden yellow */
+  --violet: #b43ce0;       /* vivid purple (used rarely) */
+  --lime: #36e65a;         /* bright green (used rarely) */
+
+  /* signature gradient drawn straight from the shader's hot centers */
+  --forge: linear-gradient(120deg, var(--ember) 0%, var(--pyrite) 40%, var(--malachite) 78%, var(--violet) 100%);
+  --heat: linear-gradient(135deg, #ff6a3d, #ff3d12);
+
+  /* typography */
+  --font-display: 'Bricolage Grotesque Variable', 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* rhythm */
+  --maxw: 1140px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: dark;
+}
+
+/* ----------------------------------------------------------------- reset -- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--obsidian);
+  color: var(--ink);
+  line-height: 1.62;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* The deep, slow molten glow that lives behind the whole page. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60rem 60rem at 82% -8%, rgba(255, 77, 26, 0.12), transparent 60%),
+    radial-gradient(50rem 50rem at 6% 22%, rgba(20, 211, 232, 0.08), transparent 55%),
+    radial-gradient(70rem 40rem at 50% 124%, rgba(180, 60, 224, 0.07), transparent 60%);
+  pointer-events: none;
+}
+
+/* faint basalt grain so the black never feels flat */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--malachite);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: rgba(226, 85, 43, 0.35);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------- layout --- */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  position: relative;
+  padding-block: clamp(4.5rem, 11vw, 9rem);
+}
+
+.section-head {
+  max-width: 46rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--malachite);
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 1.6rem;
+  height: 1px;
+  background: var(--malachite);
+  opacity: 0.7;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  margin-bottom: 1.1rem;
+}
+
+.section-head p {
+  color: var(--slate);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  max-width: 40rem;
+}
+
+.lede {
+  color: var(--slate);
+}
+
+/* ------------------------------------------------------------- buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 11px;
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.97rem;
+  line-height: 1;
+  transition: transform 0.18s var(--ease-out), background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--heat);
+  color: #fff;
+  box-shadow: 0 10px 30px -10px rgba(255, 77, 26, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 16px 40px -12px rgba(255, 77, 26, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: var(--hairline-strong);
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  border-color: var(--malachite);
+  background: rgba(47, 212, 182, 0.06);
+}
+
+/* ------------------------------------------------------------- panels ----- */
+.panel {
+  background: linear-gradient(180deg, var(--surface), var(--basalt));
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+}
+
+/* a thin ember/malachite top-edge highlight used on feature cards */
+.edge-lit {
+  position: relative;
+  overflow: hidden;
+}
+
+.edge-lit::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent, var(--ember)), transparent);
+  opacity: 0.55;
+}
+
+/* code / terminal type */
+.mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'liga' 0;
+}
+
+/* a small inline pill */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--hairline-strong);
+  color: var(--slate);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* utility */
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.text-ember {
+  color: var(--ember-bright);
+}
+.text-malachite {
+  color: var(--malachite);
+}
+.text-pyrite {
+  color: var(--pyrite);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

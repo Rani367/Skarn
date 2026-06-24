@@ -7,3 +7,6 @@ skarn.toml
 # Internal planning/strategy memo — not part of the published project.
 Global High-Star Rust Project Research.md
 LAUNCH.md
+
+# Local dev helpers (Claude Code launch config, etc.)
+.claude/

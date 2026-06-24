@@ -8,8 +8,11 @@
 [![MSRV](https://img.shields.io/badge/rustc-1.95+-blue.svg)](https://www.rust-lang.org)
 [![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-green.svg)](#license)
 ![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)
+[![Website](https://img.shields.io/badge/website-rani367.github.io%2FSkarn-ff4d1a.svg)](https://rani367.github.io/Skarn/)
 
 *Cut your agent's API bill while physically stopping it from wiping your disk or exfiltrating your secrets.*
+
+**🌐 [rani367.github.io/Skarn](https://rani367.github.io/Skarn/)** — interactive overview, live token-compression demo, and one-line install.
 
 <img src="https://raw.githubusercontent.com/Rani367/Skarn/main/docs/demo.gif" alt="skarn doctor reports the active kernel sandbox, then skarn run compresses 14k tokens of shell output down to about 700 while sandboxed" width="820">
 
@@ -52,7 +55,7 @@ Skarn is young. The macOS (Seatbelt) and Linux (Landlock + seccomp) sandboxes ar
 
 ```bash
 # One line (macOS / Linux):
-curl -fsSL https://raw.githubusercontent.com/Rani367/Skarn/main/install.sh | sh
+curl -fsSL https://rani367.github.io/Skarn/install.sh | sh
 
 # Or with Cargo:
 cargo install skarn
@@ -177,6 +180,15 @@ Requires Rust 1.95+.
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Issues and PRs welcome.
+
+## Website
+
+The landing page lives at **[rani367.github.io/Skarn](https://rani367.github.io/Skarn/)** — an
+animated overview with an interactive token-compression demo. It also serves the installer, so the
+one-liner above (`curl -fsSL https://rani367.github.io/Skarn/install.sh | sh`) pulls from there.
+
+The site source is in [`website/`](website) (Vite + React) and deploys to GitHub Pages automatically
+via [`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every push that touches it.
 
 ## License
 

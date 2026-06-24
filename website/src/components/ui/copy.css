@@ -1,0 +1,31 @@
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 9px;
+  border: 1px solid var(--hairline-strong);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--slate);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.copy-btn:hover {
+  color: var(--ink);
+  border-color: var(--malachite);
+  background: rgba(47, 212, 182, 0.07);
+}
+
+.copy-btn[data-copied='true'] {
+  color: var(--malachite);
+  border-color: var(--malachite);
+}
+
+.copy-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}

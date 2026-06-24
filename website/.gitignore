@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+# generated at build time from the canonical repo-root install.sh
+public/install.sh
+*.tsbuildinfo
