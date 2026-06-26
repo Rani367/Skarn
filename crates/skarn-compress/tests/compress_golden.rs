@@ -4,7 +4,9 @@ use skarn_common::CommandSpec;
 use skarn_compress::Compressor;
 
 fn fixture_path(name: &str) -> String {
-    let dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("tests").join("fixtures");
+    let dir = Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("tests")
+        .join("fixtures");
     dir.join(name).to_string_lossy().to_string()
 }
 
@@ -25,7 +27,8 @@ fn run_golden(profile_name: &str, fixture_stem: &str, extra_args: Vec<&str>) {
 
     let actual = out.text;
     assert_eq!(
-        actual, expected,
+        actual,
+        expected,
         "golden mismatch for profile `{profile_name}`\n\
          --- expected (from {fixture_stem}_expected.txt)\n\
          +++ actual\n\
