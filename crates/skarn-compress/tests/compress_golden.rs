@@ -30,7 +30,7 @@ fn run_golden(profile_name: &str, fixture_stem: &str, extra_args: Vec<&str>) {
          --- expected (from {fixture_stem}_expected.txt)\n\
          +++ actual\n\
          {}",
-        diff(&expected, &actual)
+        diff(expected, &actual)
     );
 }
 

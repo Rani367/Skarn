@@ -122,7 +122,9 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
         );
     }
     // For DenyAll we governed AccessNet but added zero NetPort rules, so every
-    // bind/connect is denied.
+    // bind/connect is denied.  As defense-in-depth (and to cover kernels with
+    // Landlock ABI < 4 where AccessNet is silently dropped under BestEffort),
+    // seccomp also blocks connect/bind when restrict_net is true.
 
     let status = created
         .restrict_self()
@@ -135,7 +137,7 @@ pub fn apply(policy: &Policy) -> Result<RestrictionReport> {
     };
 
     // Apply seccomp on top (best-effort: if it fails we still have Landlock).
-    match install_seccomp() {
+    match install_seccomp(restrict_net) {
         Ok(()) => notes.push("seccomp-bpf denylist applied".to_string()),
         Err(e) => notes.push(format!("seccomp-bpf not applied: {e}")),
     }
@@ -165,14 +167,17 @@ fn add_path_rule(
         .map_err(|e| Error::sandbox(format!("landlock add_rule {path}: {e}")))
 }
 
-fn install_seccomp() -> std::result::Result<(), String> {
+fn install_seccomp(block_net: bool) -> std::result::Result<(), String> {
     use seccompiler::{SeccompAction, SeccompFilter, apply_filter};
     use std::collections::BTreeMap;
 
     let mut rules = BTreeMap::new();
     for &sysno in dangerous_syscalls() {
-        // Empty rule vec => unconditional match for that syscall number.
         rules.insert(sysno, Vec::new());
+    }
+    if block_net {
+        rules.insert(libc::SYS_connect, Vec::new());
+        rules.insert(libc::SYS_bind, Vec::new());
     }
 
     let arch = std::env::consts::ARCH
@@ -180,8 +185,8 @@ fn install_seccomp() -> std::result::Result<(), String> {
         .map_err(|e| format!("seccomp arch: {e:?}"))?;
     let filter = SeccompFilter::new(
         rules,
-        SeccompAction::Allow,                     // default: allow
-        SeccompAction::Errno(libc::EPERM as u32), // matched (dangerous): EPERM
+        SeccompAction::Allow,
+        SeccompAction::Errno(libc::EPERM as u32),
         arch,
     )
     .map_err(|e| format!("seccomp filter: {e}"))?;
