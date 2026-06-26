@@ -1,0 +1,25 @@
+   Compiling skarn-common v0.1.0
+   Compiling skarn-compress v0.1.0
+    Finished test [unoptimized + debuginfo] target(s) in 0.54s
+     Running unittests src/lib.rs
+running 12 tests
+test engine::tests::test_dedupes_adjacent_lines ... ok
+test engine::tests::test_strips_ansi ... ok
+test engine::tests::test_collapses_carriage_returns ... ok
+test engine::tests::test_empty_input_yields_empty_output ... ok
+test engine::tests::test_invalid_utf8_does_not_panic ... ok
+test engine::tests::test_drops_noise_but_keeps_errors ... ok
+test engine::tests::test_truncates_and_rescues_important_lines ... ok
+test engine::tests::test_no_hidden_banner_when_nothing_is_elided ... ok
+test engine::tests::test_unknown_tool_falls_back_to_default ... ok
+test engine::tests::test_compresses_cargo_test_output ... ok
+test rules::tests::builtin_parses_and_has_profiles ... ok
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+warning: unreachable expression
+  --> src/lib.rs:42:5
+
+error[E0308]: mismatched types
+  --> src/lib.rs:25:9
+
+error: aborting due to 1 previous error
